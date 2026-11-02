@@ -3,75 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GPMSCTECH SECURED BY @speed_awr360°</title>
+<title>Praise And Glory To God The Father Almighty, Jesus Christ God Almighty, And The Holy Spirit God Almighty, Amen. | GPMSCTECH SECURED BY @speed_awr360°</title>
 <style>
-body{margin:0;font-family:Arial;background:#020c1b;color:#e6f1ff;text-align:center;padding:15px}
-.box{background:#112240;border:2px solid #64ffda;padding:15px;border-radius:15px;max-width:650px;margin:10px auto}
+body{margin:0;font-family:Arial;background:#020c1b;color:#fff;text-align:center;padding:20px}
+.box{background:#112240;border:2px solid #64ffda;border-radius:15px;padding:20px;max-width:600px;margin:20px auto}
 #timer{font-size:32px;color:#00ff88;font-weight:bold}
-h1{color:#64ffda}
-.btn{background:#64ffda;color:#020c1b;padding:12px 25px;border-radius:8px;font-weight:bold;border:none;cursor:pointer;margin:5px}
-#lock{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000f1f;z-index:9999;justify-content:center;align-items:center;flex-direction:column;padding:15px;box-sizing:border-box;overflow-y:auto}
-input{padding:12px;font-size:15px;border-radius:8px;border:2px solid #64ffda;width:260px;text-align:center;margin:5px;background:#020c1b;color:#fff}
-.qr-box{background:#fff;color:#000;padding:10px;border-radius:10px;margin:10px auto;max-width:300px}
-.tech{color:#64ffda;font-size:10px}
+h1{color:#64ffda;font-size:22px}
+h2{color:#fff}
+.btn{background:#64ffda;color:#020c1b;padding:15px 30px;border:none;border-radius:10px;font-weight:bold;font-size:18px;cursor:pointer;margin:10px}
+#lock{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999;justify-content:center;align-items:center;flex-direction:column}
+.praise{background:#112240;border:2px solid gold;padding:15px;border-radius:10px;margin:15px 0;color:#ffeb3b;font-weight:bold}
 </style>
 </head>
 <body>
-<div class="box">
-<span style="background:#ff4444;color:#fff;padding:4px 10px;border-radius:20px;font-size:11px">🔒 SECURED BY @speed_awr360° TECHNOLOGY</span>
-<h3 style="color:#64ffda;margin:8px 0 0 0">⏳ MAJARIBIO MASAA 24</h3>
-<div id="timer">Inapakia...</div>
-<p class="tech">SECURITY QR: @speed_awr360° | Codes: 34796,38065,54407,19521,10096,78967,56067,58527,74622,37300,41573,90845</p>
+
+<div class="praise">
+🙏 Praise And Glory To God The Father Almighty, Jesus Christ God Almighty, And The Holy Spirit God Almighty, Amen. 🙏
 </div>
 
 <h1>GPMSCTECH DIGITAL</h1>
-<h3>Garaji Joseph Masambu - Mwanza</h3>
-<p><b>TZS 20,000</b> CRDB Lipa Namba: 10055686</p>
+<h2>SECURED BY @speed_awr360°</h2>
 
-<div id="lock">
-<h2 style="color:#ff4444">⛔ UMEBANWA</h2>
-<p class="tech">PROTECTED BY @speed_awr360° TECHNOLOGY + QR SECURITY</p>
-
-<div class="qr-box">
-<p style="margin:0;font-weight:bold;font-size:12px">SCAN QR YA @speed_awr360° KULIPIA</p>
-<p style="font-size:28px;margin:5px">⬛⬜⬛<br>⬜⬛⬜<br>⬛⬜⬛</p>
-<p style="font-size:11px">MASTER QR: @speed_awr360°<br>CRDB:10055686</p>
+<div class="box">
+<p>🔒 Website Imefungwa</p>
+<div id="timer">23:59:59</div>
+<p>Wasiliana na Admin kupata Code</p>
+<input type="text" id="code" placeholder="Ingiza Code Yako" style="padding:15px;width:80%;border-radius:10px;border:none;text-align:center;font-size:18px">
+<br><br>
+<button class="btn" onclick="check()">FUNGUA WEBSITE</button>
+<p id="msg"></p>
 </div>
 
-<p style="font-size:13px">Ingiza HANDLE na CODE kuendelea:</p>
-<input type="text" id="handleInput" placeholder="Weka @speed_awr360°"><br>
-<input type="number" id="codeInput" placeholder="Weka Code: 34796 etc"><br>
-<button class="btn" onclick="checkSecurity()">FUNGUA SASA</button>
-<p id="msg" style="color:#ff8888"></p>
-<p style="color:#8892b0;font-size:10px">Valid: 34796,38065,54407,19521,10096,78967,56067,58527,74622,37300,41573,90845</p>
+<div id="lock">
+<h1 style="color:red;font-size:40px">⛔ LOCKED ⛔</h1>
+<p>SECURED BY @speed_awr360°</p>
+<p>Praise And Glory To God The Father Almighty, Jesus Christ God Almighty, And The Holy Spirit God Almighty, Amen.</p>
 </div>
 
 <script>
-const HANDLE="@speed_awr360°";
-const VALID_CODES=[34796,38065,54407,19521,10096,78967,56067,58527,74622,37300,41573,90845];
-console.log("%c SECURED BY @speed_awr360° + QR CODES ","background:#64ffda;color:#000;padding:10px;font-size:16px");
-const DURATION=24*60*60*1000;
-let start=localStorage.getItem("gpmsc_v3_start");
-if(!start){start=Date.now();localStorage.setItem("gpmsc_v3_start",start)}
-function updateTimer(){
-  const t=document.getElementById("timer");
-  const diff=(Number(start)+DURATION)-Date.now();
-  if(diff<=0){t.textContent="🔒 IMEBANWA NA @speed_awr360°";t.style.color="#ff4444";document.getElementById("lock").style.display="flex";return}
-  const h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
-  t.textContent=h+"h "+m+"m "+s+"s";
+const codes=["34796","38065","38254","38406","39016","39237","39458","40472","40760","43374","43765","44675"];
+let time=24*60*60;
+setInterval(()=>{
+let h=Math.floor(time/3600);
+let m=Math.floor((time%3600)/60);
+let s=time%60;
+document.getElementById("timer").innerHTML=h+":"+m+":"+s;
+time--; if(time<0){document.getElementById("lock").style.display="flex"}
+},1000);
+function check(){
+let c=document.getElementById("code").value.trim();
+if(codes.includes(c)){
+document.getElementById("msg").innerHTML="✅ Code Sahihi! Praise And Glory To God The Father Almighty, Jesus Christ God Almighty, And The Holy Spirit God Almighty, Amen.";
+document.getElementById("msg").style.color="#00ff88";
+setTimeout(()=>{window.location.href="https://gmasambu238-ui.github.io/gpmsctech-website/home.html"},1000);
+}else{
+document.getElementById("msg").innerHTML="❌ Code Si Sahihi! Jaribu Tena";
+document.getElementById("msg").style.color="red";
 }
-setInterval(updateTimer,1000);updateTimer();
-function checkSecurity(){
-  const h=document.getElementById("handleInput").value.toLowerCase();
-  const c=Number(document.getElementById("codeInput").value);
-  const msg=document.getElementById("msg");
-  if(!h.includes("speed_awr360")){msg.textContent="❌ Weka @speed_awr360°";return}
-  if(!VALID_CODES.includes(c)){msg.textContent="❌ Code sio sahihi!";return}
-  localStorage.setItem("gpmsc_v3_start",Date.now());
-  localStorage.setItem("gpmsc_qr_auth",HANDLE+"|"+c);
-  alert("✅ UMEFUNGULIWA! QR: "+HANDLE+" CODE: "+c);
-  document.getElementById("lock").style.display="none";location.reload();
 }
 </script>
+
+<p style="margin-top:30px;color:#8892b0">
+Praise And Glory To God The Father Almighty, Jesus Christ God Almighty, And The Holy Spirit God Almighty, Amen.<br>
+SECURED BY @speed_awr360° | GPMSCTECH
+</p>
+
 </body>
 </html>
