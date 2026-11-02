@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GPMSc Tech Admin</title>
+<style>
+body{font-family:Arial;background:#f4f6f9;margin:0;padding:15px}
+h2{text-align:center;color:#0a58ca}
+.card{background:white;padding:12px;margin:10px 0;border-radius:10px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,0.1)}
+.paid{color:green;font-weight:bold} .unpaid{color:red;font-weight:bold}
+button{padding:8px 14px;border:none;border-radius:6px;color:white;font-weight:bold}
+.btn-on{background:green} .btn-off{background:red}
+</style>
+</head>
+<body>
+<h2>GPMSc Tech - ADMIN</h2>
+<div id="list">Inapakia...</div>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, getDocs, doc, updateDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+const firebaseConfig = { apiKey: "AIzaSy...WEKA YAKO", authDomain: "ole.firebaseapp.com", projectId: "WEKA YAKO" };
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+async function loadUsers(){
+  const snap = await getDocs(collection(db, "users"));
+  let html="";
+  snap.forEach(d=>{
+    const u=d.data(); const id=d.id;
+    const st=u.isPaid?'<span class=paid>AMELIPA ✅</span>':'<span class=unpaid>HAJALIPA ❌</span>';
+    const btn=u.isPaid?`<button class=btn-off onclick="toggle('${id}',false)">ZUIA</button>`:`<button class=btn-on onclick="toggle('${id}',true)">RUHUSU</button>`;
+    html+=`<div class=card><div><b>${u.email||id}</b><br>${st}</div>${btn}</div>`;
+  });
+  document.getElementById('list').innerHTML=html||"Hakuna mteja";
+}
+window.toggle=async(id,val)=>{ await updateDoc(doc(db,"users",id),{isPaid:val}); loadUsers(); }
+loadUsers();
+</script>
+</body>
+</html>
