@@ -1,61 +1,56 @@
-<!DOCTYPE html>
-<html lang="sw">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GPMSCTECH - Timer 24H</title>
-<style>
-body{margin:0;font-family:Arial;background:#020c1b;color:#fff;text-align:center;padding:20px}
-.card{background:#112240;max-width:500px;margin:20px auto;padding:25px;border-radius:16px}
-#timerBox{background:#020c1b;border:3px solid #64ffda;padding:25px;border-radius:12px;margin:20px 0}
-#timer{font-size:36px;font-weight:bold;color:#00e676}
-#status{color:#8892b0;margin-top:10px}
-</style>
-</head>
-<body>
-<h1 style="color:#64ffda">GPMSCTECH</h1>
-<div class="card">
-<div id="timerBox">
-<div id="timer">Inapakia...</div>
-<div id="status"></div>
-</div>
-<h3>Malipo: TZS 20,000 / CRDB 10055686</h3>
-<button onclick="resetTimer()" style="padding:10px 20px;background:#ff4444;color:#fff;border:none;border-radius:6px;margin-top:10px">Jaribu Upya Timer (Test)</button>
-</div>
 
 <script>
-// Hifadhi muda wa kuanza
-let startTime = localStorage.getItem('gpmsc_start');
-if(!startTime){
-  startTime = new Date().getTime();
-  localStorage.setItem('gpmsc_start', startTime);
-}
-const DURATION = 24 * 60 * 60 * 1000; // masaa 24
-const endTime = parseInt(startTime) + DURATION;
+const DURATION = 24 * 60 * 60 * 1000;
 
-function updateTimer(){
-  const now = new Date().getTime();
-  const diff = endTime - now;
-  if(diff <= 0){
-    document.getElementById('timer').innerHTML = "⛔ TRIAL IMEISHA";
-    document.getElementById('timer').style.color = "#ff4444";
-    document.getElementById('status').innerHTML = "Lipa TZS 20,000 CRDB Lipa Namba 10055686<br>Huduma imefungwa!";
-    clearInterval(interval);
-    return;
-  }
-  const h = Math.floor(diff/(1000*60*60));
-  const m = Math.floor((diff%(1000*60*60))/(1000*60));
-  const s = Math.floor((diff%(1000*60))/1000);
-  document.getElementById('timer').innerHTML = h+"h "+m+"m "+s+"s";
-  document.getElementById('status').innerHTML = "Muda uliobaki kabla huduma haijafungwa<br>Baada ya masaa 24 atalazimika kulipa";
+let startTime = localStorage.getItem("gpmsc_start");
+
+if (!startTime) {
+    startTime = Date.now();
+    localStorage.setItem("gpmsc_start", startTime);
 }
-const interval = setInterval(updateTimer,1000);
+
+function updateTimer() {
+    const timer = document.getElementById("timer");
+    const status = document.getElementById("status");
+
+    const start = Number(startTime);
+    const endTime = start + DURATION;
+    const now = Date.now();
+    const diff = endTime - now;
+
+    if (diff <= 0) {
+        timer.textContent = "TRIAL IMEISHA";
+        timer.style.color = "#ff4444";
+        status.innerHTML =
+          "Lipa TZS 20,000 CRDB Lipa Namba 10055686<br>Huduma imefungwa!";
+        return;
+    }
+
+    const hours = Math.floor(diff / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+
+    timer.textContent =
+        String(hours).padStart(2, "0") + "h " +
+        String(minutes).padStart(2, "0") + "m " +
+        String(seconds).padStart(2, "0") + "s";
+
+    status.textContent =
+        "Muda uliobaki kabla huduma haijafungwa";
+}
+
 updateTimer();
 
-function resetTimer(){
-  localStorage.removeItem('gpmsc_start');
-  location.reload();
+const interval = setInterval(() => {
+    updateTimer();
+
+    if (Date.now() >= Number(startTime) + DURATION) {
+        clearInterval(interval);
+    }
+}, 1000);
+
+function resetTimer() {
+    localStorage.removeItem("gpmsc_start");
+    location.reload();
 }
 </script>
-</body>
-</html>
