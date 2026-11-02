@@ -1,56 +1,77 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPMSCTECH SECURED BY @speed_awr360°</title>
+<style>
+body{margin:0;font-family:Arial;background:#020c1b;color:#e6f1ff;text-align:center;padding:15px}
+.box{background:#112240;border:2px solid #64ffda;padding:15px;border-radius:15px;max-width:650px;margin:10px auto}
+#timer{font-size:32px;color:#00ff88;font-weight:bold}
+h1{color:#64ffda}
+.btn{background:#64ffda;color:#020c1b;padding:12px 25px;border-radius:8px;font-weight:bold;border:none;cursor:pointer;margin:5px}
+#lock{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#000f1f;z-index:9999;justify-content:center;align-items:center;flex-direction:column;padding:15px;box-sizing:border-box;overflow-y:auto}
+input{padding:12px;font-size:15px;border-radius:8px;border:2px solid #64ffda;width:260px;text-align:center;margin:5px;background:#020c1b;color:#fff}
+.qr-box{background:#fff;color:#000;padding:10px;border-radius:10px;margin:10px auto;max-width:300px}
+.tech{color:#64ffda;font-size:10px}
+</style>
+</head>
+<body>
+<div class="box">
+<span style="background:#ff4444;color:#fff;padding:4px 10px;border-radius:20px;font-size:11px">🔒 SECURED BY @speed_awr360° TECHNOLOGY</span>
+<h3 style="color:#64ffda;margin:8px 0 0 0">⏳ MAJARIBIO MASAA 24</h3>
+<div id="timer">Inapakia...</div>
+<p class="tech">SECURITY QR: @speed_awr360° | Codes: 34796,38065,54407,19521,10096,78967,56067,58527,74622,37300,41573,90845</p>
+</div>
+
+<h1>GPMSCTECH DIGITAL</h1>
+<h3>Garaji Joseph Masambu - Mwanza</h3>
+<p><b>TZS 20,000</b> CRDB Lipa Namba: 10055686</p>
+
+<div id="lock">
+<h2 style="color:#ff4444">⛔ UMEBANWA</h2>
+<p class="tech">PROTECTED BY @speed_awr360° TECHNOLOGY + QR SECURITY</p>
+
+<div class="qr-box">
+<p style="margin:0;font-weight:bold;font-size:12px">SCAN QR YA @speed_awr360° KULIPIA</p>
+<p style="font-size:28px;margin:5px">⬛⬜⬛<br>⬜⬛⬜<br>⬛⬜⬛</p>
+<p style="font-size:11px">MASTER QR: @speed_awr360°<br>CRDB:10055686</p>
+</div>
+
+<p style="font-size:13px">Ingiza HANDLE na CODE kuendelea:</p>
+<input type="text" id="handleInput" placeholder="Weka @speed_awr360°"><br>
+<input type="number" id="codeInput" placeholder="Weka Code: 34796 etc"><br>
+<button class="btn" onclick="checkSecurity()">FUNGUA SASA</button>
+<p id="msg" style="color:#ff8888"></p>
+<p style="color:#8892b0;font-size:10px">Valid: 34796,38065,54407,19521,10096,78967,56067,58527,74622,37300,41573,90845</p>
+</div>
 
 <script>
-const DURATION = 24 * 60 * 60 * 1000;
-
-let startTime = localStorage.getItem("gpmsc_start");
-
-if (!startTime) {
-    startTime = Date.now();
-    localStorage.setItem("gpmsc_start", startTime);
+const HANDLE="@speed_awr360°";
+const VALID_CODES=[34796,38065,54407,19521,10096,78967,56067,58527,74622,37300,41573,90845];
+console.log("%c SECURED BY @speed_awr360° + QR CODES ","background:#64ffda;color:#000;padding:10px;font-size:16px");
+const DURATION=24*60*60*1000;
+let start=localStorage.getItem("gpmsc_v3_start");
+if(!start){start=Date.now();localStorage.setItem("gpmsc_v3_start",start)}
+function updateTimer(){
+  const t=document.getElementById("timer");
+  const diff=(Number(start)+DURATION)-Date.now();
+  if(diff<=0){t.textContent="🔒 IMEBANWA NA @speed_awr360°";t.style.color="#ff4444";document.getElementById("lock").style.display="flex";return}
+  const h=Math.floor(diff/3600000),m=Math.floor((diff%3600000)/60000),s=Math.floor((diff%60000)/1000);
+  t.textContent=h+"h "+m+"m "+s+"s";
 }
-
-function updateTimer() {
-    const timer = document.getElementById("timer");
-    const status = document.getElementById("status");
-
-    const start = Number(startTime);
-    const endTime = start + DURATION;
-    const now = Date.now();
-    const diff = endTime - now;
-
-    if (diff <= 0) {
-        timer.textContent = "TRIAL IMEISHA";
-        timer.style.color = "#ff4444";
-        status.innerHTML =
-          "Lipa TZS 20,000 CRDB Lipa Namba 10055686<br>Huduma imefungwa!";
-        return;
-    }
-
-    const hours = Math.floor(diff / 3600000);
-    const minutes = Math.floor((diff % 3600000) / 60000);
-    const seconds = Math.floor((diff % 60000) / 1000);
-
-    timer.textContent =
-        String(hours).padStart(2, "0") + "h " +
-        String(minutes).padStart(2, "0") + "m " +
-        String(seconds).padStart(2, "0") + "s";
-
-    status.textContent =
-        "Muda uliobaki kabla huduma haijafungwa";
-}
-
-updateTimer();
-
-const interval = setInterval(() => {
-    updateTimer();
-
-    if (Date.now() >= Number(startTime) + DURATION) {
-        clearInterval(interval);
-    }
-}, 1000);
-
-function resetTimer() {
-    localStorage.removeItem("gpmsc_start");
-    location.reload();
+setInterval(updateTimer,1000);updateTimer();
+function checkSecurity(){
+  const h=document.getElementById("handleInput").value.toLowerCase();
+  const c=Number(document.getElementById("codeInput").value);
+  const msg=document.getElementById("msg");
+  if(!h.includes("speed_awr360")){msg.textContent="❌ Weka @speed_awr360°";return}
+  if(!VALID_CODES.includes(c)){msg.textContent="❌ Code sio sahihi!";return}
+  localStorage.setItem("gpmsc_v3_start",Date.now());
+  localStorage.setItem("gpmsc_qr_auth",HANDLE+"|"+c);
+  alert("✅ UMEFUNGULIWA! QR: "+HANDLE+" CODE: "+c);
+  document.getElementById("lock").style.display="none";location.reload();
 }
 </script>
+</body>
+</html>
