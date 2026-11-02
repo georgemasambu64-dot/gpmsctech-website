@@ -3,142 +3,59 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GPMSCTECH - Garaji Joseph Masambu</title>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-functions-compat.js"></script>
+<title>GPMSCTECH - Timer 24H</title>
 <style>
-body{margin:0;font-family:Arial;background:#020c1b;color:#fff;text-align:center}
-.header{padding:40px 20px;background:linear-gradient(135deg,#0a192f,#112240)}
-.header h1{color:#64ffda;font-size:32px;margin:0}
-.card{background:#112240;max-width:450px;margin:-30px auto 20px;padding:30px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.5)}
-.badge{background:#64ffda;color:#020c1b;padding:5px 15px;border-radius:20px;font-weight:bold;font-size:12px}
-.data-box{background:#0a192f;padding:15px;border-radius:10px;margin:15px 0;text-align:left}
-.label{color:#8892b0;font-size:12px}
-.value{color:#fff;font-size:18px;font-weight:bold;margin-top:5px}
+body{margin:0;font-family:Arial;background:#020c1b;color:#fff;text-align:center;padding:20px}
+.card{background:#112240;max-width:500px;margin:20px auto;padding:25px;border-radius:16px}
+#timerBox{background:#020c1b;border:3px solid #64ffda;padding:25px;border-radius:12px;margin:20px 0}
+#timer{font-size:36px;font-weight:bold;color:#00e676}
+#status{color:#8892b0;margin-top:10px}
 </style>
 </head>
 <body>
-<div class="header"><h1>GPMSCTECH</h1><p>Official Secure System</p></div>
+<h1 style="color:#64ffda">GPMSCTECH</h1>
 <div class="card">
-<div class="badge">✓ VERIFIED ADMIN</div>
-<h2>Garaji Joseph Masambu</h2>
-<div class="data-box"><div class="label">FULLNAME</div><div class="value">Garaji Joseph Masambu</div></div>
-<div class="data-box"><div class="label">QrSecurity Code</div><div class="value">@speed_awr360°</div></div>
-<div class="data-box"><div class="label">SystemName</div><div class="value">GPMSCTECH</div></div>
-<div class="data-box"><div class="label">Firebase Project</div><div class="value">gpmsctech-18abb</div></div>
-<p style="margin-top:20px;color:#64ffda">✓ Connected to Firebase Live</p>
+<div id="timerBox">
+<div id="timer">Inapakia...</div>
+<div id="status"></div>
 </div>
-
-<section id="speedSubscription" style="max-width:650px;margin:30px auto;padding:22px;background:#112240;color:#fff;border-radius:16px;font-family:Arial,sans-serif;box-sizing:border-box;">
-<h2 style="color:#64ffda;text-align:center;">@speed_awr360°</h2>
-<p style="text-align:center;color:#ccd6f6;">Malipo: TZS 20,000 / mwezi • CRDB Lipa Namba 10055686</p>
-
-<div id="countdownBox" style="background:#020c1b;border:2px solid #64ffda;padding:20px;border-radius:12px;text-align:center;margin:20px 0;">
-<div id="accessStatus" style="font-size:22px;font-weight:bold;color:#64ffda;">Inapakia muda...</div>
-<div id="expiryStatus" style="margin-top:10px;color:#8892b0;"></div>
+<h3>Malipo: TZS 20,000 / CRDB 10055686</h3>
+<button onclick="resetTimer()" style="padding:10px 20px;background:#ff4444;color:#fff;border:none;border-radius:6px;margin-top:10px">Jaribu Upya Timer (Test)</button>
 </div>
-
-<div style="background:#020c1b;padding:15px;border-radius:10px;margin:10px 0;">
-<input id="payerName" placeholder="Jina la mlipaji" style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:none;">
-<input id="months" type="number" min="1" max="12" value="1" style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:none;">
-<input id="transactionRef" placeholder="Namba ya muamala CRDB" style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:none;">
-<input id="paymentDate" type="date" style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:none;">
-<input id="paymentMethod" value="CRDB Lipa Namba" readonly style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:none;background:#0a192f;color:#64ffda;">
-<button id="submitPayment" style="width:100%;padding:12px;background:#64ffda;color:#020c1b;border:none;border-radius:8px;font-weight:bold;margin-top:10px;">Tuma Malipo</button>
-<p id="paymentMessage" style="margin-top:10px;"></p>
-</div>
-
-<div style="margin-top:20px;text-align:left;">
-<input id="email" placeholder="Email" style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:none;">
-<input id="password" type="password" placeholder="Password" style="width:100%;padding:10px;margin:5px 0;border-radius:6px;border:none;">
-<button id="loginBtn" style="padding:10px 15px;background:#64ffda;border:none;border-radius:6px;font-weight:bold;">Login</button>
-<button id="signupBtn" style="padding:10px 15px;background:#112240;color:#fff;border:1px solid #64ffda;border-radius:6px;">Signup</button>
-<p id="authMessage"></p>
-</div>
-</section>
 
 <script>
-const firebaseConfig = {
-  apiKey: "AIzaSyYourKey",
-  authDomain: "gpmsctech-18abb.firebaseapp.com",
-  projectId: "gpmsctech-18abb",
-};
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
-const functions = firebase.functions();
+// Hifadhi muda wa kuanza
+let startTime = localStorage.getItem('gpmsc_start');
+if(!startTime){
+  startTime = new Date().getTime();
+  localStorage.setItem('gpmsc_start', startTime);
+}
+const DURATION = 24 * 60 * 60 * 1000; // masaa 24
+const endTime = parseInt(startTime) + DURATION;
 
-function $(id){return document.getElementById(id);}
-function message(id, txt){$(id).textContent = txt;}
-function showError(id, err){$(id).textContent = err.message || err;}
-
-let countdownTimer = null;
-function startCountdown(endTimeISO){
-  if(countdownTimer) clearInterval(countdownTimer);
-  const endTime = new Date(endTimeISO).getTime();
-  function update(){
-    const now = new Date().getTime();
-    const diff = endTime - now;
-    if(diff <= 0){
-      clearInterval(countdownTimer);
-      $("accessStatus").textContent = "⛔ TRIAL IMEISHA - LIPA SASA";
-      $("accessStatus").style.color = "#ff4444";
-      $("expiryStatus").textContent = "Huduma imefungwa. Lipa TZS 20,000 CRDB 10055686";
-      $("submitPayment").disabled = false;
-      return;
-    }
-    const h = Math.floor(diff/(1000*60*60));
-    const m = Math.floor((diff%(1000*60*60))/(1000*60));
-    const s = Math.floor((diff%(1000*60))/1000);
-    $("accessStatus").textContent = `⏳ FREE TRIAL: ${h}h ${m}m ${s}s`;
-    $("accessStatus").style.color = "#00e676";
-    $("expiryStatus").textContent = "Itaisha: " + new Date(endTimeISO).toLocaleString('sw-TZ');
+function updateTimer(){
+  const now = new Date().getTime();
+  const diff = endTime - now;
+  if(diff <= 0){
+    document.getElementById('timer').innerHTML = "⛔ TRIAL IMEISHA";
+    document.getElementById('timer').style.color = "#ff4444";
+    document.getElementById('status').innerHTML = "Lipa TZS 20,000 CRDB Lipa Namba 10055686<br>Huduma imefungwa!";
+    clearInterval(interval);
+    return;
   }
-  update();
-  countdownTimer = setInterval(update, 1000);
+  const h = Math.floor(diff/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%(1000*60))/1000);
+  document.getElementById('timer').innerHTML = h+"h "+m+"m "+s+"s";
+  document.getElementById('status').innerHTML = "Muda uliobaki kabla huduma haijafungwa<br>Baada ya masaa 24 atalazimika kulipa";
 }
+const interval = setInterval(updateTimer,1000);
+updateTimer();
 
-async function refreshAccess(){
-  if(!auth.currentUser){message("accessStatus","Tafadhali login");return;}
-  try{
-    const getAccessStatus = functions.httpsCallable('getAccessStatus');
-    const result = await getAccessStatus();
-    const data = result.data || {};
-    if(data.status === "FREE_TRIAL" && data.graceEndsAt){startCountdown(data.graceEndsAt);}
-    else if(data.status === "ACTIVE"){if(countdownTimer) clearInterval(countdownTimer);message("accessStatus","✅ ACTIVE - Huduma Inafanya Kazi");message("expiryStatus","Expiry: "+new Date(data.expiresAt).toLocaleString());}
-    else if(data.status === "EXPIRED"){if(countdownTimer) clearInterval(countdownTimer);message("accessStatus","⛔ IMEISHA - Lipa 20,000");message("expiryStatus","Trial ya masaa 24 imeisha");}
-    else{message("accessStatus",data.status||"Checking...");}
-  }catch(e){message("accessStatus","Error: "+e.message);}
+function resetTimer(){
+  localStorage.removeItem('gpmsc_start');
+  location.reload();
 }
-
-auth.onAuthStateChanged(user=>{
-  if(user){message("authMessage","Logged in: "+user.email);refreshAccess();}
-  else{if(countdownTimer) clearInterval(countdownTimer);message("authMessage","Tafadhali jisajili / login");message("accessStatus","Hauja-login");}
-});
-
-$("loginBtn").onclick = async ()=>{
-  try{await auth.signInWithEmailAndPassword($("email").value,$("password").value);message("authMessage","Login OK");}
-  catch(e){showError("authMessage",e);}
-};
-$("signupBtn").onclick = async ()=>{
-  try{await auth.createUserWithEmailAndPassword($("email").value,$("password").value);message("authMessage","Account Created");}
-  catch(e){showError("authMessage",e);}
-};
-$("submitPayment").onclick = async ()=>{
-  try{
-    const submitPaymentClaim = functions.httpsCallable('submitPaymentClaim');
-    const res = await submitPaymentClaim({
-      payerName:$("payerName").value,
-      months:parseInt($("months").value),
-      transactionRef:$("transactionRef").value,
-      paymentDate:$("paymentDate").value,
-      paymentMethod:$("paymentMethod").value
-    });
-    message("paymentMessage","✅ Malipo yametumwa! Subiri admin a-approve. ID: "+res.data.claimId);
-  }catch(e){showError("paymentMessage",e);}
-};
 </script>
 </body>
 </html>
