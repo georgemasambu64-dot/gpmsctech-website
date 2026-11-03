@@ -1,0 +1,729 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071b38">
+
+<title>GPMSCTECH NEW BASE TECHNOLOGY</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ background:linear-gradient(140deg,#06152e,#12345c);
+ color:white;
+ font-family:Arial,sans-serif;
+}
+header{
+ text-align:center;
+ padding:25px 12px;
+ background:#0b2850;
+ border-bottom:2px solid #e8c66a;
+}
+.faith{color:#e8c66a;font-weight:bold}
+h1,h2,h3{color:#e8c66a}
+main{max-width:950px;margin:auto;padding:15px}
+section{
+ background:#102e55;
+ padding:20px;
+ margin:16px 0;
+ border:1px solid #345477;
+ border-radius:13px;
+}
+input,select,button{
+ width:100%;
+ padding:13px;
+ margin:7px 0;
+ border-radius:8px;
+ font-size:15px;
+}
+input,select{
+ background:#071b38;
+ color:white;
+ border:1px solid #607b9d;
+}
+button{
+ background:#e8c66a;
+ color:#071b38;
+ border:0;
+ font-weight:bold;
+ cursor:pointer;
+}
+button.secondary{
+ background:#24466e;
+ color:white;
+}
+.row{
+ display:flex;
+ gap:10px;
+ flex-wrap:wrap;
+}
+.row>*{flex:1;min-width:120px}
+.status{
+ background:#071b38;
+ padding:13px;
+ border-radius:8px;
+ border:1px solid #345477;
+ white-space:pre-wrap;
+ overflow-wrap:anywhere;
+}
+.timer{
+ color:#e8c66a;
+ font-size:clamp(30px,7vw,45px);
+ font-weight:bold;
+}
+.gold{color:#e8c66a}
+.small{font-size:13px;color:#c4d1e2}
+.hidden{display:none}
+a{color:#e8c66a}
+footer{text-align:center;padding:25px;color:#c4d1e2}
+</style>
+</head>
+
+<body>
+
+<header>
+<p class="faith">
+Praise And Glory To God The Father Almighty,
+Jesus Christ God Almighty, And The Holy Spirit
+God Almighty, Amen.
+</p>
+
+<h1>GPMSCTECH NEW BASE TECHNOLOGY</h1>
+
+<h2>@speed_awr360°</h2>
+
+<p>Global Positive Mind Set Center Technology</p>
+<p>Founder: Garaji Joseph Masambu</p>
+</header>
+
+<main>
+
+<section>
+<h2>1. Official 24-Hour Trial</h2>
+<div id="trialStatus" class="status">
+Loading official launch schedule...
+</div>
+<div id="timer" class="timer">--:--:--</div>
+<p class="small">
+The official trial starts when the administrator activates
+the launch schedule. The website remains visible after
+the trial ends.
+</p>
+</section>
+
+<section>
+<h2>2. Customer Registration and Login</h2>
+
+<label>Full Name</label>
+<input id="fullName" placeholder="Enter your full name">
+
+<label>Email Address</label>
+<input id="email" type="email" placeholder="Enter your email">
+
+<label>Password</label>
+<input id="password" type="password"
+placeholder="Minimum 6 characters">
+
+<div class="row">
+<button id="registerBtn">CREATE ACCOUNT</button>
+<button id="loginBtn" class="secondary">SIGN IN</button>
+</div>
+
+<button id="logoutBtn" class="secondary hidden">
+SIGN OUT
+</button>
+
+<h3>Account Information</h3>
+<div id="accountStatus" class="status">
+Not signed in.
+</div>
+</section>
+
+<section>
+<h2>3. Subscription and Payment</h2>
+
+<p>Monthly price:
+<strong class="gold">TZS 20,000</strong>
+</p>
+
+<label>Select Subscription Duration</label>
+
+<select id="months">
+<option value="1">1 Month - TZS 20,000</option>
+<option value="2">2 Months - TZS 40,000</option>
+<option value="3">3 Months - TZS 60,000</option>
+<option value="4">4 Months - TZS 80,000</option>
+<option value="5">5 Months - TZS 100,000</option>
+<option value="6">6 Months - TZS 120,000</option>
+<option value="7">7 Months - TZS 140,000</option>
+<option value="8">8 Months - TZS 160,000</option>
+<option value="9">9 Months - TZS 180,000</option>
+<option value="10">10 Months - TZS 200,000</option>
+<option value="11">11 Months - TZS 220,000</option>
+<option value="12">12 Months - TZS 240,000</option>
+</select>
+
+<div class="status">
+BANK: CRDB BANK PLC
+
+LIPA NAMBA: 10055686
+
+RECIPIENT: GARAJI JOSEPH MASAMBU
+
+PRICE: TZS 20,000 PER MONTH
+</div>
+
+<label>CRDB Transaction Reference</label>
+<input id="transactionReference"
+placeholder="Enter payment transaction reference">
+
+<button id="paymentBtn">
+SUBMIT PAYMENT FOR VERIFICATION
+</button>
+
+<p class="small">
+The administrator must verify payment directly through CRDB.
+Submitting a reference does not mean payment is approved.
+</p>
+</section>
+
+<section>
+<h2>4. Security QR Verification</h2>
+
+<label>Private QR / Access Code</label>
+<input id="qrCode" autocomplete="off"
+placeholder="Enter your private access code">
+
+<button id="qrBtn">
+SUBMIT QR FOR VERIFICATION
+</button>
+
+<p class="small">
+The code is hashed before submission.
+Administrator verification is required.
+Do not share private codes publicly.
+</p>
+</section>
+
+<section>
+<h2>5. My Service Access</h2>
+
+<div id="accessStatus" class="status">
+Sign in to check your service access.
+</div>
+
+<p class="small">
+Paid access requires verified payment, active subscription,
+and administrator-confirmed QR verification.
+</p>
+</section>
+
+<section>
+<h2>6. Contact GPMSCTECH</h2>
+
+<p>Email:
+<a href="mailto:georgemasambu64@gmail.com">
+georgemasambu64@gmail.com
+</a>
+</p>
+
+<p>Email:
+<a href="mailto:gmasambu238@gmail.com">
+gmasambu238@gmail.com
+</a>
+</p>
+
+<p>Phone / WhatsApp: +255717314652</p>
+<p>Phone / WhatsApp: +255744769060</p>
+
+<p>Owner: Garaji Joseph Masambu</p>
+</section>
+
+<div id="message" class="status">
+GPMSCTECH system ready.
+</div>
+
+</main>
+
+<footer>
+© GPMSCTECH NEW BASE TECHNOLOGY
+<br>
+@speed_awr360°
+</footer>
+
+<script type="module">
+
+// FIREBASE IMPORTS
+
+import {
+ initializeApp
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+
+import {
+ getAuth,
+ createUserWithEmailAndPassword,
+ signInWithEmailAndPassword,
+ signOut,
+ onAuthStateChanged,
+ updateProfile
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+
+import {
+ getFirestore,
+ doc,
+ getDoc,
+ setDoc,
+ collection,
+ addDoc,
+ serverTimestamp
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+
+
+// FIREBASE PROJECT CONFIGURATION
+
+const firebaseConfig = {
+ apiKey: "AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",
+ authDomain: "gpmsctech-18abb.firebaseapp.com",
+ projectId: "gpmsctech-18abb",
+ storageBucket: "gpmsctech-18abb.firebasestorage.app",
+ messagingSenderId: "554624850081",
+ appId: "1:554624850081:web:6cc5cbe084f83548ed78e0",
+ measurementId: "G-Q00NCG4CBR"
+};
+
+
+// INITIALIZE FIREBASE
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+const $ = id => document.getElementById(id);
+
+let currentUser = null;
+let launchData = null;
+
+
+// MESSAGE FUNCTION
+
+function notify(text,success=true){
+ $("message").textContent = text;
+ $("message").style.color =
+ success ? "#9be3b0" : "#ff9b9b";
+}
+
+
+// CREATE CUSTOMER PROFILE
+
+async function createProfile(user,name=""){
+
+ const ref = doc(db,"users",user.uid);
+ const snapshot = await getDoc(ref);
+
+ if(!snapshot.exists()){
+
+  await setDoc(ref,{
+   email:user.email || "",
+   displayName:name || user.displayName || "",
+   accountStatus:"pending",
+   createdAt:serverTimestamp()
+  });
+
+ }
+
+}
+
+
+// SHA-256 SECURITY HASH
+
+async function makeHash(value){
+
+ const result = await crypto.subtle.digest(
+  "SHA-256",
+  new TextEncoder().encode(value)
+ );
+
+ return [...new Uint8Array(result)]
+ .map(b=>b.toString(16).padStart(2,"0"))
+ .join("");
+
+}
+
+
+// REGISTRATION
+
+$("registerBtn").onclick = async()=>{
+
+ try{
+
+  const name = $("fullName").value.trim();
+  const email = $("email").value.trim();
+  const password = $("password").value;
+
+  if(!name || !email || password.length<6){
+
+   throw Error(
+    "Enter your full name, email and password of at least 6 characters."
+   );
+
+  }
+
+  const result =
+   await createUserWithEmailAndPassword(
+    auth,email,password
+   );
+
+  await updateProfile(result.user,{
+   displayName:name
+  });
+
+  await createProfile(result.user,name);
+
+  await refreshAccount(result.user);
+
+  notify("Account successfully created.");
+
+ }catch(error){
+
+  notify(error.message,false);
+
+ }
+
+};
+
+
+// LOGIN
+
+$("loginBtn").onclick = async()=>{
+
+ try{
+
+  const result =
+   await signInWithEmailAndPassword(
+    auth,
+    $("email").value.trim(),
+    $("password").value
+   );
+
+  await createProfile(result.user);
+
+  await refreshAccount(result.user);
+
+  notify("Successfully signed in.");
+
+ }catch(error){
+
+  notify(error.message,false);
+
+ }
+
+};
+
+
+// LOGOUT
+
+$("logoutBtn").onclick = async()=>{
+
+ try{
+
+  await signOut(auth);
+  notify("You have signed out.");
+
+ }catch(error){
+
+  notify(error.message,false);
+
+ }
+
+};
+
+
+// PAYMENT REQUEST
+
+$("paymentBtn").onclick = async()=>{
+
+ try{
+
+  if(!currentUser){
+   throw Error("Please sign in first.");
+  }
+
+  const months = Number($("months").value);
+  const reference =
+   $("transactionReference").value.trim();
+
+  if(!Number.isInteger(months) ||
+     months<1 || months>12){
+
+   throw Error("Select between 1 and 12 months.");
+
+  }
+
+  if(reference.length<5){
+   throw Error("Enter a valid transaction reference.");
+  }
+
+  await addDoc(collection(db,"payments"),{
+
+   uid:currentUser.uid,
+   email:currentUser.email || "",
+   months:months,
+   amount:months*20000,
+   currency:"TZS",
+   paymentMethod:"CRDB_LIPA_NAMBA",
+   lipaNamba:"10055686",
+   transactionReference:reference,
+   status:"pending",
+   createdAt:serverTimestamp()
+
+  });
+
+  $("transactionReference").value="";
+
+  notify(
+   "Payment request submitted. Waiting for manual CRDB verification."
+  );
+
+ }catch(error){
+
+  notify(error.message,false);
+
+ }
+
+};
+
+
+// QR VERIFICATION REQUEST
+
+$("qrBtn").onclick = async()=>{
+
+ try{
+
+  if(!currentUser){
+   throw Error("Please sign in first.");
+  }
+
+  const code = $("qrCode").value.trim();
+
+  if(code.length<12){
+   throw Error("Enter your private access code.");
+  }
+
+  const qrHash = await makeHash(code);
+
+  await addDoc(collection(db,"qrRequests"),{
+
+   uid:currentUser.uid,
+   qrHash:qrHash,
+   status:"pending",
+   createdAt:serverTimestamp()
+
+  });
+
+  $("qrCode").value="";
+
+  notify(
+   "QR request submitted for administrator verification."
+  );
+
+ }catch(error){
+
+  notify(error.message,false);
+
+ }
+
+};
+
+
+// LOAD OFFICIAL LAUNCH
+
+async function loadLaunch(){
+
+ try{
+
+  const snapshot =
+   await getDoc(doc(db,"system","launch"));
+
+  launchData =
+   snapshot.exists() ? snapshot.data() : null;
+
+  updateTimer();
+
+  setInterval(updateTimer,1000);
+
+ }catch(error){
+
+  $("trialStatus").textContent =
+   "Unable to load official launch schedule.";
+
+  notify(error.message,false);
+
+ }
+
+}
+
+
+// TRIAL COUNTDOWN
+
+function updateTimer(){
+
+ if(!launchData ||
+    launchData.status!=="active" ||
+    !launchData.trialEndsAt){
+
+  $("trialStatus").textContent =
+   "Official trial has not started.";
+
+  $("timer").textContent="--:--:--";
+
+  return;
+
+ }
+
+ const end =
+  launchData.trialEndsAt.toDate().getTime();
+
+ const remaining = Math.max(0,end-Date.now());
+
+ if(remaining===0){
+
+  $("trialStatus").textContent =
+   "The 24-hour trial has ended. Paid access requires approval.";
+
+  $("timer").textContent="00:00:00";
+
+  return;
+
+ }
+
+ const hours =
+  Math.floor(remaining/3600000);
+
+ const minutes =
+  Math.floor((remaining%3600000)/60000);
+
+ const seconds =
+  Math.floor((remaining%60000)/1000);
+
+ $("trialStatus").textContent =
+  "Official trial is active.";
+
+ $("timer").textContent =
+  [hours,minutes,seconds]
+  .map(x=>String(x).padStart(2,"0"))
+  .join(":");
+
+}
+
+
+// REFRESH CUSTOMER ACCOUNT
+
+async function refreshAccount(user){
+
+ if(!user){
+
+  $("accountStatus").textContent =
+   "Not signed in.";
+
+  $("accessStatus").textContent =
+   "Sign in to check your service access.";
+
+  return;
+
+ }
+
+ const snapshot =
+  await getDoc(doc(db,"users",user.uid));
+
+ if(!snapshot.exists()){
+
+  $("accountStatus").textContent =
+   "Customer profile not found.";
+
+  $("accessStatus").textContent =
+   "No access profile found.";
+
+  return;
+
+ }
+
+ const data = snapshot.data();
+
+ const expiry =
+  data.subscriptionExpiresAt?.toDate
+   ? data.subscriptionExpiresAt.toDate()
+   : null;
+
+ const trialActive =
+  launchData?.status==="active" &&
+  launchData.trialEndsAt?.toDate &&
+  Date.now() <
+  launchData.trialEndsAt.toDate().getTime();
+
+ const paidActive =
+  expiry &&
+  expiry.getTime()>Date.now() &&
+  data.qrVerified===true &&
+  data.accountStatus==="active";
+
+ $("accountStatus").textContent =
+  "Email: "+user.email+
+  "\nAccount: "+(data.accountStatus||"pending")+
+  "\nQR: "+(data.qrVerified===true?"Verified":"Pending")+
+  "\nSubscription expiry: "+
+  (expiry?expiry.toLocaleString():"Not approved");
+
+ $("accessStatus").textContent =
+  trialActive
+   ? "Official trial is active."
+   : paidActive
+    ? "Subscription and QR are marked active."
+    : "Paid access is pending administrator approval.";
+
+}
+
+
+// AUTHENTICATION STATE
+
+onAuthStateChanged(auth,async user=>{
+
+ currentUser=user;
+
+ $("logoutBtn").classList.toggle(
+  "hidden",
+  !user
+ );
+
+ if(user){
+
+  try{
+
+   await createProfile(user);
+   await refreshAccount(user);
+
+  }catch(error){
+
+   notify(error.message,false);
+
+  }
+
+ }else{
+
+  await refreshAccount(null);
+
+ }
+
+});
+
+
+// START SYSTEM
+
+await loadLaunch();
+
+</script>
+
+</body>
+</html>
