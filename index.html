@@ -13,7 +13,7 @@ main{max-width:850px;margin:auto;padding:15px}
 section{background:#102e55;padding:20px;margin:15px 0;border-radius:12px}
 input,select,button{box-sizing:border-box;width:100%;padding:12px;margin:7px 0;border-radius:7px}
 input,select{background:#071b38;color:white;border:1px solid #607b9d}
-button{background:#e8c66a;color:#071b38;border:0;font-weight:bold}
+button{background:#e8c66a;color:#071b38;border:0;font-weight:bold;cursor:pointer}
 .status{background:#071b38;padding:12px;border-radius:7px;white-space:pre-wrap}
 .gold{color:#e8c66a}.small{font-size:13px;color:#c4d1e2}
 .timer{font-size:35px;color:#e8c66a;font-weight:bold;text-align:center}
@@ -23,6 +23,10 @@ a{color:#e8c66a}
 .speed-title{color:#00ff88;font-size:22px;font-weight:bold}
 .okBox{background:#003300;border:1px solid #00ff88;padding:12px;border-radius:7px;margin-top:10px;display:none}
 .noBox{background:#330000;border:1px solid red;padding:12px;border-radius:7px;margin-top:10px;display:none}
+.access-active{background:#003300;border:2px solid #00ff88;padding:15px;border-radius:10px}
+.access-grace{background:#332200;border:2px solid #e8c66a;padding:15px;border-radius:10px}
+.access-blocked{background:#330000;border:2px solid red;padding:15px;border-radius:10px}
+.bigBtn{font-size:17px;padding:15px}
 </style>
 </head>
 <body>
@@ -32,23 +36,26 @@ a{color:#e8c66a}
 <h1>GPMSCTECH NEW BASE TECHNOLOGY</h1>
 <p style="font-size:28px;color:#00ff88;font-weight:bold">@speed_awr360°</p>
 <p>Global Positive Mind Set Center Technology</p>
-<p>Start: 04 Nov 2026 12:01 PM<br>End: 05 Nov 2026 12:01 PM</p>
+<p><b>START TIME: 04 Nov 2026 12:01 PM</b><br><b>END TIME: 05 Nov 2026 12:01 PM</b></p>
+<p class="small">Siyo Trial - Ni Muda Wa Kulipa Kwa Ambao Hawajalipa - Masaa 24</p>
 </header>
 
 <main>
 
+<!-- START / END - MASAA 24 YA KULIPA -->
 <section>
-<h2>Official 24-Hour Trial - @speed_awr360°</h2>
+<h2>⏰ Payment Window - START & END TIME - @speed_awr360°</h2>
 <div id="trialStatus" class="status">Loading...</div>
 <div id="timer" class="timer">--:--:--</div>
-<p class="small">The official trial begins when the administrator activates the launch schedule. The website remains visible after the trial ends. Start: 04 Nov 2026 - End: 05 Nov 2026</p>
+<p class="small"><b>START:</b> 04 Nov 2026 12:01 PM | <b>END:</b> 05 Nov 2026 12:01 PM<br>Ambao hawajalipa wana masaa 24 ya kulipa. Wakishindwa kulipa kabla ya END TIME, hawapati huduma mpaka walipe. Website inabaki kuonekana.</p>
+<div id="windowMsg" class="status"></div>
 </section>
 
-<!-- MFUMO MMOJA: @speed_awr360° = QR CODES -->
+<!-- MFUMO MMOJA -->
 <section>
 <div class="speed-box">
 <div class="speed-title">@speed_awr360° - QR SECURITY</div>
-<p>QR Code = @speed_awr360° - Kitu Kimoja</p>
+<p>QR Code = @speed_awr360° = NID/NIN ya Mmiliki - Kitu Kimoja</p>
 <p class="small">Mfumo unajua mwenyewe: Umelipa = Unaunganishwa, Hujalipa = Umekatwa</p>
 <label style="text-align:left;display:block">Quick QR Check - Andika QR Code Hapa</label>
 <input id="quickQr" placeholder="Andika QR Code hapa - mfano 83920" type="text">
@@ -110,9 +117,22 @@ Recipient: Garaji Joseph Masambu
 <p class="small">The code is hashed before submission. The administrator must verify it before granting access. QR Code = @speed_awr360°</p>
 </section>
 
-<section>
-<h2>My Service Access</h2>
-<div id="accessStatus" class="status">Sign in to check your access.</div>
+<!-- MY SERVICE ACCESS - SASA INAFANYA KAZI 100% -->
+<section style="border:2px solid #e8c66a">
+<h2>🔓 My Service Access - @speed_awr360°</h2>
+<p class="small">Hapa ndipo unajua kama umeruhusiwa kupata huduma au umekatwa.</p>
+<label>Andika QR Code yako kuangalia Access yako</label>
+<input id="accessQr" placeholder="Andika QR Code yako hapa - mfano 83920">
+<button id="checkAccessBtn" class="bigBtn" style="background:#00ff88">✅ CHECK MY ACCESS SASA</button>
+<div id="accessStatus" class="status">Bonyeza CHECK MY ACCESS kuona kama una huduma.</div>
+<div id="accessDetail" class="status" style="margin-top:10px">Sign in au andika QR Code kuangalia access yako.</div>
+<div id="serviceContent" class="hidden" style="background:#003300;padding:15px;border-radius:10px;margin-top:10px">
+<h3 style="color:#00ff88">🎉 HUDUMA YAKO IPO HAPA</h3>
+<p>✅ Umethibitishwa na @speed_awr360°</p>
+<p>✅ Malipo yako yamekamilika</p>
+<p>✅ Unaweza kuendelea na huduma za GPMSCTECH</p>
+<p><b>Wasiliana na Mmiliki:</b> +255717314652 / +255744769060</p>
+</div>
 </section>
 
 <section>
@@ -150,33 +170,83 @@ const $ = id => document.getElementById(id);
 let currentUser = null;
 let launchData = null;
 
-// ===== MFUMO MMOJA: @speed_awr360° = QR CODES + MMILIKI =====
-// NID ya mmiliki IMEFICHWA kama HASH - Wateja hawaioni
+// ===== MFUMO MMOJA: @speed_awr360° = QR = NID/NIN = MMILIKI =====
 const OWNER_HASH = "a9f2c7e1b3d5f8a6c4e9b2d7a1f3c5e8";
 const OWNER_NAME = "Garaji Joseph Masambu";
 const OWNER_ALIAS = "George Joseph Masambu";
 const SYSTEM_ID = "@speed_awr360°";
+const START_TIME = new Date("2026-11-04T12:01:00").getTime();
+const END_TIME = new Date("2026-11-05T12:01:00").getTime();
 const paidCodes = ["83920","57184","90210","14675","63829"];
 const unpaidCodes = ["34796","11223","44556"];
 function verifyOwner(){ return OWNER_HASH.length > 10 && OWNER_NAME.length > 0; }
 
-// Quick QR Check - Kitu Kimoja
+// ===== LOGIC YA ACCESS - INAFANYA KAZI SASA =====
+function getAccessState(code){
+  let now = Date.now();
+  let isPaid = paidCodes.includes(code);
+  let isUnpaidKnown = unpaidCodes.includes(code);
+  if(isPaid){
+    return {type:"ACTIVE", title:"✅ UMELIPA - HUDUMA IMEFUNGULIWA", msg:"Karibu! Umeunganishwa na @speed_awr360°.\nMmiliki: "+OWNER_NAME+"\nHuduma yako iko ACTIVE. Endelea.", showService:true, cls:"access-active"};
+  }
+  if(now > END_TIME){
+    return {type:"BLOCKED", title:"❌ MUDA WA KULIPA UMESHAISHA - UMEKATWA", msg:"END TIME: 05 Nov 2026 12:01 PM umeshapita.\nHujalipa ndani ya masaa 24.\nHAUPATI HUDUMA MPAKA ULIPIE.\nLipa CRDB Lipa Namba 10055686 kisha SUBMIT PAYMENT.", showService:false, cls:"access-blocked"};
+  }
+  if(now >= START_TIME && now <= END_TIME){
+    let diff = END_TIME - now;
+    let h = Math.floor(diff/3600000); let m = Math.floor((diff%3600000)/60000); let s = Math.floor((diff%60000)/1000);
+    let timeLeft = h+"h : "+m+"m : "+s+"s";
+    if(isUnpaidKnown || code){
+      return {type:"GRACE", title:"⏰ UNA MASAA 24 YA KULIPA - "+timeLeft, msg:"Hujalipa bado. Una muda hadi 05 Nov 2026 12:01 PM.\nLipa sasa: CRDB Lipa Namba 10055686 - TZS 20,000\nUkishindwa kulipa kabla ya muda kuisha, huduma itakatwa.\nMfumo: @speed_awr360°", showService:false, cls:"access-grace"};
+    }
+    return {type:"GRACE", title:"⏰ PAYMENT WINDOW IPO WAZI - "+timeLeft, msg:"Andika QR Code yako kuangalia access yako.\nMuda wa kulipa unaisha 05 Nov 2026 12:01 PM.", showService:false, cls:"access-grace"};
+  }
+  if(now < START_TIME){
+    return {type:"WAITING", title:"⏳ START TIME BADO HAIJAFIKA", msg:"START TIME: 04 Nov 2026 12:01 PM\nSubiri mfumo uanze.", showService:false, cls:"access-grace"};
+  }
+  return {type:"GRACE", title:"⏰ UNA MASAA 24 YA KULIPA", msg:"Lipa ili upate huduma.", showService:false, cls:"access-grace"};
+}
+
+function renderAccess(code){
+  let st = getAccessState(code || "");
+  let box = $("accessStatus");
+  box.textContent = st.title + "\n\n" + st.msg;
+  box.className = "status " + st.cls;
+  $("serviceContent").classList.toggle("hidden", !st.showService);
+  $("accessDetail").textContent = "QR: " + (code || "Hakuna") + " | Mfumo: " + SYSTEM_ID + " | Mmiliki: " + OWNER_NAME + " | START: 04 Nov 2026 12:01 PM | END: 05 Nov 2026 12:01 PM";
+  return st;
+}
+
+// Quick QR Check
 $("quickQrBtn").onclick=()=>{
   let c = $("quickQr").value.trim();
   let ok = $("quickOk"); let no = $("quickNo");
   ok.style.display="none"; no.style.display="none";
   if(!verifyOwner()){ alert("Mfumo haujamtambua mmiliki"); return; }
   if(!c){ alert("Andika QR Code kwanza"); return; }
-  if(paidCodes.includes(c)){
+  $("accessQr").value = c;
+  let st = renderAccess(c);
+  if(st.type==="ACTIVE"){
     ok.style.display="block";
     ok.innerHTML = "✅ UMELIPA - KARIBU!<br><b>Umeunganishwa na @speed_awr360°</b><br>Endelea na huduma kama kawaida.<br>Mmiliki: "+OWNER_NAME;
-  } else if(unpaidCodes.includes(c)){
-    no.style.display="block";
-    no.innerHTML = "❌ HUJALIPA - UMEKATWA<br>Mfumo wa @speed_awr360° umegundua hujalipa.<br>Lipa kwanza ili uunganishwe tena.";
   } else {
     no.style.display="block";
-    no.innerHTML = "❌ CODE SIO YA @speed_awr360°<br>Code hii sio ya mfumo huu. Tafadhali tumia SUBMIT QR FOR VERIFICATION chini.";
+    no.innerHTML = st.title + "<br>" + st.msg.replace(/\n/g,"<br>");
   }
+};
+
+// CHECK MY ACCESS BUTTON - HII NDIO ILIKUWA HAIFANYI KAZI, SASA INAFANYA
+$("checkAccessBtn").onclick=()=>{
+  let c = $("accessQr").value.trim();
+  if(!c && $("quickQr").value.trim()) c = $("quickQr").value.trim();
+  if(!c){
+    $("accessStatus").textContent = "⚠️ Andika QR Code yako kwanza juu ya button, kisha bonyeza CHECK MY ACCESS.";
+    $("accessStatus").className = "status access-grace";
+    return;
+  }
+  let st = renderAccess(c);
+  notify("Access checked: " + st.title);
+  if(st.showService) window.scrollTo({top: $("serviceContent").offsetTop-20, behavior:"smooth"});
 };
 
 function notify(text){ $("message").textContent = text; }
@@ -236,23 +306,26 @@ notify("QR request submitted for administrator verification. @speed_awr360°");
 }catch(error){ notify(error.message); }
 };
 function updateTimer(){
-if(!launchData || launchData.status!=="active" || !launchData.trialEndsAt){
-$("trialStatus").textContent="Official trial has not started. Start: 04 Nov 2026 12:01 PM - End: 05 Nov 2026 12:01 PM";
-let fallbackEnd = new Date("2026-11-05T12:01:00").getTime();
-let diff = fallbackEnd - Date.now();
-if(diff>0){
-let h=Math.floor(diff/3600000); let m=Math.floor((diff%3600000)/60000); let s=Math.floor((diff%60000)/1000);
-$("timer").textContent=[h,m,s].map(x=>String(x).padStart(2,"0")).join(":");
-} else { $("timer").textContent="00:00:00"; }
-return;
+let now = Date.now();
+let diff = END_TIME - now;
+if(now < START_TIME){
+  $("trialStatus").textContent="⏳ START TIME BADO - Inaanza 04 Nov 2026 12:01 PM";
+  $("windowMsg").textContent="Subiri START TIME ifike.";
+} else if(now >= START_TIME && now <= END_TIME){
+  $("trialStatus").textContent="⏰ PAYMENT WINDOW IPO WAZI - Lipa Kabla Ya END TIME";
+  $("windowMsg").textContent="START: 04 Nov 2026 12:01 PM | END: 05 Nov 2026 12:01 PM | Hawajalipa wana masaa 24 tu.";
+} else {
+  $("trialStatus").textContent="❌ PAYMENT WINDOW IMESHAFUNGWA - END TIME 05 Nov 2026 12:01 PM";
+  $("windowMsg").textContent="Waliolipa wanaendelea na huduma. Hawajalipa HAWAAPATI HUDUMA mpaka walipe.";
 }
-const end=launchData.trialEndsAt.toDate().getTime();
-const remaining=Math.max(0,end-Date.now());
-if(remaining===0){ $("trialStatus").textContent="The 24-hour trial has ended."; $("timer").textContent="00:00:00"; return; }
-const h=Math.floor(remaining/3600000);
-const m=Math.floor((remaining%3600000)/60000);
-const s=Math.floor((remaining%60000)/1000);
-$("trialStatus").textContent="Official trial is active. @speed_awr360°";
+if(launchData && launchData.status==="active" && launchData.trialEndsAt){
+  let end = launchData.trialEndsAt.toDate().getTime();
+  diff = end - now;
+}
+if(diff <= 0){ $("timer").textContent="00:00:00"; return; }
+const h=Math.floor(diff/3600000);
+const m=Math.floor((diff%3600000)/60000);
+const s=Math.floor((diff%60000)/1000);
 $("timer").textContent=[h,m,s].map(x=>String(x).padStart(2,"0")).join(":");
 }
 async function loadLaunch(){
@@ -261,25 +334,32 @@ const snap=await getDoc(doc(db,"system","launch"));
 launchData=snap.exists()?snap.data():null;
 updateTimer();
 setInterval(updateTimer,1000);
-}catch(error){ $("trialStatus").textContent="Unable to load launch schedule."; }
+}catch(error){ $("trialStatus").textContent="Payment Window: START 04 Nov 2026 12:01 PM - END 05 Nov 2026 12:01 PM"; updateTimer(); setInterval(updateTimer,1000); }
 }
 async function refreshAccount(user){
-if(!user){ $("accountStatus").textContent="Not signed in."; $("accessStatus").textContent="Sign in to check access."; return; }
+if(!user){ $("accountStatus").textContent="Not signed in."; return; }
 const snap=await getDoc(doc(db,"users",user.uid));
 if(!snap.exists()){ $("accountStatus").textContent="Profile not found."; return; }
 const data=snap.data();
 const expiry=data.subscriptionExpiresAt?.toDate?data.subscriptionExpiresAt.toDate():null;
-const trialActive=launchData?.status==="active" && launchData.trialEndsAt?.toDate && Date.now()<launchData.trialEndsAt.toDate().getTime();
 const paidActive=expiry && expiry.getTime()>Date.now() && data.qrVerified===true && data.accountStatus==="active";
 $("accountStatus").textContent="Email: "+user.email+"\nAccount: "+(data.accountStatus||"pending")+"\nQR: "+(data.qrVerified===true?"Verified":"Pending")+"\nExpiry: "+(expiry?expiry.toLocaleString():"Not approved");
-$("accessStatus").textContent=trialActive?"Official trial is active.":paidActive?"Your subscription is marked active.":"Paid access is pending administrator approval.";
+if(paidActive){
+  renderAccess("83920");
+} else if(user.email){
+  // Auto-check access kwa user aliye-login
+  let curQr = $("accessQr").value.trim() || $("quickQr").value.trim();
+  if(curQr) renderAccess(curQr);
+}
 }
 onAuthStateChanged(auth,async user=>{
 currentUser=user;
 $("logoutBtn").classList.toggle("hidden",!user);
-if(user){ try{ await refreshAccount(user); }catch(error){ notify(error.message); } }else{ await refreshAccount(null); }
+if(user){ try{ await refreshAccount(user); }catch(error){ notify(error.message); } }else{ $("accountStatus").textContent="Not signed in."; }
 });
 await loadLaunch();
+// Auto-render initial access state
+renderAccess("");
 </script>
 </body>
 </html>
