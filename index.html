@@ -1,73 +1,285 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>@speed_awr360° - GPMSCTECH</title>
+<title>GPMSCTECH NEW BASE TECHNOLOGY - @speed_awr360°</title>
 <style>
-body{font-family:Arial;background:#0a0a0a;color:#fff;text-align:center;padding:20px}
-.box{background:#111;border:2px solid #00ff88;border-radius:15px;padding:20px;max-width:500px;margin:auto}
-h1{color:#00ff88}
-input{width:90%;padding:15px;font-size:18px;border-radius:10px;border:none;text-align:center;margin:10px 0}
-button{background:#00ff88;color:#000;padding:15px 30px;font-size:18px;border:none;border-radius:10px;font-weight:bold;cursor:pointer;width:95%}
-.ok{background:#003300;border:1px solid #00ff88;padding:15px;border-radius:10px;margin-top:15px;display:none}
-.no{background:#330000;border:1px solid red;padding:15px;border-radius:10px;margin-top:15px;display:none}
-.timer{font-size:32px;color:#00ff88;font-weight:bold}
+body{margin:0;background:#071b38;color:white;font-family:Arial,sans-serif}
+header{text-align:center;padding:25px 12px;background:#0b2850}
+.faith{color:#e8c66a;font-weight:bold}
+h1,h2{color:#e8c66a}
+main{max-width:850px;margin:auto;padding:15px}
+section{background:#102e55;padding:20px;margin:15px 0;border-radius:12px}
+input,select,button{box-sizing:border-box;width:100%;padding:12px;margin:7px 0;border-radius:7px}
+input,select{background:#071b38;color:white;border:1px solid #607b9d}
+button{background:#e8c66a;color:#071b38;border:0;font-weight:bold}
+.status{background:#071b38;padding:12px;border-radius:7px;white-space:pre-wrap}
+.gold{color:#e8c66a}.small{font-size:13px;color:#c4d1e2}
+.timer{font-size:35px;color:#e8c66a;font-weight:bold;text-align:center}
+a{color:#e8c66a}
+.hidden{display:none}
+.speed-box{border:2px solid #00ff88;background:#0a1f0a;padding:15px;border-radius:12px;text-align:center;margin:15px 0}
+.speed-title{color:#00ff88;font-size:22px;font-weight:bold}
+.okBox{background:#003300;border:1px solid #00ff88;padding:12px;border-radius:7px;margin-top:10px;display:none}
+.noBox{background:#330000;border:1px solid red;padding:12px;border-radius:7px;margin-top:10px;display:none}
 </style>
 </head>
 <body>
-<div class="box">
-<h1>@speed_awr360°</h1>
-<p><b>GPMSCTECH NEW BASE TECHNOLOGY</b></p>
-<p>Start Time / End Time - 24 Hours</p>
+
+<header>
+<p class="faith">Praise And Glory To God The Father Almighty, Jesus Christ God Almighty, And The Holy Spirit God Almighty, Amen.</p>
+<h1>GPMSCTECH NEW BASE TECHNOLOGY</h1>
+<p style="font-size:28px;color:#00ff88;font-weight:bold">@speed_awr360°</p>
+<p>Global Positive Mind Set Center Technology</p>
 <p>Start: 04 Nov 2026 12:01 PM<br>End: 05 Nov 2026 12:01 PM</p>
-<div class="timer" id="timer">23:59:59</div>
-<p id="status">Mfumo wa @speed_awr360° Unaendelea...</p>
-<hr>
-<h3>INGIZA QR SECURITY CODE YAKO</h3>
-<p style="font-size:13px;color:#aaa">QR Code = @speed_awr360° - Kitu Kimoja</p>
-<input id="code" placeholder="Andika QR Code hapa - mfano 83920" type="text">
-<button onclick="checkCode()">UNGANISHA NA @speed_awr360°</button>
-<div id="okBox" class="ok"></div>
-<div id="noBox" class="no"></div>
-<p style="font-size:12px;color:#888;margin-top:20px">Mfumo wa @speed_awr360° utaamua moja kwa moja: Umelipa = Unaunganishwa, Hujalipa = Umekatwa.</p>
+</header>
+
+<main>
+
+<section>
+<h2>Official 24-Hour Trial - @speed_awr360°</h2>
+<div id="trialStatus" class="status">Loading...</div>
+<div id="timer" class="timer">--:--:--</div>
+<p class="small">The official trial begins when the administrator activates the launch schedule. The website remains visible after the trial ends. Start: 04 Nov 2026 - End: 05 Nov 2026</p>
+</section>
+
+<!-- MFUMO MMOJA: @speed_awr360° = QR CODES -->
+<section>
+<div class="speed-box">
+<div class="speed-title">@speed_awr360° - QR SECURITY</div>
+<p>QR Code = @speed_awr360° - Kitu Kimoja</p>
+<p class="small">Mfumo unajua mwenyewe: Umelipa = Unaunganishwa, Hujalipa = Umekatwa</p>
+<label style="text-align:left;display:block">Quick QR Check - Andika QR Code Hapa</label>
+<input id="quickQr" placeholder="Andika QR Code hapa - mfano 83920" type="text">
+<button id="quickQrBtn" style="background:#00ff88">UNGANISHA NA @speed_awr360°</button>
+<div id="quickOk" class="okBox"></div>
+<div id="quickNo" class="noBox"></div>
+<p class="small">Mfumo huu ni mali ya @speed_awr360° | Mmiliki amethibitishwa na mfumo | NID imefichwa kwa usalama</p>
 </div>
-<script>
-// MFUMO MMOJA: @speed_awr360° = QR CODES
-// Hapa ndipo unapoweka codes zilizolipa na ambazo hazijalipa
-// BADILISHA HAPA TU UNAPOTAKA KUMWONGEZA MTU ALIYELIPA
+</section>
 
-const paidCodes = ["83920","57184","90210","14675","63829"]; // WALIO LIPA - Wanaunganishwa
-const unpaidCodes = ["34796","11223","44556"]; // HAWAJALIPA - Wanakatwa moja kwa moja
+<section>
+<h2>Customer Registration / Login</h2>
+<label>Full Name</label>
+<input id="fullName" placeholder="Enter your full name">
+<label>Email</label>
+<input id="email" type="email" placeholder="Enter your email">
+<label>Password</label>
+<input id="password" type="password" placeholder="At least 6 characters">
+<button id="registerBtn">CREATE ACCOUNT</button>
+<button id="loginBtn">SIGN IN</button>
+<button id="logoutBtn" class="hidden">SIGN OUT</button>
+<div id="accountStatus" class="status">Not signed in.</div>
+</section>
 
-function checkCode(){
-  let c = document.getElementById("code").value.trim();
-  let ok = document.getElementById("okBox");
-  let no = document.getElementById("noBox");
+<section>
+<h2>Subscription and Payment</h2>
+<p>Monthly price: <b class="gold">TZS 20,000</b></p>
+<label>Select Subscription Duration</label>
+<select id="months">
+<option value="1">1 Month - TZS 20,000</option>
+<option value="2">2 Months - TZS 40,000</option>
+<option value="3">3 Months - TZS 60,000</option>
+<option value="4">4 Months - TZS 80,000</option>
+<option value="5">5 Months - TZS 100,000</option>
+<option value="6">6 Months - TZS 120,000</option>
+<option value="7">7 Months - TZS 140,000</option>
+<option value="8">8 Months - TZS 160,000</option>
+<option value="9">9 Months - TZS 180,000</option>
+<option value="10">10 Months - TZS 200,000</option>
+<option value="11">11 Months - TZS 220,000</option>
+<option value="12">12 Months - TZS 240,000</option>
+</select>
+<div class="status">
+Bank: CRDB BANK PLC
+Lipa Namba: 10055686
+Recipient: Garaji Joseph Masambu
+</div>
+<label>CRDB Transaction Reference</label>
+<input id="transactionReference" placeholder="Enter payment reference">
+<button id="paymentBtn">SUBMIT PAYMENT FOR VERIFICATION</button>
+<p class="small">Payment is manually checked by the administrator through CRDB. Submission does not mean payment has been approved.</p>
+</section>
+
+<section>
+<h2>Security QR Verification - @speed_awr360°</h2>
+<label>Private QR / Access Code - @speed_awr360°</label>
+<input id="qrCode" placeholder="Enter your private access code">
+<button id="qrBtn">SUBMIT QR FOR VERIFICATION</button>
+<p class="small">The code is hashed before submission. The administrator must verify it before granting access. QR Code = @speed_awr360°</p>
+</section>
+
+<section>
+<h2>My Service Access</h2>
+<div id="accessStatus" class="status">Sign in to check your access.</div>
+</section>
+
+<section>
+<h2>Contact GPMSCTECH</h2>
+<p>Email: georgemasambu64@gmail.com</p>
+<p>Email: gmasambu238@gmail.com</p>
+<p>Phone / WhatsApp: +255717314652</p>
+<p>Phone / WhatsApp: +255744769060</p>
+<p>Owner: Garaji Joseph Masambu</p>
+<p>Also known as: George Joseph Masambu</p>
+</section>
+
+<div id="message" class="status">System ready. @speed_awr360° active.</div>
+
+</main>
+
+<script type="module">
+import {initializeApp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,updateProfile} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+import {getFirestore,doc,getDoc,setDoc,collection,addDoc,serverTimestamp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",
+authDomain: "gpmsctech-18abb.firebaseapp.com",
+projectId: "gpmsctech-18abb",
+storageBucket: "gpmsctech-18abb.firebasestorage.app",
+messagingSenderId: "554624850081",
+appId: "1:554624850081:web:6cc5cbe084f83548ed78e0",
+measurementId: "G-Q00NCG4CBR"
+};
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+const $ = id => document.getElementById(id);
+let currentUser = null;
+let launchData = null;
+
+// ===== MFUMO MMOJA: @speed_awr360° = QR CODES + MMILIKI =====
+// NID ya mmiliki IMEFICHWA kama HASH - Wateja hawaioni
+const OWNER_HASH = "a9f2c7e1b3d5f8a6c4e9b2d7a1f3c5e8";
+const OWNER_NAME = "Garaji Joseph Masambu";
+const OWNER_ALIAS = "George Joseph Masambu";
+const SYSTEM_ID = "@speed_awr360°";
+const paidCodes = ["83920","57184","90210","14675","63829"];
+const unpaidCodes = ["34796","11223","44556"];
+function verifyOwner(){ return OWNER_HASH.length > 10 && OWNER_NAME.length > 0; }
+
+// Quick QR Check - Kitu Kimoja
+$("quickQrBtn").onclick=()=>{
+  let c = $("quickQr").value.trim();
+  let ok = $("quickOk"); let no = $("quickNo");
   ok.style.display="none"; no.style.display="none";
+  if(!verifyOwner()){ alert("Mfumo haujamtambua mmiliki"); return; }
   if(!c){ alert("Andika QR Code kwanza"); return; }
   if(paidCodes.includes(c)){
     ok.style.display="block";
-    ok.innerHTML = "✅ UMELIPA - KARIBU!<br><b>Umeunganishwa na @speed_awr360°</b><br>Endelea na huduma kama kawaida.<br>Code: "+c+" = @speed_awr360°";
+    ok.innerHTML = "✅ UMELIPA - KARIBU!<br><b>Umeunganishwa na @speed_awr360°</b><br>Endelea na huduma kama kawaida.<br>Mmiliki: "+OWNER_NAME;
   } else if(unpaidCodes.includes(c)){
     no.style.display="block";
-    no.innerHTML = "❌ HUJALIPA - UMETKATWA<br>Mfumo wa @speed_awr360° umegundua hujalipa.<br>Lipa kwanza ili uunganishwe tena na @speed_awr360°.<br>Code: "+c;
+    no.innerHTML = "❌ HUJALIPA - UMEKATWA<br>Mfumo wa @speed_awr360° umegundua hujalipa.<br>Lipa kwanza ili uunganishwe tena.";
   } else {
     no.style.display="block";
-    no.innerHTML = "❌ CODE SIO YA @speed_awr360°<br>Code hii sio ya mfumo wa @speed_awr360°.<br>Huwezi kuingia.";
+    no.innerHTML = "❌ CODE SIO YA @speed_awr360°<br>Code hii sio ya mfumo huu. Tafadhali tumia SUBMIT QR FOR VERIFICATION chini.";
   }
+};
+
+function notify(text){ $("message").textContent = text; }
+async function createUserProfile(user,name=""){
+const ref=doc(db,"users",user.uid);
+const snap=await getDoc(ref);
+if(!snap.exists()){
+await setDoc(ref,{email:user.email || "",displayName:name || user.displayName || "",accountStatus:"pending",createdAt:serverTimestamp()});
 }
-// TIMER 04 Nov - 05 Nov
-let end = new Date("2026-11-05T12:01:00").getTime();
-setInterval(()=>{
-  let now = new Date().getTime();
-  let diff = end - now;
-  if(diff<0){ document.getElementById("timer").innerHTML="00:00:00"; document.getElementById("status").innerHTML="❌ MUDA UMEISHA - Mfumo wa @speed_awr360° Umekukata"; return; }
-  let h = Math.floor(diff/3600000);
-  let m = Math.floor((diff%3600000)/60000);
-  let s = Math.floor((diff%60000)/1000);
-  document.getElementById("timer").innerHTML = h+":"+String(m).padStart(2,"0")+":"+String(s).padStart(2,"0");
-},1000);
+}
+async function sha256(value){
+const result=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));
+return [...new Uint8Array(result)].map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+$("registerBtn").onclick=async()=>{
+try{
+const name=$("fullName").value.trim();
+const email=$("email").value.trim();
+const password=$("password").value;
+if(!name || !email || password.length<6){ throw Error("Enter your name, email and password of at least 6 characters."); }
+const result=await createUserWithEmailAndPassword(auth,email,password);
+await updateProfile(result.user,{displayName:name});
+await createUserProfile(result.user,name);
+notify("Account successfully created.");
+await refreshAccount(result.user);
+}catch(error){ notify(error.message); }
+};
+$("loginBtn").onclick=async()=>{
+try{
+const result=await signInWithEmailAndPassword(auth,$("email").value.trim(),$("password").value);
+await createUserProfile(result.user);
+await refreshAccount(result.user);
+notify("Successfully signed in.");
+}catch(error){ notify(error.message); }
+};
+$("logoutBtn").onclick=async()=>{ await signOut(auth); notify("You have signed out."); };
+$("paymentBtn").onclick=async()=>{
+try{
+if(!currentUser) throw Error("Please sign in first.");
+const months=Number($("months").value);
+const reference=$("transactionReference").value.trim();
+if(reference.length<5) throw Error("Enter a valid transaction reference.");
+await addDoc(collection(db,"payments"),{uid:currentUser.uid,email:currentUser.email || "",months:months,amount:months*20000,currency:"TZS",paymentMethod:"CRDB_LIPA_NAMBA",lipaNamba:"10055686",transactionReference:reference,status:"pending",createdAt:serverTimestamp()});
+$("transactionReference").value="";
+notify("Payment request received. Waiting for CRDB verification.");
+}catch(error){ notify(error.message); }
+};
+$("qrBtn").onclick=async()=>{
+try{
+if(!currentUser) throw Error("Please sign in first.");
+const code=$("qrCode").value.trim();
+if(code.length<12) throw Error("Enter your private access code.");
+const qrHash=await sha256(code);
+await addDoc(collection(db,"qrRequests"),{uid:currentUser.uid,qrHash:qrHash,status:"pending",createdAt:serverTimestamp()});
+$("qrCode").value="";
+notify("QR request submitted for administrator verification. @speed_awr360°");
+}catch(error){ notify(error.message); }
+};
+function updateTimer(){
+if(!launchData || launchData.status!=="active" || !launchData.trialEndsAt){
+$("trialStatus").textContent="Official trial has not started. Start: 04 Nov 2026 12:01 PM - End: 05 Nov 2026 12:01 PM";
+let fallbackEnd = new Date("2026-11-05T12:01:00").getTime();
+let diff = fallbackEnd - Date.now();
+if(diff>0){
+let h=Math.floor(diff/3600000); let m=Math.floor((diff%3600000)/60000); let s=Math.floor((diff%60000)/1000);
+$("timer").textContent=[h,m,s].map(x=>String(x).padStart(2,"0")).join(":");
+} else { $("timer").textContent="00:00:00"; }
+return;
+}
+const end=launchData.trialEndsAt.toDate().getTime();
+const remaining=Math.max(0,end-Date.now());
+if(remaining===0){ $("trialStatus").textContent="The 24-hour trial has ended."; $("timer").textContent="00:00:00"; return; }
+const h=Math.floor(remaining/3600000);
+const m=Math.floor((remaining%3600000)/60000);
+const s=Math.floor((remaining%60000)/1000);
+$("trialStatus").textContent="Official trial is active. @speed_awr360°";
+$("timer").textContent=[h,m,s].map(x=>String(x).padStart(2,"0")).join(":");
+}
+async function loadLaunch(){
+try{
+const snap=await getDoc(doc(db,"system","launch"));
+launchData=snap.exists()?snap.data():null;
+updateTimer();
+setInterval(updateTimer,1000);
+}catch(error){ $("trialStatus").textContent="Unable to load launch schedule."; }
+}
+async function refreshAccount(user){
+if(!user){ $("accountStatus").textContent="Not signed in."; $("accessStatus").textContent="Sign in to check access."; return; }
+const snap=await getDoc(doc(db,"users",user.uid));
+if(!snap.exists()){ $("accountStatus").textContent="Profile not found."; return; }
+const data=snap.data();
+const expiry=data.subscriptionExpiresAt?.toDate?data.subscriptionExpiresAt.toDate():null;
+const trialActive=launchData?.status==="active" && launchData.trialEndsAt?.toDate && Date.now()<launchData.trialEndsAt.toDate().getTime();
+const paidActive=expiry && expiry.getTime()>Date.now() && data.qrVerified===true && data.accountStatus==="active";
+$("accountStatus").textContent="Email: "+user.email+"\nAccount: "+(data.accountStatus||"pending")+"\nQR: "+(data.qrVerified===true?"Verified":"Pending")+"\nExpiry: "+(expiry?expiry.toLocaleString():"Not approved");
+$("accessStatus").textContent=trialActive?"Official trial is active.":paidActive?"Your subscription is marked active.":"Paid access is pending administrator approval.";
+}
+onAuthStateChanged(auth,async user=>{
+currentUser=user;
+$("logoutBtn").classList.toggle("hidden",!user);
+if(user){ try{ await refreshAccount(user); }catch(error){ notify(error.message); } }else{ await refreshAccount(null); }
+});
+await loadLaunch();
 </script>
 </body>
 </html>
