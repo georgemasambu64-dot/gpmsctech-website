@@ -33,7 +33,7 @@ a{color:#e8c66a}
 <h2>Official 24-Hour Access</h2>
 <div id="trialStatus" class="status">Loading...</div>
 <div id="timer" class="timer">--:--:--</div>
-<p class="small">Started: 04/October/2026 - Ends: 05/October/2026. After 24 hours, only paid members continue to get service.</p>
+<p class="small">Started: 04/November/2026 - Ends: 05/November/2026. After 24 hours, only paid members continue to get service.</p>
 </section>
 <section>
 <h2>Customer Registration / Login</h2>
@@ -106,8 +106,8 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 const $ = id => document.getElementById(id);
 let currentUser = null;
-const TRIAL_END = new Date("2026-10-05T00:00:00+03:00").getTime();
-const TRIAL_START = new Date("2026-10-04T00:00:00+03:00").getTime();
+const TRIAL_END = new Date("2026-11-05T00:00:00+03:00").getTime();
+const TRIAL_START = new Date("2026-11-04T00:00:00+03:00").getTime();
 function notify(text){$("message").textContent = text;}
 async function createUserProfile(user,name=""){
 const ref=doc(db,"users",user.uid);
@@ -166,7 +166,7 @@ function updateTimer(){
 const now=Date.now();
 const remaining=Math.max(0,TRIAL_END-now);
 if(now < TRIAL_START){
-$("trialStatus").textContent="Official 24-Hour Access starts on 04/October/2026.";
+$("trialStatus").textContent="Official 24-Hour Access starts on 04/November/2026.";
 $("timer").textContent="--:--:--";
 return;
 }
@@ -178,7 +178,7 @@ return;
 const h=Math.floor(remaining/3600000);
 const m=Math.floor((remaining%3600000)/60000);
 const s=Math.floor((remaining%60000)/1000);
-$("trialStatus").textContent="Official 24-Hour Access is active. Ends 05/October/2026.";
+$("trialStatus").textContent="Official 24-Hour Access is active. Ends 05/November/2026.";
 $("timer").textContent=[h,m,s].map(x=>String(x).padStart(2,"0")).join(":");
 }
 updateTimer();
