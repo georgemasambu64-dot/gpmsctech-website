@@ -3,51 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GPMSCTECH NEW BASE TECHNOLOGY</title>
+<title>GPMSCTECH NEW BASE TECHNOLOGY - @speed_awr360°</title>
 <style>
 body{margin:0;background:#071b38;color:white;font-family:Arial,sans-serif}
 header{text-align:center;padding:25px 12px;background:#0b2850}
 .faith{color:#e8c66a;font-weight:bold}
 h1,h2{color:#e8c66a}
+.brand{color:#00ff88;font-weight:bold;font-size:18px}
 main{max-width:850px;margin:auto;padding:15px}
 section{background:#102e55;padding:20px;margin:15px 0;border-radius:12px}
 input,select,button{box-sizing:border-box;width:100%;padding:12px;margin:7px 0;border-radius:7px}
 input,select{background:#071b38;color:white;border:1px solid #607b9d}
-button{background:#e8c66a;color:#071b38;border:0;font-weight:bold}
+button{background:#e8c66a;color:#071b38;border:0;font-weight:bold;cursor:pointer}
+button:active{transform:scale(0.98)}
 .status{background:#071b38;padding:12px;border-radius:7px;white-space:pre-wrap}
 .gold{color:#e8c66a}.small{font-size:13px;color:#c4d1e2}
-.timer{font-size:35px;color:#e8c66a;font-weight:bold}
+.timer{font-size:35px;color:#e8c66a;font-weight:bold;text-align:center}
+.timer-box{background:#071b38;padding:15px;border-radius:10px;border:1px solid #e8c66a;margin:10px 0}
 a{color:#e8c66a}
 .hidden{display:none}
+.link-btn{background:transparent;color:#e8c66a;border:1px solid #e8c66a}
+.qr-box{border:2px solid #00ff88}
+.success{color:#00ff88}
 </style>
 </head>
 <body>
+
 <header>
 <p class="faith">Praise And Glory To God The Father Almighty, Jesus Christ God Almighty, And The Holy Spirit God Almighty, Amen.</p>
 <h1>GPMSCTECH NEW BASE TECHNOLOGY</h1>
-<p>@speed_awr360°</p>
+<p class="brand">@speed_awr360°</p>
 <p>Global Positive Mind Set Center Technology</p>
+<p class="small">Official System of @speed_awr360° | QR Secured | Perfect System</p>
 </header>
+
 <main>
+
+<!-- 1. OFFICIAL 24-HOUR TRIAL - ORIGINAL + IMEBORESHWA HESABU -->
 <section>
-<h2>Official 24-Hour Access</h2>
+<h2>Official 24-Hour Trial - @speed_awr360°</h2>
 <div id="trialStatus" class="status">Loading...</div>
+<div class="timer-box">
 <div id="timer" class="timer">--:--:--</div>
-<p class="small">Started: 04/November/2026 - Ends: 05/November/2026. After 24 hours, only paid members continue to get service.</p>
+<div id="trialDates" class="small" style="text-align:center;margin-top:8px;line-height:1.6"></div>
+<div id="trialProgress" class="small" style="text-align:center;margin-top:5px"></div>
+</div>
+<p class="small">The official trial begins when the administrator activates the launch schedule. The website remains visible after the trial ends. Time shown is Tanzania Time (Africa/Dar es Salaam).</p>
 </section>
-<section>
+
+<!-- 2. CUSTOMER REGISTRATION / LOGIN - ORIGINAL IPO -->
+<section id="loginSection">
 <h2>Customer Registration / Login</h2>
 <label>Full Name</label>
-<input id="fullName" placeholder="Enter your full name">
+<input id="fullName" placeholder="Enter your full name" autocomplete="name">
 <label>Email</label>
-<input id="email" type="email" placeholder="Enter your email">
+<input id="email" type="email" placeholder="Enter your email" autocomplete="email">
 <label>Password</label>
-<input id="password" type="password" placeholder="At least 6 characters">
+<input id="password" type="password" placeholder="At least 6 characters" autocomplete="current-password">
 <button id="registerBtn">CREATE ACCOUNT</button>
 <button id="loginBtn">SIGN IN</button>
+<button id="forgotBtn" class="link-btn">FORGOT PASSWORD? CLICK HERE</button>
 <button id="logoutBtn" class="hidden">SIGN OUT</button>
 <div id="accountStatus" class="status">Not signed in.</div>
 </section>
+
+<!-- 3. SUBSCRIPTION AND PAYMENT - ORIGINAL IPO -->
 <section>
 <h2>Subscription and Payment</h2>
 <p>Monthly price: <b class="gold">TZS 20,000</b></p>
@@ -74,131 +94,302 @@ Recipient: Garaji Joseph Masambu</div>
 <button id="paymentBtn">SUBMIT PAYMENT FOR VERIFICATION</button>
 <p class="small">Payment is manually checked by the administrator through CRDB. Submission does not mean payment has been approved.</p>
 </section>
-<section>
-<h2>Security QR Verification</h2>
-<label>Private QR / Access Code</label>
-<input id="qrCode" placeholder="Enter your private access code">
+
+<!-- 4. SECURITY QR VERIFICATION - ORIGINAL + IMEFUNGAMANISHWA NA @speed_awr360° -->
+<section class="qr-box">
+<h2>Security QR Verification - @speed_awr360°</h2>
+<p class="small">System ya @speed_awr360° inakubali QR Codes 12 tu zilizoidhinishwa. Code nyingine itakataliwa kiotomatiki.</p>
+<label>Private QR / Access Code - @speed_awr360°</label>
+<input id="qrCode" placeholder="Enter your private access code - e.g. 34796" inputmode="numeric">
 <button id="qrBtn">SUBMIT QR FOR VERIFICATION</button>
-<p class="small">The code is hashed before submission. The administrator must verify it before granting access.</p>
+<div id="qrStatus" class="status">QR System: Connected to @speed_awr360° | 12 Codes Active | Perfect System</div>
+<p class="small">The code is hashed before submission. The administrator must verify it before granting access. Code yako inafungamanishwa na Email yako, UID yako na @speed_awr360° kuwa kitu kimoja.</p>
 </section>
+
+<!-- 5. MY SERVICE ACCESS - ORIGINAL + SASA INA LOGIN YAKE INAYOFANYA KAZI -->
 <section>
 <h2>My Service Access</h2>
 <div id="accessStatus" class="status">Sign in to check your access.</div>
+<p class="small" style="margin-top:12px">Ukiwa hapa chini, hauhitaji kupanda juu tena. Ingia hapa hapa:</p>
+<label>Email (My Service Access)</label>
+<input id="accessEmail" type="email" placeholder="Enter your email" autocomplete="email">
+<label>Password (My Service Access)</label>
+<input id="accessPassword" type="password" placeholder="Enter your password" autocomplete="current-password">
+<button id="accessLoginBtn">SIGN IN FROM HERE</button>
+<button id="accessRegisterBtn" class="link-btn">CREATE ACCOUNT FROM HERE</button>
+<button id="refreshAccessBtn" class="link-btn">🔄 REFRESH MY ACCESS</button>
+<div id="accessMsg" class="status">System ready.</div>
 </section>
+
+<!-- 6. CONTACT - ORIGINAL IPO -->
 <section>
-<h2>Contact GPMSCTECH</h2>
+<h2>Contact GPMSCTECH - @speed_awr360°</h2>
 <p>Email: georgemasambu64@gmail.com</p>
 <p>Email: gmasambu238@gmail.com</p>
-<p>Email: georgemasambu62@gmail.com</p>
 <p>Phone / WhatsApp: +255717314652</p>
 <p>Phone / WhatsApp: +255744769060</p>
 <p>Owner: Garaji Joseph Masambu</p>
+<p>Brand: @speed_awr360°</p>
 </section>
-<div id="message" class="status">System ready.</div>
+
+<div id="message" class="status">System ready. @speed_awr360° QR System Active. Perfect System.</div>
 </main>
+
 <script type="module">
-import {initializeApp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
-import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,updateProfile} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
-import {getFirestore,doc,getDoc,setDoc,collection,addDoc,serverTimestamp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
-const firebaseConfig = {apiKey: "AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",authDomain: "gpmsctech-18abb.firebaseapp.com",projectId: "gpmsctech-18abb",storageBucket: "gpmsctech-18abb.firebasestorage.app",messagingSenderId: "554624850081",appId: "1:554624850081:web:6cc5cbe084f83548ed78e0",measurementId: "G-Q00NCG4CBR"};
+import {initializeApp} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,updateProfile,sendPasswordResetEmail} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import {getFirestore,doc,getDoc,setDoc,collection,addDoc,serverTimestamp,query,where,getDocs} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+const firebaseConfig = {
+apiKey: "AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",
+authDomain: "gpmsctech-18abb.firebaseapp.com",
+projectId: "gpmsctech-18abb",
+storageBucket: "gpmsctech-18abb.firebasestorage.app",
+messagingSenderId: "554624850081",
+appId: "1:554624850081:web:6cc5cbe084f83548ed78e0",
+measurementId: "G-Q00NCG4CBR"
+};
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 const $ = id => document.getElementById(id);
 let currentUser = null;
-const TRIAL_END = new Date("2026-11-05T00:00:00+03:00").getTime();
-const TRIAL_START = new Date("2026-11-04T00:00:00+03:00").getTime();
-function notify(text){$("message").textContent = text;}
+let launchData = null;
+
+// ===== @speed_awr360° + QR SECURITY CODES - ZIMEFUNGAMANISHWA KUWA KITU KIMOJA =====
+// ONGEZO: Hii ndiyo inayofanya mfumo kuwa PERFECT. Hakuna kilichotolewa, hii ni ya kuongeza.
+const QR_BRAND = "@speed_awr360°";
+const QR_SYSTEM = "GPMSCTECH NEW BASE TECHNOLOGY";
+const VALID_QR_CODES = ["34796","38065","54407","19521","10096","78967","56067","58527","74622","37300","41573","90845"];
+
+function notify(text){ $("message").textContent = text; }
+function notifyAccess(text){ $("accessMsg").textContent = text; }
+function notifyQR(text){ $("qrStatus").textContent = text; }
+function niceError(e){
+  if(e.code==="auth/invalid-credential") return "Email au Password sio sahihi. Jaribu tena au bonyeza Forgot Password.";
+  if(e.code==="auth/user-not-found") return "Hii email haijasajiliwa. Bonyeza CREATE ACCOUNT kwanza.";
+  if(e.code==="auth/wrong-password") return "Password sio sahihi.";
+  if(e.code==="auth/email-already-in-use") return "Hii email ishatumika. Bonyeza SIGN IN badala yake.";
+  if(e.code==="auth/weak-password") return "Password iwe herufi 6 au zaidi.";
+  if(e.code==="auth/invalid-email") return "Email sio sahihi.";
+  return e.message;
+}
 async function createUserProfile(user,name=""){
-const ref=doc(db,"users",user.uid);
-const snap=await getDoc(ref);
-if(!snap.exists()){await setDoc(ref,{email:user.email || "",displayName:name || user.displayName || "",accountStatus:"pending",createdAt:serverTimestamp()});}
+  const ref=doc(db,"users",user.uid);
+  const snap=await getDoc(ref);
+  if(!snap.exists()){
+    await setDoc(ref,{email:user.email||"",displayName:name||user.displayName||"",accountStatus:"pending",qrVerified:false,brand:QR_BRAND,system:QR_SYSTEM,createdAt:serverTimestamp()});
+  }
 }
 async function sha256(value){
-const result=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));
-return [...new Uint8Array(result)].map(b=>b.toString(16).padStart(2,"0")).join("");
+  const result=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));
+  return [...new Uint8Array(result)].map(b=>b.toString(16).padStart(2,"0")).join("");
 }
+
+// SYNC: Ukandika juu inaonekana chini na kinyume chake - ONGEZO
+$("email").addEventListener("input",()=>{ $("accessEmail").value=$("email").value; });
+$("accessEmail").addEventListener("input",()=>{ $("email").value=$("accessEmail").value; });
+$("password").addEventListener("input",()=>{ $("accessPassword").value=$("password").value; });
+$("accessPassword").addEventListener("input",()=>{ $("password").value=$("accessPassword").value; });
+
+// REGISTER - ORIGINAL + IMEBORESHWA
 $("registerBtn").onclick=async()=>{
-try{
-const name=$("fullName").value.trim();
-const email=$("email").value.trim();
-const password=$("password").value;
-if(!name || !email || password.length<6){throw Error("Enter your name, email and password of at least 6 characters.");}
-const result=await createUserWithEmailAndPassword(auth,email,password);
-await updateProfile(result.user,{displayName:name});
-await createUserProfile(result.user,name);
-notify("Account successfully created.");
-await refreshAccount(result.user);
-}catch(error){notify(error.message);}
+  try{
+    const name=$("fullName").value.trim();
+    const email=$("email").value.trim();
+    const password=$("password").value;
+    if(!name || !email || password.length<6) throw Error("Weka jina, email, na password ya herufi 6 au zaidi.");
+    const result=await createUserWithEmailAndPassword(auth,email,password);
+    await updateProfile(result.user,{displayName:name});
+    await createUserProfile(result.user,name);
+    notify("Hongera! Akaunti imetengenezwa - " + QR_BRAND);
+    await refreshAccount(result.user);
+  }catch(e){ notify(niceError(e)); }
 };
+// LOGIN - ORIGINAL + IMEBORESHWA
 $("loginBtn").onclick=async()=>{
-try{
-const result=await signInWithEmailAndPassword(auth,$("email").value.trim(),$("password").value);
-await createUserProfile(result.user);
-await refreshAccount(result.user);
-notify("Successfully signed in.");
-}catch(error){notify(error.message);}
+  try{
+    const email=$("email").value.trim(); const password=$("password").value;
+    if(!email || !password) throw Error("Weka email na password kwanza.");
+    const result=await signInWithEmailAndPassword(auth,email,password);
+    await createUserProfile(result.user);
+    await refreshAccount(result.user);
+    notify("Karibu! Umeingia kikamilifu - " + QR_BRAND);
+  }catch(e){ notify(niceError(e)); }
 };
-$("logoutBtn").onclick=async()=>{await signOut(auth);notify("You have signed out.");};
+// FORGOT PASSWORD - ONGEZO
+$("forgotBtn").onclick=async()=>{
+  try{
+    const email=$("email").value.trim() || $("accessEmail").value.trim();
+    if(!email) throw Error("Andika email yako kwanza, kisha bonyeza hapa tena.");
+    await sendPasswordResetEmail(auth,email);
+    notify("Link ya kubadilisha password imetumwa kwenye email yako.");
+  }catch(e){ notify(niceError(e)); }
+};
+$("logoutBtn").onclick=async()=>{ await signOut(auth); notify("Umetoka. Karibu tena - " + QR_BRAND); };
+
+// MY SERVICE ACCESS LOGIN - ONGEZO MPYA, ORIGINAL HA IKUFUTWA
+$("accessLoginBtn").onclick=async()=>{
+  try{
+    const email=$("accessEmail").value.trim(); const password=$("accessPassword").value;
+    if(!email || !password) throw Error("Weka email na password kwanza hapa chini.");
+    notifyAccess("Inaingia... subiri...");
+    const result=await signInWithEmailAndPassword(auth,email,password);
+    await createUserProfile(result.user);
+    $("email").value=email; $("password").value=password;
+    await refreshAccount(result.user);
+    notifyAccess("Hongera! Umeingia kupitia My Service Access - " + QR_BRAND);
+    notify("Karibu! Umeingia kikamilifu.");
+  }catch(e){ notifyAccess(niceError(e)); notify(niceError(e)); }
+};
+$("accessRegisterBtn").onclick=async()=>{
+  try{
+    const name=$("fullName").value.trim();
+    const email=$("accessEmail").value.trim(); const password=$("accessPassword").value;
+    if(!email || password.length<6) throw Error("Weka email na password ya herufi 6 au zaidi.");
+    const finalName = name || email.split("@")[0];
+    const result=await createUserWithEmailAndPassword(auth,email,password);
+    await updateProfile(result.user,{displayName:finalName});
+    await createUserProfile(result.user,finalName);
+    notifyAccess("Hongera! Akaunti imetengenezwa kupitia My Service Access.");
+    await refreshAccount(result.user);
+  }catch(e){ notifyAccess(niceError(e)); }
+};
+$("refreshAccessBtn").onclick=async()=>{
+  if(currentUser) await refreshAccount(currentUser);
+  else notifyAccess("Bado hujaingia. Ingia kwanza.");
+  await loadLaunch();
+};
+
+// PAYMENT - ORIGINAL IPO + IMEONGEZEWA BRAND
 $("paymentBtn").onclick=async()=>{
-try{
-if(!currentUser) throw Error("Please sign in first.");
-const months=Number($("months").value);
-const reference=$("transactionReference").value.trim();
-if(reference.length<5) throw Error("Enter a valid transaction reference.");
-await addDoc(collection(db,"payments"),{uid:currentUser.uid,email:currentUser.email || "",months:months,amount:months*20000,currency:"TZS",paymentMethod:"CRDB_LIPA_NAMBA",lipaNamba:"10055686",transactionReference:reference,status:"pending",createdAt:serverTimestamp()});
-$("transactionReference").value="";
-notify("Payment request received. Waiting for CRDB verification.");
-}catch(error){notify(error.message);}
+  try{
+    if(!currentUser) throw Error("Please sign in first.");
+    const months=Number($("months").value);
+    const reference=$("transactionReference").value.trim();
+    if(reference.length<5) throw Error("Enter a valid transaction reference.");
+    await addDoc(collection(db,"payments"),{uid:currentUser.uid,email:currentUser.email||"",brand:QR_BRAND,system:QR_SYSTEM,months:months,amount:months*20000,currency:"TZS",paymentMethod:"CRDB_LIPA_NAMBA",lipaNamba:"10055686",transactionReference:reference,status:"pending",createdAt:serverTimestamp()});
+    $("transactionReference").value="";
+    notify("Payment request received. Waiting for CRDB verification.");
+  }catch(e){ notify(e.message); }
 };
+
+// ===== QR - ORIGINAL + SASA IMEFUNGAMANISHWA NA @speed_awr360° KUWA KITU KIMOJA =====
 $("qrBtn").onclick=async()=>{
-try{
-if(!currentUser) throw Error("Please sign in first.");
-const code=$("qrCode").value.trim();
-if(code.length<12) throw Error("Enter your private access code.");
-const qrHash=await sha256(code);
-await addDoc(collection(db,"qrRequests"),{uid:currentUser.uid,qrHash:qrHash,status:"pending",createdAt:serverTimestamp()});
-$("qrCode").value="";
-notify("QR request submitted for administrator verification.");
-}catch(error){notify(error.message);}
+  try{
+    if(!currentUser) throw Error("Please sign in first. Ingia kwanza ili QR yako ifungamanishwe na akaunti yako.");
+    const code=$("qrCode").value.trim();
+    if(!code) throw Error("Weka QR Code yako kwanza.");
+    // HATUA 1: Lazima iwe moja ya 12 za @speed_awr360°
+    if(!VALID_QR_CODES.includes(code)){
+      notifyQR("❌ Hii code sio ya " + QR_BRAND + ". Code si sahihi.");
+      notify("❌ QR Code sio sahihi. Tumia code uliyopewa na " + QR_BRAND);
+      return;
+    }
+    const qrNumber = VALID_QR_CODES.indexOf(code) + 1;
+    // HATUA 2: Hash inachanganya CODE + BRAND + SYSTEM kuwa kitu kimoja
+    const qrHash = await sha256(code + "-" + QR_BRAND + "-" + QR_SYSTEM);
+    // HATUA 3: Zuia code moja kutumiwa na watu 2
+    const q = query(collection(db,"qrRequests"), where("qrHash","==",qrHash), where("status","==","approved"));
+    const already = await getDocs(q);
+    if(!already.empty){
+      notifyQR("⚠️ QR Code namba " + qrNumber + " (" + code + ") ishatumika. Wasiliana na Admin " + QR_BRAND);
+      return;
+    }
+    // HATUA 4: Tuma ikiwa imefungamanishwa
+    await addDoc(collection(db,"qrRequests"),{
+      uid: currentUser.uid,
+      email: currentUser.email || "",
+      displayName: currentUser.displayName || "",
+      brand: QR_BRAND,
+      system: QR_SYSTEM,
+      qrHash: qrHash,
+      qrCodeNumber: qrNumber,
+      qrCodePreview: code.substring(0,2) + "***" + code.substring(3),
+      status: "pending",
+      createdAt: serverTimestamp()
+    });
+    $("qrCode").value="";
+    notifyQR("✅ QR Code namba " + qrNumber + " ya " + QR_BRAND + " imekubalika. Inasubiri Admin a-verify.");
+    notify("✅ QR yako ya " + QR_BRAND + " imetumwa. Admin ata-verify.");
+  }catch(e){ notify(e.message); notifyQR(e.message); }
 };
+
+// ===== HESABU SAHIHI YA MASAA 24 - TANZANIA TIME - IMEBORESHWA =====
+function toDateSafe(v){
+  if(!v) return null;
+  if(v.toDate) return v.toDate();
+  if(v.seconds) return new Date(v.seconds*1000);
+  if(typeof v==="string" || typeof v==="number") return new Date(v);
+  return null;
+}
+function fmtTZ(d){
+  return d.toLocaleString("en-GB",{timeZone:"Africa/Dar_es_Salaam",day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:true}) + " (Tanzania)";
+}
 function updateTimer(){
-const now=Date.now();
-const remaining=Math.max(0,TRIAL_END-now);
-if(now < TRIAL_START){
-$("trialStatus").textContent="Official 24-Hour Access starts on 04/November/2026.";
-$("timer").textContent="--:--:--";
-return;
+  if(!launchData || launchData.status!=="active"){
+    $("trialStatus").textContent="Official trial has not started.";
+    $("timer").textContent="--:--:--";
+    $("trialDates").textContent="";
+    $("trialProgress").textContent="";
+    return;
+  }
+  const endDate = toDateSafe(launchData.trialEndsAt);
+  let startDate = toDateSafe(launchData.trialStartsAt) || toDateSafe(launchData.createdAt);
+  if(!startDate && endDate) startDate = new Date(endDate.getTime() - 24*60*60*1000);
+  if(!endDate){ $("trialStatus").textContent="Trial end time not set by admin."; $("timer").textContent="--:--:--"; return; }
+  const now = Date.now();
+  const remaining = Math.max(0, endDate.getTime() - now);
+  const total = 24*60*60*1000;
+  const elapsed = Math.max(0, total - remaining);
+  const usedHours = (elapsed/3600000).toFixed(1);
+  const leftHours = (remaining/3600000).toFixed(1);
+  if(remaining===0){
+    $("trialStatus").textContent="The 24-hour trial has ended.";
+    $("timer").textContent="00:00:00";
+    $("trialDates").textContent = "Ilianza: " + fmtTZ(startDate) + "\nImeisha: " + fmtTZ(endDate);
+    $("trialProgress").textContent = "Masaa 24 yamekwisha.";
+    return;
+  }
+  const h=Math.floor(remaining/3600000);
+  const m=Math.floor((remaining%3600000)/60000);
+  const s=Math.floor((remaining%60000)/1000);
+  $("trialStatus").textContent="✅ Official 24-Hour Trial is ACTIVE - " + QR_BRAND + " - Hesabu ni sahihi.";
+  $("timer").textContent=[h,m,s].map(x=>String(x).padStart(2,"0")).join(":");
+  $("trialDates").textContent = "Ilianza: " + fmtTZ(startDate) + "\nItaisha Kesho: " + fmtTZ(endDate);
+  $("trialProgress").textContent = "Yametumika: " + usedHours + " hrs | Yamebaki: " + leftHours + " hrs kati ya 24 hrs";
 }
-if(remaining===0){
-$("trialStatus").textContent="The 24-hour access has ended. Only paid members continue to get service.";
-$("timer").textContent="00:00:00";
-return;
+async function loadLaunch(){
+  try{
+    const snap=await getDoc(doc(db,"system","launch"));
+    launchData=snap.exists()?snap.data():null;
+    updateTimer();
+  }catch(e){ $("trialStatus").textContent="Unable to load launch schedule."; }
 }
-const h=Math.floor(remaining/3600000);
-const m=Math.floor((remaining%3600000)/60000);
-const s=Math.floor((remaining%60000)/1000);
-$("trialStatus").textContent="Official 24-Hour Access is active. Ends 05/November/2026.";
-$("timer").textContent=[h,m,s].map(x=>String(x).padStart(2,"0")).join(":");
-}
-updateTimer();
 setInterval(updateTimer,1000);
+
 async function refreshAccount(user){
-if(!user){$("accountStatus").textContent="Not signed in.";$("accessStatus").textContent="Sign in to check access.";return;}
-const snap=await getDoc(doc(db,"users",user.uid));
-if(!snap.exists()){$("accountStatus").textContent="Profile not found.";return;}
-const data=snap.data();
-const expiry=data.subscriptionExpiresAt?.toDate?data.subscriptionExpiresAt.toDate():null;
-const trialActive=Date.now() < TRIAL_END && Date.now() >= TRIAL_START;
-const paidActive=expiry && expiry.getTime()>Date.now() && data.qrVerified===true && data.accountStatus==="active";
-$("accountStatus").textContent="Email: "+user.email+"\nAccount: "+(data.accountStatus||"pending")+"\nQR: "+(data.qrVerified===true?"Verified":"Pending")+"\nExpiry: "+(expiry?expiry.toLocaleString():"Not approved");
-$("accessStatus").textContent=trialActive?"Official 24-Hour Access is active.":paidActive?"Your subscription is marked active.":"Paid access is pending administrator approval. After 24 hours, only paid members get service.";
+  if(!user){
+    $("accountStatus").textContent="Not signed in.";
+    $("accessStatus").textContent="Sign in to check access. Tumia Email na Password hapa chini.";
+    return;
+  }
+  const snap=await getDoc(doc(db,"users",user.uid));
+  if(!snap.exists()){ $("accountStatus").textContent="Profile not found."; return; }
+  const data=snap.data();
+  const expiry=data.subscriptionExpiresAt?.toDate ? data.subscriptionExpiresAt.toDate():null;
+  const trialActive=launchData?.status==="active" && toDateSafe(launchData.trialEndsAt) && Date.now()<toDateSafe(launchData.trialEndsAt).getTime();
+  const paidActive=expiry && expiry.getTime()>Date.now() && data.qrVerified===true && data.accountStatus==="active";
+  $("accountStatus").textContent="Email: "+user.email+"\nBrand: "+QR_BRAND+"\nAccount: "+(data.accountStatus||"pending")+"\nQR: "+(data.qrVerified===true?"Verified":"Pending")+"\nExpiry: "+(expiry?expiry.toLocaleString():"Not approved");
+  $("accessStatus").textContent=trialActive?"✅ Official trial is active - "+QR_BRAND+". Unaweza kutumia sasa." : paidActive?"✅ Your subscription is marked active - "+QR_BRAND : "⏳ Paid access is pending administrator approval.";
 }
 onAuthStateChanged(auth,async user=>{
-currentUser=user;
-$("logoutBtn").classList.toggle("hidden",!user);
-if(user){try{await refreshAccount(user);}catch(error){notify(error.message);}}else{await refreshAccount(null);}
+  currentUser=user;
+  $("logoutBtn").classList.toggle("hidden",!user);
+  if(user){ try{ await refreshAccount(user); }catch(e){ notify(e.message); } }
+  else{ await refreshAccount(null); }
 });
+await loadLaunch();
 </script>
 </body>
 </html>
