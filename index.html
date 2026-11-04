@@ -1,365 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071b38">
 <title>GPMSCTECH NEW BASE TECHNOLOGY - @speed_awr360°</title>
 <style>
-body{margin:0;background:#071b38;color:white;font-family:Arial,sans-serif}
-header{text-align:center;padding:25px 12px;background:#0b2850}
-.faith{color:#e8c66a;font-weight:bold}
-h1,h2{color:#e8c66a}
-main{max-width:850px;margin:auto;padding:15px}
-section{background:#102e55;padding:20px;margin:15px 0;border-radius:12px}
-input,select,button{box-sizing:border-box;width:100%;padding:12px;margin:7px 0;border-radius:7px}
-input,select{background:#071b38;color:white;border:1px solid #607b9d}
-button{background:#e8c66a;color:#071b38;border:0;font-weight:bold;cursor:pointer}
-.status{background:#071b38;padding:12px;border-radius:7px;white-space:pre-wrap}
-.gold{color:#e8c66a}.small{font-size:13px;color:#c4d1e2}
-.timer{font-size:35px;color:#e8c66a;font-weight:bold;text-align:center}
-a{color:#e8c66a}
-.hidden{display:none}
-.speed-box{border:2px solid #00ff88;background:#0a1f0a;padding:15px;border-radius:12px;text-align:center;margin:15px 0}
-.speed-title{color:#00ff88;font-size:22px;font-weight:bold}
-.okBox{background:#003300;border:1px solid #00ff88;padding:12px;border-radius:7px;margin-top:10px;display:none}
-.noBox{background:#330000;border:1px solid red;padding:12px;border-radius:7px;margin-top:10px;display:none}
-.access-active{background:#003300;border:2px solid #00ff88;padding:15px;border-radius:10px}
-.access-grace{background:#332200;border:2px solid #e8c66a;padding:15px;border-radius:10px}
-.access-blocked{background:#330000;border:2px solid red;padding:15px;border-radius:10px}
-.bigBtn{font-size:17px;padding:15px}
+:root{--navy:#071b38;--panel:#102e55;--head:#0b2850;--gold:#e8c66a;--green:#00ff88;--muted:#c4d1e2;--red:#ff7777}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:white;font-family:Arial,sans-serif;line-height:1.5}
+header{text-align:center;padding:24px 12px;background:var(--head)}header .faith{color:var(--gold);font-weight:bold}
+h1,h2,h3{color:var(--gold)}h1{font-size:clamp(22px,4vw,34px)}main{max-width:900px;margin:auto;padding:14px}
+section{background:var(--panel);padding:18px;margin:15px 0;border-radius:12px;box-shadow:0 4px 14px #0002}
+label{display:block;margin-top:9px;font-weight:bold}input,select,button{width:100%;padding:12px;margin:7px 0;border-radius:7px;font:inherit}
+input,select{background:var(--navy);color:white;border:1px solid #607b9d}button{background:var(--gold);color:var(--navy);border:0;font-weight:bold;cursor:pointer}
+button:disabled{opacity:.55;cursor:not-allowed}.greenBtn{background:var(--green)}.dangerBtn{background:#ff7777}
+.status{background:var(--navy);padding:12px;border-radius:7px;white-space:pre-wrap;overflow-wrap:anywhere}
+.gold{color:var(--gold)}.small{font-size:13px;color:var(--muted)}.timer{font-size:clamp(27px,6vw,38px);color:var(--gold);font-weight:bold;text-align:center}
+.hidden{display:none!important}.speed-box{border:2px solid var(--green);background:#0a1f0a;padding:15px;border-radius:12px;text-align:center;margin:12px 0}
+.speed-title{color:var(--green);font-size:22px;font-weight:bold}.okBox,.noBox{padding:12px;border-radius:7px;margin-top:10px}
+.okBox{background:#003300;border:1px solid var(--green)}.noBox{background:#330000;border:1px solid red}
+.access-active{background:#003300;border:2px solid var(--green)}.access-grace{background:#332200;border:2px solid var(--gold)}.access-blocked{background:#330000;border:2px solid red}
+.bigBtn{font-size:17px;padding:15px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.card{background:#071b38;border-radius:8px;padding:12px}.row{display:flex;gap:8px;flex-wrap:wrap}.row>*{flex:1;min-width:130px}
+a{color:var(--gold)}.pill{display:inline-block;padding:3px 9px;border-radius:20px;background:#24496f;color:white;font-size:12px}
+hr{border:0;border-top:1px solid #45617e;margin:16px 0}
 </style>
 </head>
 <body>
-
 <header>
 <p class="faith">Praise And Glory To God The Father Almighty, Jesus Christ God Almighty, And The Holy Spirit God Almighty, Amen.</p>
 <h1>GPMSCTECH NEW BASE TECHNOLOGY</h1>
-<p style="font-size:28px;color:#00ff88;font-weight:bold">@speed_awr360°</p>
+<p style="font-size:28px;color:#00ff88;font-weight:bold;margin:4px">@speed_awr360°</p>
 <p>Global Positive Mind Set Center Technology</p>
-<p><b>START TIME: 04 Nov 2026 12:01 PM</b><br><b>END TIME: 05 Nov 2026 12:01 PM</b></p>
-<p class="small">Siyo Trial - Ni Muda Wa Kulipa Kwa Ambao Hawajalipa - Masaa 24</p>
+<p><b>PAYMENT WINDOW: <span id="windowHeader">Inapakiwa...</span></b></p>
+<p class="small">Siyo Trial - Muda wa kulipa kwa ambao hawajalipa - Masaa 24</p>
 </header>
-
 <main>
-
-<!-- START / END - MASAA 24 YA KULIPA -->
 <section>
-<h2>⏰ Payment Window - START & END TIME - @speed_awr360°</h2>
-<div id="trialStatus" class="status">Loading...</div>
+<h2>⏰ Payment Window - START & END TIME</h2>
+<div id="trialStatus" class="status">Inapakia hali ya dirisha la malipo...</div>
 <div id="timer" class="timer">--:--:--</div>
-<p class="small"><b>START:</b> 04 Nov 2026 12:01 PM | <b>END:</b> 05 Nov 2026 12:01 PM<br>Ambao hawajalipa wana masaa 24 ya kulipa. Wakishindwa kulipa kabla ya END TIME, hawapati huduma mpaka walipe. Website inabaki kuonekana.</p>
+<p class="small">Dirisha la saa 24 linadhibitiwa na mipangilio ya seva. Tovuti itaendelea kuonekana hata dirisha likifungwa.</p>
 <div id="windowMsg" class="status"></div>
 </section>
 
-<!-- MFUMO MMOJA -->
-<section>
-<div class="speed-box">
+<section><div class="speed-box">
 <div class="speed-title">@speed_awr360° - QR SECURITY</div>
-<p>QR Code = @speed_awr360° = NID/NIN ya Mmiliki - Kitu Kimoja</p>
-<p class="small">Mfumo unajua mwenyewe: Umelipa = Unaunganishwa, Hujalipa = Umekatwa</p>
-<label style="text-align:left;display:block">Quick QR Check - Andika QR Code Hapa</label>
-<input id="quickQr" placeholder="Andika QR Code hapa - mfano 83920" type="text">
-<button id="quickQrBtn" style="background:#00ff88">UNGANISHA NA @speed_awr360°</button>
-<div id="quickOk" class="okBox"></div>
-<div id="quickNo" class="noBox"></div>
-<p class="small">Mfumo huu ni mali ya @speed_awr360° | Mmiliki amethibitishwa na mfumo | NID imefichwa kwa usalama</p>
-</div>
-</section>
+<p>QR Code ni kitambulisho cha ufikiaji wa mfumo. Haibadilishi NID/NIN ya serikali.</p>
+<label for="quickQr">Quick QR Check - QR Code yako</label>
+<input id="quickQr" autocomplete="off" placeholder="Weka QR/access code yako" type="password">
+<button id="quickQrBtn" class="greenBtn">UNGANISHA NA @speed_awr360°</button>
+<div id="quickResult" class="status">Inasubiri ukaguzi.</div>
+<p class="small">QR itathibitishwa na seva. Hakuna QR za majaribio zilizowekwa wazi ndani ya JavaScript.</p>
+</div></section>
 
 <section>
 <h2>Customer Registration / Login</h2>
-<label>Full Name</label>
-<input id="fullName" placeholder="Enter your full name">
-<label>Email</label>
-<input id="email" type="email" placeholder="Enter your email">
-<label>Password</label>
-<input id="password" type="password" placeholder="At least 6 characters">
-<button id="registerBtn">CREATE ACCOUNT</button>
-<button id="loginBtn">SIGN IN</button>
-<button id="logoutBtn" class="hidden">SIGN OUT</button>
+<label for="fullName">Full Name</label><input id="fullName" autocomplete="name" placeholder="Enter your full name">
+<label for="email">Email</label><input id="email" type="email" autocomplete="username" placeholder="Enter your email">
+<label for="password">Password</label><input id="password" type="password" autocomplete="current-password" placeholder="At least 6 characters">
+<div class="row"><button id="registerBtn">CREATE ACCOUNT</button><button id="loginBtn">SIGN IN</button><button id="logoutBtn" class="hidden dangerBtn">SIGN OUT</button></div>
 <div id="accountStatus" class="status">Not signed in.</div>
 </section>
 
 <section>
 <h2>Subscription and Payment</h2>
 <p>Monthly price: <b class="gold">TZS 20,000</b></p>
-<label>Select Subscription Duration</label>
+<label for="months">Select Subscription Duration</label>
 <select id="months">
-<option value="1">1 Month - TZS 20,000</option>
-<option value="2">2 Months - TZS 40,000</option>
-<option value="3">3 Months - TZS 60,000</option>
-<option value="4">4 Months - TZS 80,000</option>
-<option value="5">5 Months - TZS 100,000</option>
-<option value="6">6 Months - TZS 120,000</option>
-<option value="7">7 Months - TZS 140,000</option>
-<option value="8">8 Months - TZS 160,000</option>
-<option value="9">9 Months - TZS 180,000</option>
-<option value="10">10 Months - TZS 200,000</option>
-<option value="11">11 Months - TZS 220,000</option>
-<option value="12">12 Months - TZS 240,000</option>
+<option value="1">1 Month - TZS 20,000</option><option value="2">2 Months - TZS 40,000</option><option value="3">3 Months - TZS 60,000</option><option value="4">4 Months - TZS 80,000</option><option value="5">5 Months - TZS 100,000</option><option value="6">6 Months - TZS 120,000</option><option value="7">7 Months - TZS 140,000</option><option value="8">8 Months - TZS 160,000</option><option value="9">9 Months - TZS 180,000</option><option value="10">10 Months - TZS 200,000</option><option value="11">11 Months - TZS 220,000</option><option value="12">12 Months - TZS 240,000</option>
 </select>
-<div class="status">
-Bank: CRDB BANK PLC
-Lipa Namba: 10055686
-Recipient: Garaji Joseph Masambu
-</div>
-<label>CRDB Transaction Reference</label>
-<input id="transactionReference" placeholder="Enter payment reference">
+<div class="status">Bank: CRDB BANK PLC<br>Lipa Namba: 10055686<br>Recipient: Garaji Joseph Masambu</div>
+<label for="transactionReference">CRDB Transaction Reference</label><input id="transactionReference" autocomplete="off" placeholder="Enter payment reference">
 <button id="paymentBtn">SUBMIT PAYMENT FOR VERIFICATION</button>
-<p class="small">Payment is manually checked by the administrator through CRDB. Submission does not mean payment has been approved.</p>
+<div id="paymentStatus" class="status">Sign in ili kuwasilisha ombi la malipo.</div>
+<p class="small">Ombi huhifadhiwa kama pending. Administrator atalihakiki. Uthibitishaji wa moja kwa moja wa CRDB unahitaji API rasmi ya CRDB na webhook credentials.</p>
 </section>
 
 <section>
 <h2>Security QR Verification - @speed_awr360°</h2>
-<label>Private QR / Access Code - @speed_awr360°</label>
-<input id="qrCode" placeholder="Enter your private access code">
+<label for="qrCode">Private QR / Access Code - @speed_awr360°</label><input id="qrCode" type="password" autocomplete="off" placeholder="Weka private access code yako">
 <button id="qrBtn">SUBMIT QR FOR VERIFICATION</button>
-<p class="small">The code is hashed before submission. The administrator must verify it before granting access. QR Code = @speed_awr360°</p>
+<div id="qrStatus" class="status">QR haijawasilishwa.</div>
+<p class="small">Code inahashiwa kwenye kivinjari na kuhakikiwa na backend. Administrator ndiye anayeidhinisha QR.</p>
 </section>
 
-<!-- MY SERVICE ACCESS - SASA INAFANYA KAZI 100% -->
 <section style="border:2px solid #e8c66a">
 <h2>🔓 My Service Access - @speed_awr360°</h2>
-<p class="small">Hapa ndipo unajua kama umeruhusiwa kupata huduma au umekatwa.</p>
-<label>Andika QR Code yako kuangalia Access yako</label>
-<input id="accessQr" placeholder="Andika QR Code yako hapa - mfano 83920">
-<button id="checkAccessBtn" class="bigBtn" style="background:#00ff88">✅ CHECK MY ACCESS SASA</button>
-<div id="accessStatus" class="status">Bonyeza CHECK MY ACCESS kuona kama una huduma.</div>
-<div id="accessDetail" class="status" style="margin-top:10px">Sign in au andika QR Code kuangalia access yako.</div>
+<p class="small">Angalia hali ya ruhusa yako kwa akaunti iliyoingia. QR siyo mbadala wa malipo.</p>
+<label for="accessQr">QR Code (hiari, kwa ukaguzi wa QR uliowasilishwa)</label><input id="accessQr" type="password" autocomplete="off" placeholder="Weka QR code ikiwa inahitajika">
+<button id="checkAccessBtn" class="bigBtn greenBtn">✅ CHECK MY ACCESS SASA</button>
+<div id="accessStatus" class="status">Bonyeza CHECK MY ACCESS.</div>
+<div id="accessDetail" class="status" style="margin-top:10px">Inasubiri taarifa za akaunti.</div>
 <div id="serviceContent" class="hidden" style="background:#003300;padding:15px;border-radius:10px;margin-top:10px">
-<h3 style="color:#00ff88">🎉 HUDUMA YAKO IPO HAPA</h3>
-<p>✅ Umethibitishwa na @speed_awr360°</p>
-<p>✅ Malipo yako yamekamilika</p>
-<p>✅ Unaweza kuendelea na huduma za GPMSCTECH</p>
-<p><b>Wasiliana na Mmiliki:</b> +255717314652 / +255744769060</p>
+<h3 style="color:#00ff88">🎉 HUDUMA YAKO IPO HAPA</h3><p>✅ Akaunti na usajili vimethibitishwa na seva.</p><p>✅ Ruhusa yako bado ni hai.</p><p>Wasiliana na Mmiliki: +255717314652 / +255744769060</p>
 </div>
 </section>
 
-<section>
-<h2>Contact GPMSCTECH</h2>
-<p>Email: georgemasambu64@gmail.com</p>
-<p>Email: gmasambu238@gmail.com</p>
-<p>Phone / WhatsApp: +255717314652</p>
-<p>Phone / WhatsApp: +255744769060</p>
-<p>Owner: Garaji Joseph Masambu</p>
-<p>Also known as: George Joseph Masambu</p>
+<section id="adminSection" class="hidden">
+<h2>Administrator Dashboard</h2><p class="small">Inaonekana kwa akaunti yenye custom claim ya admin pekee.</p>
+<div class="grid">
+<div class="card"><h3>Pending Payments</h3><div id="adminPayments">Inapakia...</div></div>
+<div class="card"><h3>Pending QR Requests</h3><div id="adminQrs">Inapakia...</div></div>
+</div>
+<button id="refreshAdminBtn">REFRESH ADMIN DATA</button>
+<div id="adminStatus" class="status">Admin dashboard.</div>
 </section>
 
-<div id="message" class="status">System ready. @speed_awr360° active.</div>
-
+<section><h2>Contact GPMSCTECH</h2>
+<p>Email: georgemasambu64@gmail.com</p><p>Email: gmasambu238@gmail.com</p>
+<p>Phone / WhatsApp: +255717314652</p><p>Phone / WhatsApp: +255744769060</p>
+<p>Owner: Garaji Joseph Masambu</p><p>Also known as: George Joseph Masambu</p>
+</section>
+<div id="message" class="status">System ready. @speed_awr360°</div>
 </main>
 
 <script type="module">
 import {initializeApp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
 import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,updateProfile} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
-import {getFirestore,doc,getDoc,setDoc,collection,addDoc,serverTimestamp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+import {getFirestore,doc,getDoc,setDoc,serverTimestamp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+import {getFunctions,httpsCallable} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-functions.js";
 
-const firebaseConfig = {
-apiKey: "AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",
-authDomain: "gpmsctech-18abb.firebaseapp.com",
-projectId: "gpmsctech-18abb",
-storageBucket: "gpmsctech-18abb.firebasestorage.app",
-messagingSenderId: "554624850081",
-appId: "1:554624850081:web:6cc5cbe084f83548ed78e0",
-measurementId: "G-Q00NCG4CBR"
-};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const $ = id => document.getElementById(id);
-let currentUser = null;
-let launchData = null;
-
-// ===== MFUMO MMOJA: @speed_awr360° = QR = NID/NIN = MMILIKI =====
-const OWNER_HASH = "a9f2c7e1b3d5f8a6c4e9b2d7a1f3c5e8";
-const OWNER_NAME = "Garaji Joseph Masambu";
-const OWNER_ALIAS = "George Joseph Masambu";
-const SYSTEM_ID = "@speed_awr360°";
-const START_TIME = new Date("2026-11-04T12:01:00").getTime();
-const END_TIME = new Date("2026-11-05T12:01:00").getTime();
-const paidCodes = ["83920","57184","90210","14675","63829"];
-const unpaidCodes = ["34796","11223","44556"];
-function verifyOwner(){ return OWNER_HASH.length > 10 && OWNER_NAME.length > 0; }
-
-// ===== LOGIC YA ACCESS - INAFANYA KAZI SASA =====
-function getAccessState(code){
-  let now = Date.now();
-  let isPaid = paidCodes.includes(code);
-  let isUnpaidKnown = unpaidCodes.includes(code);
-  if(isPaid){
-    return {type:"ACTIVE", title:"✅ UMELIPA - HUDUMA IMEFUNGULIWA", msg:"Karibu! Umeunganishwa na @speed_awr360°.\nMmiliki: "+OWNER_NAME+"\nHuduma yako iko ACTIVE. Endelea.", showService:true, cls:"access-active"};
-  }
-  if(now > END_TIME){
-    return {type:"BLOCKED", title:"❌ MUDA WA KULIPA UMESHAISHA - UMEKATWA", msg:"END TIME: 05 Nov 2026 12:01 PM umeshapita.\nHujalipa ndani ya masaa 24.\nHAUPATI HUDUMA MPAKA ULIPIE.\nLipa CRDB Lipa Namba 10055686 kisha SUBMIT PAYMENT.", showService:false, cls:"access-blocked"};
-  }
-  if(now >= START_TIME && now <= END_TIME){
-    let diff = END_TIME - now;
-    let h = Math.floor(diff/3600000); let m = Math.floor((diff%3600000)/60000); let s = Math.floor((diff%60000)/1000);
-    let timeLeft = h+"h : "+m+"m : "+s+"s";
-    if(isUnpaidKnown || code){
-      return {type:"GRACE", title:"⏰ UNA MASAA 24 YA KULIPA - "+timeLeft, msg:"Hujalipa bado. Una muda hadi 05 Nov 2026 12:01 PM.\nLipa sasa: CRDB Lipa Namba 10055686 - TZS 20,000\nUkishindwa kulipa kabla ya muda kuisha, huduma itakatwa.\nMfumo: @speed_awr360°", showService:false, cls:"access-grace"};
-    }
-    return {type:"GRACE", title:"⏰ PAYMENT WINDOW IPO WAZI - "+timeLeft, msg:"Andika QR Code yako kuangalia access yako.\nMuda wa kulipa unaisha 05 Nov 2026 12:01 PM.", showService:false, cls:"access-grace"};
-  }
-  if(now < START_TIME){
-    return {type:"WAITING", title:"⏳ START TIME BADO HAIJAFIKA", msg:"START TIME: 04 Nov 2026 12:01 PM\nSubiri mfumo uanze.", showService:false, cls:"access-grace"};
-  }
-  return {type:"GRACE", title:"⏰ UNA MASAA 24 YA KULIPA", msg:"Lipa ili upate huduma.", showService:false, cls:"access-grace"};
+const firebaseConfig={apiKey:"AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",authDomain:"gpmsctech-18abb.firebaseapp.com",projectId:"gpmsctech-18abb",storageBucket:"gpmsctech-18abb.firebasestorage.app",messagingSenderId:"554624850081",appId:"1:554624850081:web:6cc5cbe084f83548ed78e0",measurementId:"G-Q00NCG4CBR"};
+const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),functions=getFunctions(app,"africa-south1");
+const call=(name)=>httpsCallable(functions,name);
+const $=id=>document.getElementById(id);
+let currentUser=null,systemConfig=null,isAdmin=false,timerHandle=null;
+const notify=t=>$("message").textContent=t;
+const showResult=(id,t,cls="status")=>{$(id).textContent=t;$(id).className=cls;};
+const sha256=async value=>{const b=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,"0")).join("");};
+function fmt(ts){if(!ts)return "Haijawekwa";const d=ts.toDate?ts.toDate():new Date(ts);return d.toLocaleString("sw-TZ",{timeZone:"Africa/Dar_es_Salaam"});}
+function getDate(v){if(!v)return null;return v.toDate?v.toDate():new Date(v);}
+function renderWindow(){
+ const start=getDate(systemConfig?.paymentWindowStart),end=getDate(systemConfig?.paymentWindowEnd),now=new Date();
+ if(!start||!end){$("trialStatus").textContent="Payment window haijawekwa na administrator."; $("windowMsg").textContent="Wasiliana na administrator."; $("timer").textContent="--:--:--";$("windowHeader").textContent="Haijawekwa";return;}
+ $("windowHeader").textContent=fmt(start)+" hadi "+fmt(end);
+ let diff=end-now;
+ if(now<start){$("trialStatus").textContent="⏳ START TIME BADO";$("windowMsg").textContent="Dirisha linaanza: "+fmt(start);diff=start-now;}
+ else if(now<=end){$("trialStatus").textContent="⏰ PAYMENT WINDOW IPO WAZI";$("windowMsg").textContent="Lipa kabla ya: "+fmt(end);}
+ else{$("trialStatus").textContent="❌ PAYMENT WINDOW IMEFUNGWA";$("windowMsg").textContent="Muda wa kulipa umeisha. Akaunti isiyo na subscription haiwezi kupata huduma.";}
+ if(diff<0)diff=0;let s=Math.floor(diff/1000),h=Math.floor(s/3600),m=Math.floor(s%3600/60),sec=s%60;
+ $("timer").textContent=[h,m,sec].map(x=>String(x).padStart(2,"0")).join(":");
 }
-
-function renderAccess(code){
-  let st = getAccessState(code || "");
-  let box = $("accessStatus");
-  box.textContent = st.title + "\n\n" + st.msg;
-  box.className = "status " + st.cls;
-  $("serviceContent").classList.toggle("hidden", !st.showService);
-  $("accessDetail").textContent = "QR: " + (code || "Hakuna") + " | Mfumo: " + SYSTEM_ID + " | Mmiliki: " + OWNER_NAME + " | START: 04 Nov 2026 12:01 PM | END: 05 Nov 2026 12:01 PM";
-  return st;
+async function loadSystem(){try{const s=await getDoc(doc(db,"system","config"));systemConfig=s.exists()?s.data():null;renderWindow();if(timerHandle)clearInterval(timerHandle);timerHandle=setInterval(renderWindow,1000);}catch(e){showResult("trialStatus","Imeshindwa kupakia mipangilio ya mfumo: "+e.message);}}
+async function refreshAccount(){
+ if(!currentUser){$("accountStatus").textContent="Not signed in.";return;}
+ const token=await currentUser.getIdTokenResult(true);isAdmin=token.claims.admin===true;
+ const snap=await getDoc(doc(db,"users",currentUser.uid));const d=snap.exists()?snap.data():{};
+ const expiry=getDate(d.subscriptionExpiresAt);
+ $("accountStatus").textContent=`Email: ${currentUser.email}\nAccount: ${d.accountStatus||"pending"}\nQR: ${d.qrVerified===true?"Verified":"Pending"}\nSubscription: ${expiry&&expiry>Date.now()?"ACTIVE":"Not active"}\nExpiry: ${fmt(d.subscriptionExpiresAt)}\nRole: ${isAdmin?"Administrator":"Customer"}`;
+ $("logoutBtn").classList.toggle("hidden",!currentUser);
+ $("adminSection").classList.toggle("hidden",!isAdmin);
+ if(isAdmin)await loadAdmin();
 }
-
-// Quick QR Check
-$("quickQrBtn").onclick=()=>{
-  let c = $("quickQr").value.trim();
-  let ok = $("quickOk"); let no = $("quickNo");
-  ok.style.display="none"; no.style.display="none";
-  if(!verifyOwner()){ alert("Mfumo haujamtambua mmiliki"); return; }
-  if(!c){ alert("Andika QR Code kwanza"); return; }
-  $("accessQr").value = c;
-  let st = renderAccess(c);
-  if(st.type==="ACTIVE"){
-    ok.style.display="block";
-    ok.innerHTML = "✅ UMELIPA - KARIBU!<br><b>Umeunganishwa na @speed_awr360°</b><br>Endelea na huduma kama kawaida.<br>Mmiliki: "+OWNER_NAME;
-  } else {
-    no.style.display="block";
-    no.innerHTML = st.title + "<br>" + st.msg.replace(/\n/g,"<br>");
-  }
-};
-
-// CHECK MY ACCESS BUTTON - HII NDIO ILIKUWA HAIFANYI KAZI, SASA INAFANYA
-$("checkAccessBtn").onclick=()=>{
-  let c = $("accessQr").value.trim();
-  if(!c && $("quickQr").value.trim()) c = $("quickQr").value.trim();
-  if(!c){
-    $("accessStatus").textContent = "⚠️ Andika QR Code yako kwanza juu ya button, kisha bonyeza CHECK MY ACCESS.";
-    $("accessStatus").className = "status access-grace";
-    return;
-  }
-  let st = renderAccess(c);
-  notify("Access checked: " + st.title);
-  if(st.showService) window.scrollTo({top: $("serviceContent").offsetTop-20, behavior:"smooth"});
-};
-
-function notify(text){ $("message").textContent = text; }
-async function createUserProfile(user,name=""){
-const ref=doc(db,"users",user.uid);
-const snap=await getDoc(ref);
-if(!snap.exists()){
-await setDoc(ref,{email:user.email || "",displayName:name || user.displayName || "",accountStatus:"pending",createdAt:serverTimestamp()});
+$("registerBtn").onclick=async()=>{try{const n=$("fullName").value.trim(),e=$("email").value.trim(),p=$("password").value;if(!n||!e||p.length<6)throw Error("Jaza jina, email na password yenye angalau herufi 6.");const r=await createUserWithEmailAndPassword(auth,e,p);await updateProfile(r.user,{displayName:n});await setDoc(doc(db,"users",r.user.uid),{uid:r.user.uid,email:e,displayName:n,accountStatus:"pending",qrVerified:false,createdAt:serverTimestamp()});notify("Akaunti imefunguliwa. Subiri uthibitishaji unaohitajika.");await refreshAccount();}catch(e){notify(e.message);}};
+$("loginBtn").onclick=async()=>{try{await signInWithEmailAndPassword(auth,$("email").value.trim(),$("password").value);notify("Umeingia kikamilifu.");}catch(e){notify(e.message);}};
+$("logoutBtn").onclick=async()=>{await signOut(auth);notify("Umetoka kwenye akaunti.");};
+$("paymentBtn").onclick=async()=>{try{if(!currentUser)throw Error("Ingia kwanza.");const months=Number($("months").value),ref=$("transactionReference").value.trim();if(!Number.isInteger(months)||months<1||months>12)throw Error("Muda wa usajili si sahihi.");if(ref.length<5||ref.length>100)throw Error("Weka transaction reference sahihi.");const r=await call("submitPayment")({months,transactionReference:ref});showResult("paymentStatus","Ombi limepokelewa. Namba: "+r.data.paymentId+"\nHali: PENDING. Litasubiri uthibitishaji wa CRDB/administrator.");$("transactionReference").value="";}catch(e){showResult("paymentStatus",e.message);}};
+$("qrBtn").onclick=async()=>{try{if(!currentUser)throw Error("Ingia kwanza.");const code=$("qrCode").value.trim();if(code.length<12||code.length>256)throw Error("QR/access code iwe na herufi 12 hadi 256.");const hash=await sha256(code);const r=await call("submitQrRequest")({qrHash:hash});$("qrCode").value="";showResult("qrStatus","QR request imewasilishwa. Hali: PENDING. Request: "+r.data.requestId);}catch(e){showResult("qrStatus",e.message);}};
+async function checkAccess(){
+ try{if(!currentUser)throw Error("Ingia kwenye akaunti kwanza.");const r=await call("checkMyAccess")();const d=r.data;
+ $("accessStatus").textContent=d.message+"\nHali: "+d.status;$("accessStatus").className="status "+(d.allowed?"access-active":d.status==="GRACE"?"access-grace":"access-blocked");
+ $("serviceContent").classList.toggle("hidden",!d.allowed);
+ $("accessDetail").textContent=`Account: ${d.accountStatus||"pending"}\nQR: ${d.qrVerified?"Verified":"Pending"}\nSubscription expiry: ${d.expiresAt||"Haijaidhinishwa"}\nSystem: @speed_awr360°`;
+ }catch(e){showResult("accessStatus",e.message,"status access-blocked");$("serviceContent").classList.add("hidden");}
 }
+$("checkAccessBtn").onclick=checkAccess;
+$("quickQrBtn").onclick=async()=>{try{if(!currentUser)throw Error("Ingia kwanza ili QR ihusishwe na akaunti yako.");const code=$("quickQr").value.trim();if(code.length<12)throw Error("QR code si sahihi au ni fupi.");const hash=await sha256(code);const r=await call("checkQrStatus")({qrHash:hash});showResult("quickResult",r.data.message,r.data.verified?"status okBox":"status noBox");}catch(e){showResult("quickResult",e.message,"status noBox");}};
+async function loadAdmin(){
+ try{const r=await call("adminListPending")();$("adminPayments").innerHTML="";$("adminQrs").innerHTML="";
+ for(const p of r.data.payments){const el=document.createElement("div");el.className="card";el.textContent=`${p.email} | TZS ${p.amount} | ${p.months} mwezi | Ref: ${p.transactionReference}`;const b=document.createElement("button");b.textContent="APPROVE PAYMENT";b.onclick=()=>review("reviewPayment",{paymentId:p.id,decision:"approve"});const x=document.createElement("button");x.textContent="REJECT";x.className="dangerBtn";x.onclick=()=>review("reviewPayment",{paymentId:p.id,decision:"reject"});el.append(b,x);$("adminPayments").append(el);}
+ for(const q of r.data.qrRequests){const el=document.createElement("div");el.className="card";el.textContent=`${q.email} | QR request: ${q.id}`;const b=document.createElement("button");b.textContent="APPROVE QR";b.onclick=()=>review("reviewQrRequest",{requestId:q.id,decision:"approve"});const x=document.createElement("button");x.textContent="REJECT";x.className="dangerBtn";x.onclick=()=>review("reviewQrRequest",{requestId:q.id,decision:"reject"});el.append(b,x);$("adminQrs").append(el);}
+ if(!r.data.payments.length)$("adminPayments").textContent="Hakuna malipo yanayosubiri.";
+ if(!r.data.qrRequests.length)$("adminQrs").textContent="Hakuna QR requests zinazosubiri.";
+ }catch(e){showResult("adminStatus",e.message);}
 }
-async function sha256(value){
-const result=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));
-return [...new Uint8Array(result)].map(b=>b.toString(16).padStart(2,"0")).join("");
-}
-$("registerBtn").onclick=async()=>{
-try{
-const name=$("fullName").value.trim();
-const email=$("email").value.trim();
-const password=$("password").value;
-if(!name || !email || password.length<6){ throw Error("Enter your name, email and password of at least 6 characters."); }
-const result=await createUserWithEmailAndPassword(auth,email,password);
-await updateProfile(result.user,{displayName:name});
-await createUserProfile(result.user,name);
-notify("Account successfully created.");
-await refreshAccount(result.user);
-}catch(error){ notify(error.message); }
-};
-$("loginBtn").onclick=async()=>{
-try{
-const result=await signInWithEmailAndPassword(auth,$("email").value.trim(),$("password").value);
-await createUserProfile(result.user);
-await refreshAccount(result.user);
-notify("Successfully signed in.");
-}catch(error){ notify(error.message); }
-};
-$("logoutBtn").onclick=async()=>{ await signOut(auth); notify("You have signed out."); };
-$("paymentBtn").onclick=async()=>{
-try{
-if(!currentUser) throw Error("Please sign in first.");
-const months=Number($("months").value);
-const reference=$("transactionReference").value.trim();
-if(reference.length<5) throw Error("Enter a valid transaction reference.");
-await addDoc(collection(db,"payments"),{uid:currentUser.uid,email:currentUser.email || "",months:months,amount:months*20000,currency:"TZS",paymentMethod:"CRDB_LIPA_NAMBA",lipaNamba:"10055686",transactionReference:reference,status:"pending",createdAt:serverTimestamp()});
-$("transactionReference").value="";
-notify("Payment request received. Waiting for CRDB verification.");
-}catch(error){ notify(error.message); }
-};
-$("qrBtn").onclick=async()=>{
-try{
-if(!currentUser) throw Error("Please sign in first.");
-const code=$("qrCode").value.trim();
-if(code.length<12) throw Error("Enter your private access code.");
-const qrHash=await sha256(code);
-await addDoc(collection(db,"qrRequests"),{uid:currentUser.uid,qrHash:qrHash,status:"pending",createdAt:serverTimestamp()});
-$("qrCode").value="";
-notify("QR request submitted for administrator verification. @speed_awr360°");
-}catch(error){ notify(error.message); }
-};
-function updateTimer(){
-let now = Date.now();
-let diff = END_TIME - now;
-if(now < START_TIME){
-  $("trialStatus").textContent="⏳ START TIME BADO - Inaanza 04 Nov 2026 12:01 PM";
-  $("windowMsg").textContent="Subiri START TIME ifike.";
-} else if(now >= START_TIME && now <= END_TIME){
-  $("trialStatus").textContent="⏰ PAYMENT WINDOW IPO WAZI - Lipa Kabla Ya END TIME";
-  $("windowMsg").textContent="START: 04 Nov 2026 12:01 PM | END: 05 Nov 2026 12:01 PM | Hawajalipa wana masaa 24 tu.";
-} else {
-  $("trialStatus").textContent="❌ PAYMENT WINDOW IMESHAFUNGWA - END TIME 05 Nov 2026 12:01 PM";
-  $("windowMsg").textContent="Waliolipa wanaendelea na huduma. Hawajalipa HAWAAPATI HUDUMA mpaka walipe.";
-}
-if(launchData && launchData.status==="active" && launchData.trialEndsAt){
-  let end = launchData.trialEndsAt.toDate().getTime();
-  diff = end - now;
-}
-if(diff <= 0){ $("timer").textContent="00:00:00"; return; }
-const h=Math.floor(diff/3600000);
-const m=Math.floor((diff%3600000)/60000);
-const s=Math.floor((diff%60000)/1000);
-$("timer").textContent=[h,m,s].map(x=>String(x).padStart(2,"0")).join(":");
-}
-async function loadLaunch(){
-try{
-const snap=await getDoc(doc(db,"system","launch"));
-launchData=snap.exists()?snap.data():null;
-updateTimer();
-setInterval(updateTimer,1000);
-}catch(error){ $("trialStatus").textContent="Payment Window: START 04 Nov 2026 12:01 PM - END 05 Nov 2026 12:01 PM"; updateTimer(); setInterval(updateTimer,1000); }
-}
-async function refreshAccount(user){
-if(!user){ $("accountStatus").textContent="Not signed in."; return; }
-const snap=await getDoc(doc(db,"users",user.uid));
-if(!snap.exists()){ $("accountStatus").textContent="Profile not found."; return; }
-const data=snap.data();
-const expiry=data.subscriptionExpiresAt?.toDate?data.subscriptionExpiresAt.toDate():null;
-const paidActive=expiry && expiry.getTime()>Date.now() && data.qrVerified===true && data.accountStatus==="active";
-$("accountStatus").textContent="Email: "+user.email+"\nAccount: "+(data.accountStatus||"pending")+"\nQR: "+(data.qrVerified===true?"Verified":"Pending")+"\nExpiry: "+(expiry?expiry.toLocaleString():"Not approved");
-if(paidActive){
-  renderAccess("83920");
-} else if(user.email){
-  // Auto-check access kwa user aliye-login
-  let curQr = $("accessQr").value.trim() || $("quickQr").value.trim();
-  if(curQr) renderAccess(curQr);
-}
-}
-onAuthStateChanged(auth,async user=>{
-currentUser=user;
-$("logoutBtn").classList.toggle("hidden",!user);
-if(user){ try{ await refreshAccount(user); }catch(error){ notify(error.message); } }else{ $("accountStatus").textContent="Not signed in."; }
-});
-await loadLaunch();
-// Auto-render initial access state
-renderAccess("");
+async function review(name,data){try{await call(name)(data);showResult("adminStatus","Uamuzi umehifadhiwa.");await loadAdmin();await refreshAccount();}catch(e){showResult("adminStatus",e.message);}}
+$("refreshAdminBtn").onclick=loadAdmin;
+onAuthStateChanged(auth,async user=>{currentUser=user;isAdmin=false;if(!user){$("accountStatus").textContent="Not signed in.";$("logoutBtn").classList.add("hidden");$("adminSection").classList.add("hidden");$("serviceContent").classList.add("hidden");return;}try{await refreshAccount();}catch(e){notify(e.message);}});
+await loadSystem();
 </script>
-</body>
-</html>
+</body></html>
