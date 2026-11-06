@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +12,10 @@ body{margin:0;background:var(--navy);color:var(--white);font-family:Arial,sans-s
 header{text-align:center;padding:25px 12px;background:#0b2850;border-bottom:2px solid var(--gold)}
 header h1{color:var(--gold);margin:5px}
 header p{margin:8px 0}
+.lang-bar{background:#FFD700;padding:10px;text-align:center;position:sticky;top:0;z-index:999;color:#000}
+.lang-bar select{padding:8px;border-radius:8px;font-weight:bold}
+.lang-sw{display:block;color:#d7e8ff;font-size:0.92em;margin-top:2px}
+.lang-en{display:block}
 .container{width:min(950px,94%);margin:20px auto}
 .card{background:var(--panel);padding:20px;margin:16px 0;border:1px solid #31547d;border-radius:12px}
 h2,h3{color:var(--gold)}
@@ -24,297 +28,221 @@ button:disabled{opacity:.5;cursor:not-allowed}
 .timebox{background:#071b38;border:1px solid var(--gold);border-radius:8px;padding:12px;min-width:75px;text-align:center}
 .timebox strong{display:block;font-size:25px;color:var(--green)}
 .status{padding:12px;background:#071b38;border-radius:7px;text-align:center}
-.success{color:var(--green)}
-.error{color:var(--red)}
-.small{font-size:13px;color:#c9d8e9}
-.hidden{display:none!important}
+.success{color:var(--green)}.error{color:var(--red)}.small{font-size:13px;color:#c9d8e9}.hidden{display:none!important}
 footer{text-align:center;padding:25px 10px;color:#d7c58d;border-top:1px solid #31547d}
 a{color:var(--gold)}
-.greenBtn{background:var(--green)!important}
-.dangerBtn{background:var(--red)!important;color:#fff!important}
 </style>
 </head>
 <body>
+
+<!-- LANGUAGE SELECTOR -->
+<div class="lang-bar">
+  <b>🌍 Select Language / Chagua Lugha:</b><br>
+  <select id="langSelect" onchange="changeLang(this.value)">
+    <option value="both">English + Kiswahili (Both / Mbili)</option>
+    <option value="en">English Only</option>
+    <option value="sw">Kiswahili Tu</option>
+  </select>
+  <div id="google_translate_element" style="margin-top:6px"></div>
+  <div style="font-size:12px;margin-top:4px">For your country language, use Google Translate above / Kwa lugha ya nchi yako, tumia Google Translate hapo juu</div>
+</div>
+
 <header>
-<h1>GPMSCTECH</h1>
-<h2>NEW BASE TECHNOLOGY</h2>
-<p>System ID: @speed_awr360°</p>
-<p>Global Positive Mind Set Center Technology</p>
-<p>National & International Digital Technology Services</p>
+  <h1>GPMSCTECH</h1>
+  <h2><span class="lang-en">NEW BASE TECHNOLOGY</span><span class="lang-sw">TEKNOLOJIA MPYA YA MSINGI</span></h2>
+  <p>System ID: @speed_awr360°</p>
+  <p><span class="lang-en">Global Positive Mind Set Center Technology</span><span class="lang-sw">Teknolojia ya Kituo cha Kimataifa cha Mtazamo Chanya</span></p>
+  <p><span class="lang-en">National & International Digital Technology Services</span><span class="lang-sw">Huduma za Teknolojia ya Kidijitali za Kitaifa na Kimataifa</span></p>
 </header>
+
 <main class="container">
+
 <section class="card">
-<h2>MFUMO WA MUDA WA HUDUMA</h2>
-<p>Huduma ya awali inapatikana hadi tarehe:</p>
-<h3>10 NOVEMBER 2026 — 23:59:59</h3>
-<div class="timer">
-<div class="timebox"><strong id="days">--</strong>Siku</div>
-<div class="timebox"><strong id="hours">--</strong>Saa</div>
-<div class="timebox"><strong id="minutes">--</strong>Dakika</div>
-<div class="timebox"><strong id="seconds">--</strong>Sekunde</div>
-</div>
-<div class="status" id="timerStatus">Inahesabu muda...</div>
-<p class="small">Timer hii hutumia saa ya kifaa chako. Uthibitishaji wa mwisho wa muda wa huduma unapaswa kufanywa pia na Firebase backend.</p>
+  <h2><span class="lang-en">SERVICE TIME SYSTEM</span><span class="lang-sw">MFUMO WA MUDA WA HUDUMA</span></h2>
+  <p><span class="lang-en">Initial service is available until:</span><span class="lang-sw">Huduma ya awali inapatikana hadi tarehe:</span></p>
+  <h3>10 NOVEMBER 2026 — 23:59:59</h3>
+  <div class="timer">
+    <div class="timebox"><strong id="days">--</strong><span class="lang-en">Days</span><span class="lang-sw">Siku</span></div>
+    <div class="timebox"><strong id="hours">--</strong><span class="lang-en">Hours</span><span class="lang-sw">Saa</span></div>
+    <div class="timebox"><strong id="minutes">--</strong><span class="lang-en">Minutes</span><span class="lang-sw">Dakika</span></div>
+    <div class="timebox"><strong id="seconds">--</strong><span class="lang-en">Seconds</span><span class="lang-sw">Sekunde</span></div>
+  </div>
+  <div class="status" id="timerStatus">Counting...</div>
+  <p class="small"><span class="lang-en">This timer uses your device time. Final verification must also be done by Firebase backend.</span><span class="lang-sw">Timer hii hutumia saa ya kifaa chako. Uthibitishaji wa mwisho wa muda wa huduma unapaswa kufanywa pia na Firebase backend.</span></p>
 </section>
+
 <section class="card">
-<h2>USAJILI WA MTEJA</h2>
-<label>Jina kamili</label>
-<input id="fullName" type="text" placeholder="Ingiza jina lako">
-<label>Barua pepe</label>
-<input id="registerEmail" type="email" placeholder="Email">
-<label>Nenosiri</label>
-<input id="registerPassword" type="password" placeholder="Angalau herufi 6">
-<button id="registerBtn" onclick="registerUser()">JISAJILI</button>
-<p id="registerMessage"></p>
+  <h2><span class="lang-en">CUSTOMER REGISTRATION</span><span class="lang-sw">USAJILI WA MTEJA</span></h2>
+  <label><span class="lang-en">Full Name</span><span class="lang-sw">Jina kamili</span></label>
+  <input id="fullName" type="text" placeholder="Enter your name / Ingiza jina lako">
+  <label><span class="lang-en">Email</span><span class="lang-sw">Barua pepe</span></label>
+  <input id="registerEmail" type="email" placeholder="Email">
+  <label><span class="lang-en">Password</span><span class="lang-sw">Nenosiri</span></label>
+  <input id="registerPassword" type="password" placeholder="At least 6 characters / Angalau herufi 6">
+  <button onclick="registerUser()"><span class="lang-en">REGISTER</span><span class="lang-sw">JISAJILI</span></button>
+  <p id="registerMessage"></p>
 </section>
+
 <section class="card">
-<h2>INGIA KWENYE MFUMO</h2>
-<label>Barua pepe</label>
-<input id="loginEmail" type="email" placeholder="Email">
-<label>Nenosiri</label>
-<input id="loginPassword" type="password" placeholder="Nenosiri">
-<button id="loginBtn" onclick="loginUser()">INGIA</button>
-<button onclick="logoutUser()">TOKA KWENYE AKAUNTI</button>
-<p id="loginMessage"></p>
-<div id="accountInfo" class="status">Hujaingia kwenye akaunti.</div>
+  <h2><span class="lang-en">LOGIN TO SYSTEM</span><span class="lang-sw">INGIA KWENYE MFUMO</span></h2>
+  <label><span class="lang-en">Email</span><span class="lang-sw">Barua pepe</span></label>
+  <input id="loginEmail" type="email" placeholder="Email">
+  <label><span class="lang-en">Password</span><span class="lang-sw">Nenosiri</span></label>
+  <input id="loginPassword" type="password" placeholder="Password / Nenosiri">
+  <button onclick="loginUser()"><span class="lang-en">LOGIN</span><span class="lang-sw">INGIA</span></button>
+  <button onclick="logoutUser()"><span class="lang-en">LOGOUT</span><span class="lang-sw">TOKA KWENYE AKAUNTI</span></button>
+  <p id="loginMessage"></p>
+  <div id="accountInfo" class="status">Not logged in / Hujaingia kwenye akaunti.</div>
 </section>
+
 <section class="card">
-<h2>MFUMO WA MALIPO</h2>
-<p>Ada: <strong>TZS 20,000 kwa mwezi</strong></p>
-<label>Chagua muda wa usajili</label>
-<select id="months">
-<option value="1">Mwezi 1 — TZS 20,000</option>
-<option value="2">Miezi 2 — TZS 40,000</option>
-<option value="3">Miezi 3 — TZS 60,000</option>
-<option value="4">Miezi 4 — TZS 80,000</option>
-<option value="5">Miezi 5 — TZS 100,000</option>
-<option value="6">Miezi 6 — TZS 120,000</option>
-<option value="7">Miezi 7 — TZS 140,000</option>
-<option value="8">Miezi 8 — TZS 160,000</option>
-<option value="9">Miezi 9 — TZS 180,000</option>
-<option value="10">Miezi 10 — TZS 200,000</option>
-<option value="11">Miezi 11 — TZS 220,000</option>
-<option value="12">Miezi 12 — TZS 240,000</option>
-</select>
-<label>Namba ya kumbukumbu ya muamala</label>
-<input id="transactionReference" type="text" placeholder="Weka transaction reference">
-<div class="status"><strong>CRDB BANK PLC</strong><br>Lipa Namba: 10055686<br>Jina la mpokeaji: Garaji Joseph Masambu</div>
-<button onclick="submitPayment()">WASILISHA TAARIFA ZA MALIPO</button>
-<p id="paymentMessage"></p>
-<p class="small">Malipo yatathibitishwa na msimamizi. Kuwasilisha kumbukumbu hakumaanishi kuwa malipo tayari yamekubaliwa.</p>
+  <h2><span class="lang-en">PAYMENT SYSTEM</span><span class="lang-sw">MFUMO WA MALIPO</span></h2>
+  <p><span class="lang-en">Fee:</span><span class="lang-sw">Ada:</span> <strong>TZS 20,000 <span class="lang-en">per month</span><span class="lang-sw">kwa mwezi</span></strong></p>
+  <label><span class="lang-en">Choose registration period</span><span class="lang-sw">Chagua muda wa usajili</span></label>
+  <select id="months">
+    <option value="1">1 Month / Mwezi 1 — TZS 20,000</option>
+    <option value="2">2 Months / Miezi 2 — TZS 40,000</option>
+    <option value="3">3 Months / Miezi 3 — TZS 60,000</option>
+    <option value="4">4 Months / Miezi 4 — TZS 80,000</option>
+    <option value="5">5 Months / Miezi 5 — TZS 100,000</option>
+    <option value="6">6 Months / Miezi 6 — TZS 120,000</option>
+    <option value="7">7 Months / Miezi 7 — TZS 140,000</option>
+    <option value="8">8 Months / Miezi 8 — TZS 160,000</option>
+    <option value="9">9 Months / Miezi 9 — TZS 180,000</option>
+    <option value="10">10 Months / Miezi 10 — TZS 200,000</option>
+    <option value="11">11 Months / Miezi 11 — TZS 220,000</option>
+    <option value="12">12 Months / Miezi 12 — TZS 240,000</option>
+  </select>
+  <label><span class="lang-en">Transaction Reference Number</span><span class="lang-sw">Namba ya kumbukumbu ya muamala</span></label>
+  <input id="transactionReference" type="text" placeholder="Enter transaction reference / Weka transaction reference">
+  <div class="status"><strong>CRDB BANK PLC</strong><br><span class="lang-en">Lipa Number:</span><span class="lang-sw">Lipa Namba:</span> 10055686<br><span class="lang-en">Receiver Name:</span><span class="lang-sw">Jina la mpokeaji:</span> Garaji Joseph Masambu</div>
+  <button onclick="submitPayment()"><span class="lang-en">SUBMIT PAYMENT DETAILS</span><span class="lang-sw">WASILISHA TAARIFA ZA MALIPO</span></button>
+  <p id="paymentMessage"></p>
+  <p class="small"><span class="lang-en">Payment will be verified by admin. Submitting a reference does not mean payment is already approved.</span><span class="lang-sw">Malipo yatathibitishwa na msimamizi. Kuwasilisha kumbukumbu hakumaanishi kuwa malipo tayari yamekubaliwa.</span></p>
 </section>
+
 <section class="card">
-<h2>QR SECURITY VERIFICATION</h2>
-<label>Ingiza QR Security Code</label>
-<input id="qrCode" type="password" placeholder="Ingiza code yako">
-<button onclick="submitQrRequest()">WASILISHA OMBI LA QR</button>
-<p id="qrMessage"></p>
+  <h2>QR SECURITY VERIFICATION</h2>
+  <label><span class="lang-en">Enter QR Security Code</span><span class="lang-sw">Ingiza QR Security Code</span></label>
+  <input id="qrCode" type="password" placeholder="Enter your code / Ingiza code yako">
+  <button onclick="submitQrRequest()"><span class="lang-en">SUBMIT QR REQUEST</span><span class="lang-sw">WASILISHA OMBI LA QR</span></button>
+  <p id="qrMessage"></p>
 </section>
+
 <section class="card">
-<h2>HALI YA HUDUMA YANGU</h2>
-<button onclick="checkMyAccess()">ANGALIA HALI YA HUDUMA</button>
-<div id="accessResult" class="status">Hakuna taarifa iliyopakiwa.</div>
+  <h2><span class="lang-en">MY SERVICE STATUS</span><span class="lang-sw">HALI YA HUDUMA YANGU</span></h2>
+  <button onclick="checkMyAccess()"><span class="lang-en">CHECK MY SERVICE STATUS</span><span class="lang-sw">ANGALIA HALI YA HUDUMA</span></button>
+  <div id="accessResult" class="status"><span class="lang-en">No information loaded.</span><span class="lang-sw">Hakuna taarifa iliyopakiwa.</span></div>
 </section>
+
 <section class="card hidden" id="adminSection">
-<h2>ADMIN DASHBOARD</h2>
-<p>Sehemu hii inaonekana tu kwa akaunti yenye ruhusa ya Admin iliyothibitishwa na Firebase.</p>
-<div style="border:2px solid #e8c66a;padding:14px;border-radius:10px;margin:14px 0;background:#071b38">
-<h3>🔐 ADMIN TIMER CONTROL - @speed_awr360°</h3>
-<p class="small">Timer IMESIMAMISHWA kwa sasa. Haitapungua mpaka ubonyeze RUHUSU. Bonyeza Jumatatu ukiwa tayari.</p>
-<button onclick="enableTimer()" class="greenBtn">▶️ ADMIN: RUHUSU TIMER IANZE (JUMATATU)</button>
-<button onclick="disableTimer()" class="dangerBtn">⏸️ ADMIN: SIMAMISHA TIMER</button>
-<p id="timerAdminStatus" class="status">Hali ya timer: Inapakiwa...</p>
-</div>
-<button onclick="loadAdmin()">PAKIA MAOMBI YANAYOSUBIRI</button>
-<div id="adminResults"></div>
+  <h2>ADMIN DASHBOARD</h2>
+  <p><span class="lang-en">This section is visible only to Admin account verified by Firebase.</span><span class="lang-sw">Sehemu hii inaonekana tu kwa akaunti yenye ruhusa ya Admin iliyothibitishwa na Firebase.</span></p>
+  <button onclick="loadAdmin()"><span class="lang-en">LOAD PENDING REQUESTS</span><span class="lang-sw">PAKIA MAOMBI YANAYOSUBIRI</span></button>
+  <div id="adminResults"></div>
 </section>
+
 <section class="card">
-<h2>MAWASILIANO</h2>
-<p>Email: georgemasambu64@gmail.com</p>
-<p>Email: gmasambu238@gmail.com</p>
-<p>WhatsApp: +255717314652</p>
-<p>WhatsApp: +255744769060</p>
+  <h2><span class="lang-en">CONTACTS</span><span class="lang-sw">MAWASILIANO</span></h2>
+  <p>Email: georgemasambu64@gmail.com</p>
+  <p>Email: gmasambu238@gmail.com</p>
+  <p>WhatsApp: +255717314652</p>
+  <p>WhatsApp: +255744769060</p>
 </section>
 </main>
+
 <footer>
-<p>GPMSCTECH NEW BASE TECHNOLOGY</p>
-<p>Founder & CEO: Garaji Joseph Masambu</p>
-<p>Also known as George Joseph Masambu</p>
-<p>Based in Mwanza, Tanzania, Serving the World.</p>
+  <p>GPMSCTECH NEW BASE TECHNOLOGY</p>
+  <p><span class="lang-en">Founder & CEO:</span><span class="lang-sw">Mwanzilishi & Mkurugenzi:</span> Garaji Joseph Masambu</p>
+  <p><span class="lang-en">Also known as</span><span class="lang-sw">Pia anajulikana kama</span> George Joseph Masambu</p>
+  <p><span class="lang-en">Based in Mwanza, Tanzania, Serving the World.</span><span class="lang-sw">Anapatikana Mwanza, Tanzania, Anahudumia Dunia.</span></p>
 </footer>
+
+<script>
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,sw,fr,es,ar,pt,de,zh-CN,hi,am,so,yo,ig,ha,zu,ru',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}
+function changeLang(val){
+  document.querySelectorAll('.lang-en').forEach(e=>e.style.display=(val==='sw'?'none':'block'));
+  document.querySelectorAll('.lang-sw').forEach(e=>e.style.display=(val==='en'?'none':'block'));
+  localStorage.setItem('gpmsc_lang',val);
+}
+let savedLang=localStorage.getItem('gpmsc_lang')||'both';
+document.getElementById('langSelect').value=savedLang; changeLang(savedLang);
+function msg(en,sw){ let l=localStorage.getItem('gpmsc_lang')||'both'; if(l==='en') return en; if(l==='sw') return sw; return en+' / '+sw; }
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 <script type="module">
 import {initializeApp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
 import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, getIdTokenResult} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
 import {getFirestore, doc, setDoc, getDoc, serverTimestamp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
 import {getFunctions, httpsCallable} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-functions.js";
-const firebaseConfig = {apiKey: "AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",authDomain: "gpmsctech-18abb.firebaseapp.com",projectId: "gpmsctech-18abb",storageBucket: "gpmsctech-18abb.firebasestorage.app",messagingSenderId: "554624850081",appId: "1:554624850081:web:6cc5cbe084f83548ed78e0",measurementId: "G-Q00NCG4CBR"};
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-const functions = getFunctions(app,"africa-south1");
-const callFunction = name => httpsCallable(functions,name);
-const DEADLINE = new Date("2026-11-10T23:59:59+03:00").getTime();
-const START_TIME = new Date("2026-11-09T08:00:00+03:00").getTime();
-let timerEnabled = false;
-async function loadTimerSetting(){
-  try{
-    const snap = await getDoc(doc(db,"system","config"));
-    if(snap.exists()){
-      const d = snap.data();
-      timerEnabled = d.timerEnabled === true;
-    } else { timerEnabled = false; }
-  }catch(e){ timerEnabled = false; }
-  updateTimer();
-  const el = document.getElementById("timerAdminStatus");
-  if(el) el.textContent = "Hali ya timer: " + (timerEnabled ? "INAENDELEA - INAPUNGUZA" : "IMESIMAMISHWA - HAIPUNGUI");
+
+const firebaseConfig={apiKey:"AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",authDomain:"gpmsctech-18abb.firebaseapp.com",projectId:"gpmsctech-18abb",storageBucket:"gpmsctech-18abb.firebasestorage.app",messagingSenderId:"554624850081",appId:"1:554624850081:web:6cc5cbe084f83548ed78e0",measurementId:"G-Q00NCG4CBR"};
+const app=initializeApp(firebaseConfig);
+const auth=getAuth(app); const db=getFirestore(app); const functions=getFunctions(app,"africa-south1");
+const callFunction=name=>httpsCallable(functions,name);
+
+const DEADLINE=new Date("2026-11-10T23:59:59+03:00").getTime();
+let timerEnabled=true;
+async function loadTimerConfig(){
+  try{ const snap=await getDoc(doc(db,"system","config")); if(snap.exists() && snap.data().timerEnabled===false){ timerEnabled=false; document.getElementById("timerStatus").innerHTML="⏸️ TIMER PAUSED / TIMER IMESIMAMISHWA - WAIT FOR ADMIN / SUBIRI ADMIN ARUHUSU. It will not decrease until Admin allows / Haitapungua mpaka Admin abonyeze RUHUSU TIMER."; } }catch(e){}
 }
+loadTimerConfig();
 function updateTimer(){
-  if(!timerEnabled){
-    document.getElementById("days").textContent="01";
-    document.getElementById("hours").textContent="15";
-    document.getElementById("minutes").textContent="59";
-    document.getElementById("seconds").textContent="59";
-    document.getElementById("timerStatus").innerHTML = '<span style="color:#e8c66a">⏸️ TIMER IMESIMAMISHWA - SUBIRI ADMIN ARUHUSU JUMATATU. Haitapungua mpaka Admin abonyeze RUHUSU TIMER.</span>';
-    return;
-  }
-  const remaining = DEADLINE - Date.now();
-  if(remaining <= 0){
-    document.getElementById("days").textContent="00";
-    document.getElementById("hours").textContent="00";
-    document.getElementById("minutes").textContent="00";
-    document.getElementById("seconds").textContent="00";
-    document.getElementById("timerStatus").innerHTML = '<span class="error">MUDA WA HUDUMA YA AWALI UMEMALIZIKA - DEADLINE 10 NOV IMEPITA. Wasiolipa wamekatwa mfumo wa @speed_awr360°.</span>';
-    return;
-  }
-  const days=Math.floor(remaining/86400000);
-  const hours=Math.floor((remaining%86400000)/3600000);
-  const minutes=Math.floor((remaining%3600000)/60000);
-  const seconds=Math.floor((remaining%60000)/1000);
-  document.getElementById("days").textContent=String(days).padStart(2,"0");
-  document.getElementById("hours").textContent=String(hours).padStart(2,"0");
-  document.getElementById("minutes").textContent=String(minutes).padStart(2,"0");
-  document.getElementById("seconds").textContent=String(seconds).padStart(2,"0");
-  document.getElementById("timerStatus").textContent = "Muda wa huduma ya awali bado unaendelea. DEADLINE: 10 NOV 2026 - Asiyelipa hadi hapo atakatiwa @speed_awr360°.";
+  if(!timerEnabled) return;
+  const remaining=DEADLINE-Date.now();
+  if(remaining<=0){["days","hours","minutes","seconds"].forEach(id=>document.getElementById(id).textContent="00"); document.getElementById("timerStatus").innerHTML='<span class="error">INITIAL SERVICE TIME ENDED / MUDA WA HUDUMA YA AWALI UMEMALIZIKA.</span>'; return;}
+  document.getElementById("days").textContent=Math.floor(remaining/86400000);
+  document.getElementById("hours").textContent=Math.floor((remaining%86400000)/3600000);
+  document.getElementById("minutes").textContent=Math.floor((remaining%3600000)/60000);
+  document.getElementById("seconds").textContent=Math.floor((remaining%60000)/1000);
+  document.getElementById("timerStatus").textContent=window.msg("Initial service time is still running.","Muda wa huduma ya awali bado unaendelea.");
 }
-window.enableTimer = async function(){
-  try{
-    const user = auth.currentUser;
-    if(!user) return alert("Ingia kama Admin kwanza.");
-    const token = await getIdTokenResult(user,true);
-    if(token.claims.admin !== true) return alert("Wewe si Admin.");
-    if(!confirm("Uhakika unataka KUANZISHA TIMER sasa? Timer itaanza kupunguza kuelekea 10 Nov 2026.")) return;
-    await setDoc(doc(db,"system","config"),{timerEnabled:true,timerStartedAt:serverTimestamp(),paymentWindowStart:new Date(START_TIME),paymentWindowEnd:new Date(DEADLINE)},{merge:true});
-    timerEnabled = true;
-    document.getElementById("timerAdminStatus").textContent = "✅ TIMER IMEANZISHWA - Sasa inapunguza hadi 10 Nov.";
-    updateTimer();
-  }catch(e){ alert(e.message); }
-};
-window.disableTimer = async function(){
-  try{
-    const user = auth.currentUser;
-    if(!user) return alert("Ingia kama Admin kwanza.");
-    const token = await getIdTokenResult(user,true);
-    if(token.claims.admin !== true) return alert("Wewe si Admin.");
-    if(!confirm("Uhakika unataka KUSIMAMISHA TIMER?")) return;
-    await setDoc(doc(db,"system","config"),{timerEnabled:false},{merge:true});
-    timerEnabled = false;
-    document.getElementById("timerAdminStatus").textContent = "⏸️ TIMER IMESIMAMISHWA - Haipungui sasa.";
-    updateTimer();
-  }catch(e){ alert(e.message); }
-};
-loadTimerSetting();
-setInterval(updateTimer,1000);
+updateTimer(); setInterval(updateTimer,1000);
+
 window.registerUser=async function(){
-  const name=document.getElementById("fullName").value.trim();
-  const email=document.getElementById("registerEmail").value.trim();
-  const password=document.getElementById("registerPassword").value;
-  const message=document.getElementById("registerMessage");
-  if(!name || !email || password.length<6){message.textContent="Jaza taarifa zote. Nenosiri liwe na angalau herufi 6.";return;}
-  try{
-    const credential=await createUserWithEmailAndPassword(auth,email,password);
-    await updateProfile(credential.user,{displayName:name});
-    await setDoc(doc(db,"users",credential.user.uid),{fullName:name,email:email,createdAt:serverTimestamp()});
-    message.textContent="Usajili umefanikiwa.";
-  }catch(error){message.textContent="Usajili umeshindikana: "+error.message;}
+  const name=document.getElementById("fullName").value.trim(); const email=document.getElementById("registerEmail").value.trim(); const password=document.getElementById("registerPassword").value; const message=document.getElementById("registerMessage");
+  if(!name||!email||password.length<6){message.textContent=window.msg("Fill all fields. Password must be at least 6 characters.","Jaza taarifa zote. Nenosiri liwe na angalau herufi 6."); return;}
+  try{const credential=await createUserWithEmailAndPassword(auth,email,password); await updateProfile(credential.user,{displayName:name}); await setDoc(doc(db,"users",credential.user.uid),{fullName:name,email:email,createdAt:serverTimestamp()}); message.textContent=window.msg("Registration successful.","Usajili umefanikiwa.");}catch(error){message.textContent=window.msg("Registration failed: ","Usajili umeshindikana: ")+error.message;}
 };
 window.loginUser=async function(){
-  const email=document.getElementById("loginEmail").value.trim();
-  const password=document.getElementById("loginPassword").value;
-  const message=document.getElementById("loginMessage");
-  try{await signInWithEmailAndPassword(auth,email,password);message.textContent="Umeingia kikamilifu.";}catch(error){message.textContent="Imeshindikana kuingia: "+error.message;}
+  const email=document.getElementById("loginEmail").value.trim(); const password=document.getElementById("loginPassword").value; const message=document.getElementById("loginMessage");
+  try{await signInWithEmailAndPassword(auth,email,password); message.textContent=window.msg("You have logged in successfully.","Umeingia kikamilifu.");}catch(error){message.textContent=window.msg("Failed to login: ","Imeshindikana kuingia: ")+error.message;}
 };
-window.logoutUser=async function(){try{await signOut(auth);document.getElementById("loginMessage").textContent="Umetoka kwenye akaunti.";}catch(error){alert(error.message);}};
+window.logoutUser=async function(){try{await signOut(auth); document.getElementById("loginMessage").textContent=window.msg("You have logged out.","Umetoka kwenye akaunti.");}catch(error){alert(error.message);}};
 onAuthStateChanged(auth,async user=>{
-  const info=document.getElementById("accountInfo");
-  const admin=document.getElementById("adminSection");
-  if(!user){info.textContent="Hujaingia kwenye akaunti.";admin.classList.add("hidden");return;}
-  info.textContent="Umeingia kama: "+user.email;
-  try{
-    const token=await getIdTokenResult(user,true);
-    if(token.claims.admin===true){admin.classList.remove("hidden");}else{admin.classList.add("hidden");}
-  }catch(error){admin.classList.add("hidden");}
+  const info=document.getElementById("accountInfo"); const admin=document.getElementById("adminSection");
+  if(!user){info.textContent=window.msg("Not logged in.","Hujaingia kwenye akaunti."); admin.classList.add("hidden"); return;}
+  info.textContent=window.msg("Logged in as: ","Umeingia kama: ")+user.email;
+  try{const token=await getIdTokenResult(user,true); if(token.claims.admin===true){admin.classList.remove("hidden");}else{admin.classList.add("hidden");}}catch(error){admin.classList.add("hidden");}
 });
 window.submitPayment=async function(){
-  const user=auth.currentUser;
-  const message=document.getElementById("paymentMessage");
-  if(!user){message.textContent="Tafadhali ingia kwanza.";return;}
-  if(!timerEnabled){message.textContent="Timer haijaruhusiwa na Admin bado. Subiri Admin aruhusu Jumatatu.";return;}
-  const months=Number(document.getElementById("months").value);
-  const reference=document.getElementById("transactionReference").value.trim();
-  if(!reference){message.textContent="Weka transaction reference.";return;}
-  try{
-    const result=await callFunction("submitPayment")({months,transactionReference:reference});
-    message.textContent=result.data.message || "Ombi la malipo limewasilishwa.";
-  }catch(error){message.textContent="Ombi halijafanikiwa: "+error.message;}
+  const user=auth.currentUser; const message=document.getElementById("paymentMessage");
+  if(!user){message.textContent=window.msg("Please login first.","Tafadhali ingia kwanza."); return;}
+  const months=Number(document.getElementById("months").value); const reference=document.getElementById("transactionReference").value.trim();
+  if(!reference){message.textContent=window.msg("Enter transaction reference.","Weka transaction reference."); return;}
+  try{const result=await callFunction("submitPayment")({months,transactionReference:reference}); message.textContent=result.data.message||window.msg("Payment request submitted.","Ombi la malipo limewasilishwa.");}catch(error){message.textContent=window.msg("Request failed: ","Ombi halijafanikiwa: ")+error.message;}
 };
-async function sha256(value){
-  const data=new TextEncoder().encode(value);
-  const hash=await crypto.subtle.digest("SHA-256",data);
-  return Array.from(new Uint8Array(hash)).map(byte=>byte.toString(16).padStart(2,"0")).join("");
-}
+async function sha256(value){const data=new TextEncoder().encode(value); const hash=await crypto.subtle.digest("SHA-256",data); return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,"0")).join("");}
 window.submitQrRequest=async function(){
-  const user=auth.currentUser;
-  const message=document.getElementById("qrMessage");
-  const code=document.getElementById("qrCode").value.trim();
-  if(!user){message.textContent="Ingia kwanza.";return;}
-  if(!code){message.textContent="Weka QR Security Code.";return;}
-  try{
-    const qrHash=await sha256(code);
-    const result=await callFunction("submitQrRequest")({qrHash});
-    document.getElementById("qrCode").value="";
-    message.textContent=result.data.message || "Ombi limewasilishwa.";
-  }catch(error){message.textContent="Imeshindikana: "+error.message;}
+  const user=auth.currentUser; const message=document.getElementById("qrMessage"); const code=document.getElementById("qrCode").value.trim();
+  if(!user){message.textContent=window.msg("Login first.","Ingia kwanza."); return;} if(!code){message.textContent=window.msg("Enter QR Security Code.","Weka QR Security Code."); return;}
+  try{const qrHash=await sha256(code); const result=await callFunction("submitQrRequest")({qrHash}); document.getElementById("qrCode").value=""; message.textContent=result.data.message||window.msg("Request submitted.","Ombi limewasilishwa.");}catch(error){message.textContent=window.msg("Failed: ","Imeshindikana: ")+error.message;}
 };
 window.checkMyAccess=async function(){
   const resultBox=document.getElementById("accessResult");
-  if(!auth.currentUser){resultBox.textContent="Ingia kwanza.";return;}
-  try{
-    const result=await callFunction("checkMyAccess")();
-    const data=result.data;
-    resultBox.textContent = "Hali: "+(data.status || "Haijabainishwa")+" | Ruhusa: "+(data.allowed ? "IMERUHUSIWA" : "HAIRUHUSIWI")+" | Taarifa: "+(data.message || "");
-  }catch(error){resultBox.textContent="Imeshindikana kuangalia huduma: "+error.message;}
+  if(!auth.currentUser){resultBox.textContent=window.msg("Login first.","Ingia kwanza."); return;}
+  try{const result=await callFunction("checkMyAccess")(); const data=result.data; resultBox.textContent=window.msg("Status: ","Hali: ")+(data.status||window.msg("Not specified","Haijabainishwa"))+" | "+window.msg("Permission: ","Ruhusa: ")+(data.allowed?window.msg("ALLOWED","IMERUHUSIWA"):window.msg("NOT ALLOWED","HAIRUHUSIWI"))+" | "+window.msg("Info: ","Taarifa: ")+(data.message||"");}catch(error){resultBox.textContent=window.msg("Failed to check service: ","Imeshindikana kuangalia huduma: ")+error.message;}
 };
 window.loadAdmin=async function(){
   const output=document.getElementById("adminResults");
-  if(!auth.currentUser){output.textContent="Admin hajaingia.";return;}
-  try{
-    const token=await getIdTokenResult(auth.currentUser,true);
-    if(token.claims.admin!==true){output.textContent="Huna ruhusa ya Admin.";return;}
-    const result=await callFunction("adminListPending")();
-    const data=result.data;
-    output.innerHTML="<h3>Maombi ya Malipo</h3>";
-    (data.payments || []).forEach(item=>{
-      const p=document.createElement("p");
-      p.textContent=(item.email || "")+" | "+(item.amount || "")+" | "+(item.transactionReference || "")+" | "+(item.id || "");
-      output.appendChild(p);
-    });
-    output.innerHTML+="<h3>Maombi ya QR</h3>";
-    (data.qrRequests || []).forEach(item=>{
-      const p=document.createElement("p");
-      p.textContent=(item.email || "")+" | "+(item.id || "");
-      output.appendChild(p);
-    });
-  }catch(error){output.textContent="Admin dashboard haijapakiwa: "+error.message;}
+  if(!auth.currentUser){output.textContent=window.msg("Admin not logged in.","Admin hajaingia."); return;}
+  try{const token=await getIdTokenResult(auth.currentUser,true); if(token.claims.admin!==true){output.textContent=window.msg("You have no Admin permission.","Huna ruhusa ya Admin."); return;}
+  const result=await callFunction("adminListPending")(); const data=result.data; output.innerHTML="<h3>"+window.msg("Payment Requests","Maombi ya Malipo")+"</h3>";
+  (data.payments||[]).forEach(item=>{const p=document.createElement("p"); p.textContent=(item.email||"")+" | "+(item.amount||"")+" | "+(item.transactionReference||"")+" | "+(item.id||""); output.appendChild(p);});
+  output.innerHTML+="<h3>"+window.msg("QR Requests","Maombi ya QR")+"</h3>";
+  (data.qrRequests||[]).forEach(item=>{const p=document.createElement("p"); p.textContent=(item.email||"")+" | "+(item.id||""); output.appendChild(p);});
+  }catch(error){output.textContent=window.msg("Admin dashboard failed to load: ","Admin dashboard haijapakiwa: ")+error.message;}
 };
 </script>
 </body>
