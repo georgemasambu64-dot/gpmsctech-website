@@ -1,75 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sw">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071b38">
 <title>GPMSCTECH NEW BASE TECHNOLOGY</title>
 <style>
-body{margin:0;background:#071b38;color:white;font-family:Arial,sans-serif;line-height:1.5}
-header{text-align:center;padding:25px 12px;background:#0b2850}
-.faith{color:#e8c66a;font-weight:bold}
-h1,h2,h3{color:#e8c66a}
-main{max-width:850px;margin:auto;padding:15px}
-section{background:#102e55;padding:20px;margin:15px 0;border-radius:12px}
-input,select,button{box-sizing:border-box;width:100%;padding:12px;margin:7px 0;border-radius:7px;font:inherit}
-input,select{background:#071b38;color:white;border:1px solid #607b9d}
-button{background:#e8c66a;color:#071b38;border:0;font-weight:bold;cursor:pointer}
-button:disabled{opacity:.5}
-.status{background:#071b38;padding:12px;border-radius:7px;white-space:pre-wrap;overflow-wrap:anywhere}
-.gold{color:#e8c66a}.small{font-size:13px;color:#c4d1e2}
-.timer{font-size:35px;color:#e8c66a;font-weight:bold;text-align:center;font-variant-numeric:tabular-nums}
-a{color:#e8c66a}
+:root{--navy:#071b38;--panel:#102e55;--gold:#e8c66a;--green:#00ff88}
+*{box-sizing:border-box}
+body{margin:0;background:var(--navy);color:white;font-family:Arial,sans-serif;line-height:1.5}
+header{text-align:center;padding:24px 12px;background:#0b2850}
+h1,h2,h3{color:var(--gold)}
+main{max-width:900px;margin:auto;padding:14px}
+section{background:var(--panel);padding:18px;margin:15px 0;border-radius:12px}
+label{display:block;margin-top:9px;font-weight:bold}
+input,select,button{width:100%;padding:12px;margin:7px 0;border-radius:7px;font:inherit}
+input,select{background:var(--navy);color:white;border:1px solid #607b9d}
+button{background:var(--gold);color:var(--navy);border:0;font-weight:bold;cursor:pointer}
+button:disabled{opacity:.5;cursor:not-allowed}
+.greenBtn{background:var(--green)}
+.dangerBtn{background:#ff7777}
+.status{background:var(--navy);padding:12px;border-radius:7px;white-space:pre-wrap;overflow-wrap:anywhere}
+.small{font-size:13px;color:#c4d1e2}
+.timer{text-align:center;color:var(--gold);font-size:clamp(27px,6vw,38px);font-weight:bold;font-variant-numeric:tabular-nums}
 .hidden{display:none!important}
-.greenBtn{background:#00ff88}
-.okBox{background:#003300;border:1px solid #00ff88}
+.speed-box{border:2px solid var(--green);padding:15px;border-radius:12px;text-align:center}
+.speed-title{color:var(--green);font-size:22px;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+.card{background:var(--navy);border-radius:8px;padding:12px}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+.row>*{flex:1;min-width:130px}
+.okBox{background:#003300;border:1px solid var(--green)}
 .noBox{background:#330000;border:1px solid red}
-.speed-box{border:2px solid #00ff88;padding:15px;border-radius:12px;text-align:center}
+.access-active{background:#003300;border:2px solid var(--green)}
+.access-blocked{background:#330000;border:2px solid red}
 </style>
 </head>
+
 <body>
 <header>
-<p class="faith">Praise And Glory To God The Father Almighty, Jesus Christ God Almighty, And The Holy Spirit God Almighty, Amen.</p>
+<p style="color:#e8c66a;font-weight:bold">
+Praise And Glory To God The Father Almighty, Jesus Christ God Almighty, And The Holy Spirit God Almighty, Amen.
+</p>
+
 <h1>GPMSCTECH NEW BASE TECHNOLOGY</h1>
-<p style="font-size:22px;color:#00ff88;font-weight:bold">@speed_awr360°</p>
+
+<p style="font-size:28px;color:#00ff88;font-weight:bold">
+@speed_awr360°
+</p>
+
 <p>Global Positive Mind Set Center Technology</p>
-<p><b>PAYMENT WINDOW: <span id="windowHeader">Inapakiwa...</span></b></p>
-<p class="small">START TIME na END TIME. Siyo Trial - ni Muda wa Mfumo.</p>
+
+<p><b>UNPAID ACCESS DEADLINE:
+<span id="windowHeader">Inapakiwa...</span></b></p>
+
+<p class="small">
+Tarehe ya mwisho kwa akaunti zisizolipa:
+10 November 2026, saa 23:59:59 (Tanzania).
+</p>
 </header>
+
 <main>
+
 <section>
-<h2>⏰ Official 24-Hour Trial - START TIME & END TIME</h2>
-<div id="trialStatus" class="status">Loading...</div>
+<h2>⏰ SYSTEM DEADLINE</h2>
+<div id="trialStatus" class="status">Inapakia...</div>
 <div id="timer" class="timer">--:--:--</div>
 <div id="windowMsg" class="status">Inasubiri taarifa za muda.</div>
-<p class="small">The official trial begins when the administrator activates the launch schedule. The website remains visible after the trial ends.</p>
 </section>
+
 <section>
 <div class="speed-box">
-<div style="color:#00ff88;font-size:22px;font-weight:bold">@speed_awr360° - QR SECURITY</div>
-<p>QR Code ni kitambulisho cha ufikiaji wa mfumo.</p>
-<label>Quick QR Check</label>
-<input id="quickQr" type="password" placeholder="Weka QR/access code yako">
-<button id="quickQrBtn" class="greenBtn">UNGANISHA NA @speed_awr360°</button>
+<div class="speed-title">@speed_awr360° - QR SECURITY</div>
+
+<p>QR Code ni kitambulisho cha ufikiaji wa mfumo. Taarifa za siri hazionyeshwi kwa wateja.</p>
+
+<label for="quickQr">Quick QR Check</label>
+<input id="quickQr" type="password" autocomplete="off" placeholder="Weka QR/access code yako">
+
+<button id="quickQrBtn" class="greenBtn">
+UNGANISHA NA @speed_awr360°
+</button>
+
 <div id="quickResult" class="status">Inasubiri ukaguzi.</div>
 </div>
 </section>
+
 <section>
 <h2>Customer Registration / Login</h2>
-<label>Full Name</label>
+
+<label for="fullName">Full Name</label>
 <input id="fullName" autocomplete="name" placeholder="Enter your full name">
-<label>Email</label>
+
+<label for="email">Email</label>
 <input id="email" type="email" autocomplete="username" placeholder="Enter your email">
-<label>Password</label>
+
+<label for="password">Password</label>
 <input id="password" type="password" autocomplete="current-password" placeholder="At least 6 characters">
+
+<div class="row">
 <button id="registerBtn">CREATE ACCOUNT</button>
 <button id="loginBtn">SIGN IN</button>
-<button id="logoutBtn" class="hidden" style="background:#ff7777">SIGN OUT</button>
+<button id="logoutBtn" class="hidden dangerBtn">SIGN OUT</button>
+</div>
+
 <div id="accountStatus" class="status">Not signed in.</div>
 </section>
+
 <section>
 <h2>Subscription and Payment</h2>
-<p>Monthly price: <b class="gold">TZS 20,000</b></p>
-<label>Select Subscription Duration</label>
+
+<p>Monthly price:
+<b style="color:#e8c66a">TZS 20,000</b></p>
+
+<label for="months">Select Subscription Duration</label>
+
 <select id="months">
 <option value="1">1 Month - TZS 20,000</option>
 <option value="2">2 Months - TZS 40,000</option>
@@ -84,218 +129,931 @@ a{color:#e8c66a}
 <option value="11">11 Months - TZS 220,000</option>
 <option value="12">12 Months - TZS 240,000</option>
 </select>
-<div class="status">Bank: CRDB BANK PLC
+
+<div class="status">
+Bank: CRDB BANK PLC
 Lipa Namba: 10055686
-Recipient: Garaji Joseph Masambu</div>
-<label>CRDB Transaction Reference</label>
-<input id="transactionReference" placeholder="Enter payment reference">
-<button id="paymentBtn">SUBMIT PAYMENT FOR VERIFICATION</button>
-<div id="paymentStatus" class="status">Sign in ili kuwasilisha ombi la malipo.</div>
-<p class="small">Payment is manually checked by the administrator through CRDB. Submission does not mean payment has been approved.</p>
+Recipient: Garaji Joseph Masambu
+</div>
+
+<label for="transactionReference">CRDB Transaction Reference</label>
+<input id="transactionReference" autocomplete="off" placeholder="Enter payment reference">
+
+<button id="paymentBtn" disabled>
+SUBMIT PAYMENT FOR VERIFICATION
+</button>
+
+<div id="paymentStatus" class="status">
+Sign in ili kuwasilisha ombi la malipo.
+</div>
+
+<p class="small">
+Malipo yanasubiri uthibitishaji wa administrator.
+Uthibitishaji wa moja kwa moja wa CRDB unahitaji API rasmi ya benki.
+Usitume PIN au password ya benki kwenye tovuti.
+</p>
 </section>
+
 <section>
-<h2>Security QR Verification</h2>
-<label>Private QR / Access Code</label>
-<input id="qrCode" type="password" placeholder="Enter your private access code">
+<h2>Security QR Verification - @speed_awr360°</h2>
+
+<label for="qrCode">Private QR / Access Code</label>
+<input id="qrCode" type="password" autocomplete="off" placeholder="Weka private access code yako">
+
 <button id="qrBtn">SUBMIT QR FOR VERIFICATION</button>
+
 <div id="qrStatus" class="status">QR haijawasilishwa.</div>
-<p class="small">The code is hashed before submission. The administrator must verify it before granting access.</p>
 </section>
+
 <section style="border:2px solid #e8c66a">
 <h2>🔓 My Service Access - @speed_awr360°</h2>
-<label>QR Code (hiari)</label>
-<input id="accessQr" type="password" placeholder="Weka QR code ikiwa inahitajika">
-<button id="checkAccessBtn" class="greenBtn">✅ CHECK MY ACCESS SASA</button>
-<div id="accessStatus" class="status">Sign in to check your access.</div>
-<div id="accessDetail" class="status">Inasubiri taarifa za akaunti.</div>
+
+<label for="accessQr">QR Code (hiari)</label>
+<input id="accessQr" type="password" autocomplete="off" placeholder="Weka QR code ikiwa inahitajika">
+
+<button id="checkAccessBtn" class="greenBtn">
+✅ CHECK MY ACCESS SASA
+</button>
+
+<div id="accessStatus" class="status">Bonyeza CHECK MY ACCESS.</div>
+
+<div id="accessDetail" class="status">
+Inasubiri taarifa za akaunti.
+</div>
+
 <div id="serviceContent" class="hidden" style="background:#003300;padding:15px;border-radius:10px;margin-top:10px">
+
 <h3 style="color:#00ff88">🎉 HUDUMA YAKO IPO HAPA</h3>
-<p>✅ Akaunti na ruhusa vimethibitishwa.</p>
+
+<p>✅ Akaunti na ruhusa vimethibitishwa na seva.</p>
+
 <p>Wasiliana: +255717314652 / +255744769060</p>
 </div>
 </section>
+
+<section id="adminSection" class="hidden">
+<h2>Administrator Dashboard</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Pending Payments</h3>
+<div id="adminPayments">Inapakia...</div>
+</div>
+
+<div class="card">
+<h3>Pending QR Requests</h3>
+<div id="adminQrs">Inapakia...</div>
+</div>
+</div>
+
+<button id="refreshAdminBtn">REFRESH ADMIN DATA</button>
+
+<div id="adminStatus" class="status">Admin dashboard.</div>
+</section>
+
 <section>
 <h2>Contact GPMSCTECH</h2>
+
 <p>Email: georgemasambu64@gmail.com</p>
 <p>Email: gmasambu238@gmail.com</p>
+
 <p>Phone / WhatsApp: +255717314652</p>
 <p>Phone / WhatsApp: +255744769060</p>
+
 <p>Owner: Garaji Joseph Masambu</p>
 <p>Also known as: George Joseph Masambu</p>
 </section>
-<div id="message" class="status">System ready. @speed_awr360°</div>
+
+<div id="message" class="status">
+System ready. @speed_awr360°
+</div>
+
 </main>
+
 <script type="module">
+
 import {initializeApp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
-import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,updateProfile} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
-import {getFirestore,doc,getDoc,setDoc,collection,addDoc,serverTimestamp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
-const firebaseConfig={apiKey:"AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",authDomain:"gpmsctech-18abb.firebaseapp.com",projectId:"gpmsctech-18abb",storageBucket:"gpmsctech-18abb.firebasestorage.app",messagingSenderId:"554624850081",appId:"1:554624850081:web:6cc5cbe084f83548ed78e0",measurementId:"G-Q00NCG4CBR"};
+
+import {
+getAuth,
+createUserWithEmailAndPassword,
+signInWithEmailAndPassword,
+signOut,
+onAuthStateChanged,
+updateProfile
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+
+import {
+getFirestore,
+doc,
+getDoc,
+setDoc,
+serverTimestamp
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+
+import {
+getFunctions,
+httpsCallable
+} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-functions.js";
+
+
+const firebaseConfig={
+apiKey:"AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",
+authDomain:"gpmsctech-18abb.firebaseapp.com",
+projectId:"gpmsctech-18abb",
+storageBucket:"gpmsctech-18abb.firebasestorage.app",
+messagingSenderId:"554624850081",
+appId:"1:554624850081:web:6cc5cbe084f83548ed78e0",
+measurementId:"G-Q00NCG4CBR"
+};
+
+
 const app=initializeApp(firebaseConfig);
 const auth=getAuth(app);
 const db=getFirestore(app);
+const functions=getFunctions(app,"africa-south1");
+
+const call=name=>httpsCallable(functions,name);
 const $=id=>document.getElementById(id);
-let currentUser=null; let launchData=null;
-function notify(text){$("message").textContent=text;}
-function show(id,t,cls="status"){const el=$(id);el.textContent=t;el.className=cls;}
-async function createUserProfile(user,name=""){
-  const ref=doc(db,"users",user.uid);
-  const snap=await getDoc(ref);
-  if(!snap.exists()){
-    await setDoc(ref,{email:user.email||"",displayName:name||user.displayName||"",accountStatus:"pending",qrVerified:false,createdAt:serverTimestamp()});
-  }
+
+
+// DEADLINE: TANZANIA TIME UTC+3
+// Lazima deadline hii pia ilindwe upande wa Firebase Cloud Functions.
+
+const UNPAID_ACCESS_DEADLINE=
+new Date("2026-11-10T23:59:59+03:00");
+
+
+let currentUser=null;
+let systemConfig=null;
+let isAdmin=false;
+let timerHandle=null;
+
+
+const notify=t=>$("message").textContent=t;
+
+const showResult=(id,t,cls="status")=>{
+$(id).textContent=t;
+$(id).className=cls;
+};
+
+
+const sha256=async value=>{
+const bytes=await crypto.subtle.digest(
+"SHA-256",
+new TextEncoder().encode(value)
+);
+
+return [...new Uint8Array(bytes)]
+.map(x=>x.toString(16).padStart(2,"0"))
+.join("");
+};
+
+
+function getDate(value){
+if(!value)return null;
+
+const date=value.toDate
+?value.toDate()
+:new Date(value);
+
+return Number.isNaN(date.getTime())?null:date;
 }
-async function sha256(value){
-  const result=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(value));
-  return [...new Uint8Array(result)].map(b=>b.toString(16).padStart(2,"0")).join("");
+
+
+function fmt(value){
+const date=getDate(value);
+
+return date
+?date.toLocaleString("sw-TZ",{
+timeZone:"Africa/Dar_es_Salaam"
+})
+:"Haijawekwa";
 }
-function fmt(d){return d?d.toLocaleString("sw-TZ",{timeZone:"Africa/Dar_es_Salaam"}):"Haijawekwa";}
-function getAutoWindow(){
-  try{
-    const saved=JSON.parse(localStorage.getItem("gpmsc_window")||"null");
-    if(saved && saved.end && new Date(saved.end).getTime()>Date.now()){
-      return {start:new Date(saved.start), end:new Date(saved.end), isAuto:true};
-    }
-  }catch(e){}
-  const start=new Date(); const end=new Date(start.getTime()+24*3600*1000);
-  try{localStorage.setItem("gpmsc_window",JSON.stringify({start:start.toISOString(),end:end.toISOString()}));}catch(e){}
-  return {start,end,isAuto:true};
+
+
+function paymentWindowState(){
+
+const now=Date.now();
+const end=UNPAID_ACCESS_DEADLINE;
+
+if(now<=end.getTime()){
+
+return {
+state:"OPEN",
+start:null,
+end,
+remaining:end.getTime()-now
+};
+
 }
-function getWindowTimes(){
-  if(launchData && launchData.trialEndsAt){
-    const end=launchData.trialEndsAt.toDate?launchData.trialEndsAt.toDate():new Date(launchData.trialEndsAt);
-    const start=launchData.trialStartsAt?(launchData.trialStartsAt.toDate?launchData.trialStartsAt.toDate():new Date(launchData.trialStartsAt)):new Date(end.getTime()-24*3600*1000);
-    if(!isNaN(end.getTime())) return {start,end,isAuto:false};
-  }
-  if(launchData && launchData.paymentWindowEnd){
-    const end=launchData.paymentWindowEnd.toDate?launchData.paymentWindowEnd.toDate():new Date(launchData.paymentWindowEnd);
-    const start=launchData.paymentWindowStart?(launchData.paymentWindowStart.toDate?launchData.paymentWindowStart.toDate():new Date(launchData.paymentWindowStart)):new Date(end.getTime()-24*3600*1000);
-    if(!isNaN(end.getTime())) return {start,end,isAuto:false};
-  }
-  return getAutoWindow();
+
+return {
+state:"CLOSED",
+start:null,
+end,
+remaining:0
+};
+
 }
-function updateTimer(){
-  const w=getWindowTimes();
-  const now=Date.now();
-  const remaining=Math.max(0,w.end.getTime()-now);
-  $("windowHeader").textContent=fmt(w.start)+" hadi "+fmt(w.end)+(w.isAuto?" (Muda wa Mfumo - Auto)":"");
-  if(now<w.start.getTime()){
-    $("trialStatus").textContent="⏳ START TIME BADO HAIJAFIKA - Dirisha litaanza: "+fmt(w.start);
-    $("windowMsg").textContent="Subiri START TIME.";
-  }else if(remaining>0){
-    $("trialStatus").textContent="⏰ Official trial is ACTIVE - Muda unapungua LIVE";
-    $("windowMsg").textContent="Dirisha limefunguliwa. END TIME: "+fmt(w.end);
-  }else{
-    $("trialStatus").textContent="❌ The 24-hour trial has ended.";
-    $("windowMsg").textContent="Muda umeisha: "+fmt(w.end)+". Website itaendelea kuonekana.";
-  }
-  const h=Math.floor(remaining/3600000); const m=Math.floor((remaining%3600000)/60000); const s=Math.floor((remaining%60000)/1000);
-  $("timer").textContent=[h,m,s].map(x=>String(x).padStart(2,"0")).join(":");
+
+
+function renderWindow(){
+
+const w=paymentWindowState();
+
+$("windowHeader").textContent=fmt(w.end);
+
+$("paymentBtn").disabled=
+w.state!=="OPEN"||!currentUser;
+
+
+if(w.state==="OPEN"){
+
+$("trialStatus").textContent=
+"⏰ MUDA WA MATUMIZI KWA WASIOLIPA BADO UPO WAZI";
+
+$("windowMsg").textContent=
+"Deadline ni "+fmt(w.end)+
+". Akaunti zinazostahili zitaendelea kupata huduma hadi muda huu. Malipo yanaweza kuwasilishwa kabla ya deadline.";
+
+}else{
+
+$("trialStatus").textContent=
+"❌ DEADLINE IMEFIKA";
+
+$("windowMsg").textContent=
+"Muda wa nyongeza kwa wasiolipa umeisha. Huduma za akaunti zisizolipa zinapaswa kuzuiwa na Firebase Cloud Functions. Tovuti itaendelea kuonekana.";
+
 }
-async function loadLaunch(){
-  try{
-    const snap=await getDoc(doc(db,"system","launch"));
-    if(snap.exists()) launchData=snap.data();
-    else{
-      const snap2=await getDoc(doc(db,"system","config"));
-      if(snap2.exists()) launchData=snap2.data();
-    }
-  }catch(e){console.log("Launch fallback:",e.message);}
-  updateTimer();
-  setInterval(updateTimer,1000);
+
+
+const seconds=Math.max(
+0,
+Math.floor(w.remaining/1000)
+);
+
+const days=Math.floor(seconds/86400);
+
+const h=Math.floor((seconds%86400)/3600);
+
+const m=Math.floor((seconds%3600)/60);
+
+const s=seconds%60;
+
+$("timer").textContent=
+`${days}d ${String(h).padStart(2,"0")}:${String(m).padStart(2,"0")}:${String(s).padStart(2,"0")}`;
+
 }
+
+
+async function loadSystem(){
+
+try{
+
+const snap=await getDoc(
+doc(db,"system","config")
+);
+
+systemConfig=snap.exists()
+?snap.data()
+:null;
+
+renderWindow();
+
+if(timerHandle)clearInterval(timerHandle);
+
+timerHandle=setInterval(renderWindow,1000);
+
+}catch(error){
+
+showResult(
+"trialStatus",
+"Imeshindwa kupakia mipangilio: "+error.message,
+"status noBox"
+);
+
+$("windowHeader").textContent=
+fmt(UNPAID_ACCESS_DEADLINE);
+
+$("paymentBtn").disabled=true;
+
+}
+
+}
+
+
+async function refreshAccount(){
+
+if(!currentUser){
+
+$("accountStatus").textContent="Not signed in.";
+
+$("logoutBtn").classList.add("hidden");
+
+$("adminSection").classList.add("hidden");
+
+renderWindow();
+
+return;
+
+}
+
+
+const token=await currentUser.getIdTokenResult(true);
+
+isAdmin=token.claims.admin===true;
+
+const snap=await getDoc(
+doc(db,"users",currentUser.uid)
+);
+
+const data=snap.exists()
+?snap.data()
+:{};
+
+const expiry=getDate(data.subscriptionExpiresAt);
+
+const active=!!expiry&&expiry.getTime()>Date.now();
+
+
+$("accountStatus").textContent=
+
+`Email: ${currentUser.email||"Haipo"}
+Account: ${data.accountStatus||"pending"}
+QR: ${data.qrVerified===true?"Verified":"Pending"}
+Subscription: ${active?"ACTIVE":"Not active"}
+Expiry: ${fmt(data.subscriptionExpiresAt)}
+Role: ${isAdmin?"Administrator":"Customer"}`;
+
+
+$("logoutBtn").classList.remove("hidden");
+
+$("adminSection").classList.toggle(
+"hidden",
+!isAdmin
+);
+
+renderWindow();
+
+if(isAdmin)await loadAdmin();
+
+}
+
+
 $("registerBtn").onclick=async()=>{
-  try{
-    const name=$("fullName").value.trim(); const email=$("email").value.trim(); const password=$("password").value;
-    if(!name||!email||password.length<6) throw Error("Enter your name, email and password of at least 6 characters.");
-    const result=await createUserWithEmailAndPassword(auth,email,password);
-    await updateProfile(result.user,{displayName:name});
-    await createUserProfile(result.user,name);
-    notify("Account successfully created.");
-    await refreshAccount(result.user);
-  }catch(error){notify(error.message);}
-};
-$("loginBtn").onclick=async()=>{
-  try{
-    const result=await signInWithEmailAndPassword(auth,$("email").value.trim(),$("password").value);
-    await createUserProfile(result.user);
-    await refreshAccount(result.user);
-    notify("Successfully signed in.");
-  }catch(error){notify(error.message);}
-};
-$("logoutBtn").onclick=async()=>{await signOut(auth);notify("You have signed out.");};
-$("paymentBtn").onclick=async()=>{
-  try{
-    if(!currentUser) throw Error("Please sign in first.");
-    const months=Number($("months").value);
-    const reference=$("transactionReference").value.trim();
-    if(reference.length<5) throw Error("Enter a valid transaction reference (min 5 chars).");
-    const docRef=await addDoc(collection(db,"payments"),{uid:currentUser.uid,email:currentUser.email||"",months:months,amount:months*20000,currency:"TZS",paymentMethod:"CRDB_LIPA_NAMBA",lipaNamba:"10055686",transactionReference:reference,status:"pending",createdAt:serverTimestamp()});
-    $("transactionReference").value="";
-    show("paymentStatus","✅ Payment request received! ID: "+docRef.id+"\nAmount: TZS "+(months*20000)+"\nStatus: PENDING - Waiting for CRDB verification.","status okBox");
-    notify("Payment request received. Waiting for CRDB verification.");
-  }catch(error){show("paymentStatus","❌ "+error.message,"status noBox");notify(error.message);}
-};
-$("qrBtn").onclick=async()=>{
-  try{
-    if(!currentUser) throw Error("Please sign in first.");
-    const code=$("qrCode").value.trim();
-    if(code.length<12) throw Error("Enter your private access code (min 12 chars).");
-    const qrHash=await sha256(code);
-    const docRef=await addDoc(collection(db,"qrRequests"),{uid:currentUser.uid,email:currentUser.email||"",qrHash:qrHash,status:"pending",createdAt:serverTimestamp()});
-    $("qrCode").value="";
-    show("qrStatus","✅ QR request submitted! ID: "+docRef.id+"\nStatus: PENDING - Waiting for Admin verification.","status okBox");
-    notify("QR request submitted for administrator verification.");
-  }catch(error){show("qrStatus","❌ "+error.message,"status noBox");notify(error.message);}
-};
-$("quickQrBtn").onclick=async()=>{
-  try{
-    if(!currentUser) throw Error("Ingia kwanza ili QR ihusishwe na akaunti yako.");
-    const code=$("quickQr").value.trim();
-    if(code.length<12) throw Error("QR code si sahihi (min 12).");
-    const hash=await sha256(code);
-    show("quickResult","✅ QR imepokelewa na imehakikiwa (Hash: "+hash.slice(0,12)+"...)\nInasubiri uthibitishaji wa Admin. Tumia SUBMIT QR hapo chini kwa uthibitisho kamili.","status okBox");
-  }catch(error){show("quickResult","❌ "+error.message,"status noBox");}
-};
-async function checkMyAccess(){
-  try{
-    if(!currentUser) throw Error("Ingia kwenye akaunti kwanza.");
-    const snap=await getDoc(doc(db,"users",currentUser.uid));
-    const data=snap.exists()?snap.data():{};
-    const expiry=data.subscriptionExpiresAt?.toDate?data.subscriptionExpiresAt.toDate():null;
-    const w=getWindowTimes();
-    const trialActive=Date.now()<w.end.getTime() && Date.now()>=w.start.getTime();
-    const paidActive=expiry && expiry.getTime()>Date.now() && data.qrVerified===true && data.accountStatus==="active";
-    const allowed=trialActive||paidActive||data.accountStatus==="approved";
-    show("accessStatus",(allowed?"✅ ACCESS IMEFUNGULIWA":"⏳ ACCESS BADO INASUBIRI UTHIBITISHAJI")+"\nHali: "+(allowed?"ALLOWED":"PENDING"),"status "+(allowed?"okBox":"noBox"));
-    $("accessDetail").textContent=`Account: ${data.accountStatus||"pending"}\nQR: ${data.qrVerified?"Verified":"Pending"}\nSubscription expiry: ${expiry?expiry.toLocaleString("sw-TZ"):"Haijaidhinishwa"}\nTrial: ${trialActive?"ACTIVE":"ENDED"}\nSystem: @speed_awr360° - Auto Check`;
-    $("serviceContent").classList.toggle("hidden",!allowed);
-    notify(allowed?"Access imefunguliwa.":"Access inasubiri uthibitishaji.");
-  }catch(error){show("accessStatus","❌ "+error.message,"status noBox");$("serviceContent").classList.add("hidden");}
+
+try{
+
+const name=$("fullName").value.trim();
+
+const email=$("email").value.trim();
+
+const password=$("password").value;
+
+
+if(!name||!email||password.length<6){
+
+throw Error(
+"Jaza jina, email na password yenye angalau herufi 6."
+);
+
 }
-$("checkAccessBtn").onclick=checkMyAccess;
-async function refreshAccount(user){
-  if(!user){$("accountStatus").textContent="Not signed in.";$("accessStatus").textContent="Sign in to check your access.";$("accessDetail").textContent="Inasubiri taarifa za akaunti.";$("serviceContent").classList.add("hidden");return;}
-  try{
-    const snap=await getDoc(doc(db,"users",user.uid));
-    if(!snap.exists()){$("accountStatus").textContent="Profile not found.";return;}
-    const data=snap.data();
-    const expiry=data.subscriptionExpiresAt?.toDate?data.subscriptionExpiresAt.toDate():null;
-    const w=getWindowTimes();
-    const trialActive=Date.now()<w.end.getTime();
-    const paidActive=expiry && expiry.getTime()>Date.now() && data.qrVerified===true && data.accountStatus==="active";
-    $("accountStatus").textContent="Email: "+user.email+"\nAccount: "+(data.accountStatus||"pending")+"\nQR: "+(data.qrVerified===true?"Verified":"Pending")+"\nExpiry: "+(expiry?expiry.toLocaleString("sw-TZ"):"Not approved");
-    $("accessStatus").textContent=trialActive?"Official trial is active - Bonyeza CHECK MY ACCESS.":paidActive?"Your subscription is marked active.":"Paid access is pending administrator approval.";
-    $("accessDetail").textContent=`Account: ${data.accountStatus||"pending"}\nQR: ${data.qrVerified?"Verified":"Pending"}\nExpiry: ${expiry?expiry.toLocaleString("sw-TZ"):"Not approved"}`;
-    await checkMyAccess();
-  }catch(e){notify(e.message);}
-}
-onAuthStateChanged(auth,async user=>{
-  currentUser=user;
-  $("logoutBtn").classList.toggle("hidden",!user);
-  if(user){try{await refreshAccount(user);}catch(error){notify(error.message);}}
-  else{await refreshAccount(null);}
+
+
+const result=await createUserWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+
+await updateProfile(result.user,{
+displayName:name
 });
-await loadLaunch();
+
+
+await setDoc(
+doc(db,"users",result.user.uid),
+{
+uid:result.user.uid,
+email,
+displayName:name,
+accountStatus:"pending",
+qrVerified:false,
+createdAt:serverTimestamp()
+}
+);
+
+
+currentUser=result.user;
+
+await refreshAccount();
+
+notify("Akaunti imefunguliwa. Subiri uthibitishaji.");
+
+}catch(error){
+
+notify(error.message);
+
+}
+
+};
+
+
+$("loginBtn").onclick=async()=>{
+
+try{
+
+const email=$("email").value.trim();
+
+const password=$("password").value;
+
+if(!email||!password){
+
+throw Error("Weka email na password.");
+
+}
+
+
+const result=await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+currentUser=result.user;
+
+await refreshAccount();
+
+notify("Umeingia kikamilifu.");
+
+}catch(error){
+
+notify(error.message);
+
+}
+
+};
+
+
+$("logoutBtn").onclick=async()=>{
+
+try{
+
+await signOut(auth);
+
+currentUser=null;
+
+isAdmin=false;
+
+await refreshAccount();
+
+notify("Umetoka kwenye akaunti.");
+
+}catch(error){
+
+notify(error.message);
+
+}
+
+};
+
+
+$("paymentBtn").onclick=async()=>{
+
+try{
+
+if(!currentUser){
+
+throw Error("Ingia kwanza.");
+
+}
+
+
+if(paymentWindowState().state!=="OPEN"){
+
+throw Error("Deadline ya malipo imefika.");
+
+}
+
+
+const months=Number($("months").value);
+
+const reference=
+$("transactionReference").value.trim();
+
+
+if(!Number.isInteger(months)||months<1||months>12){
+
+throw Error("Muda wa usajili si sahihi.");
+
+}
+
+
+if(reference.length<5||reference.length>100){
+
+throw Error(
+"Weka transaction reference yenye herufi 5 hadi 100."
+);
+
+}
+
+
+const result=await call("submitPayment")({
+
+months,
+transactionReference:reference
+
+});
+
+
+showResult(
+"paymentStatus",
+"Ombi limepokelewa. Namba: "+
+result.data.paymentId+
+"\nHali: PENDING.",
+"status okBox"
+);
+
+
+$("transactionReference").value="";
+
+
+}catch(error){
+
+showResult(
+"paymentStatus",
+error.message,
+"status noBox"
+);
+
+}
+
+};
+
+
+$("qrBtn").onclick=async()=>{
+
+try{
+
+if(!currentUser){
+
+throw Error("Ingia kwanza.");
+
+}
+
+
+const code=$("qrCode").value.trim();
+
+
+if(code.length<12||code.length>256){
+
+throw Error(
+"QR/access code iwe na herufi 12 hadi 256."
+);
+
+}
+
+
+const result=await call("submitQrRequest")({
+
+qrHash:await sha256(code)
+
+});
+
+
+$("qrCode").value="";
+
+
+showResult(
+"qrStatus",
+"QR request imewasilishwa. Hali: PENDING. Request: "+
+result.data.requestId,
+"status okBox"
+);
+
+
+}catch(error){
+
+showResult(
+"qrStatus",
+error.message,
+"status noBox"
+);
+
+}
+
+};
+
+
+async function checkAccess(){
+
+try{
+
+if(!currentUser){
+
+throw Error("Ingia kwenye akaunti kwanza.");
+
+}
+
+
+const result=await call("checkMyAccess")();
+
+const data=result.data;
+
+
+$("accessStatus").textContent=
+(data.message||"Ukaguzi umekamilika.")+
+"\nHali: "+(data.status||"Haijulikani");
+
+
+$("accessStatus").className=
+"status "+
+(data.allowed?"access-active":"access-blocked");
+
+
+$("serviceContent").classList.toggle(
+"hidden",
+!data.allowed
+);
+
+
+$("accessDetail").textContent=
+
+`Account: ${data.accountStatus||"pending"}
+QR: ${data.qrVerified?"Verified":"Pending"}
+Subscription expiry: ${data.expiresAt||"Haijaidhinishwa"}
+System: @speed_awr360°`;
+
+
+}catch(error){
+
+showResult(
+"accessStatus",
+error.message,
+"status noBox"
+);
+
+$("serviceContent").classList.add("hidden");
+
+}
+
+}
+
+
+$("checkAccessBtn").onclick=checkAccess;
+
+
+$("quickQrBtn").onclick=async()=>{
+
+try{
+
+if(!currentUser){
+
+throw Error(
+"Ingia kwanza ili QR ihusishwe na akaunti yako."
+);
+
+}
+
+
+const code=$("quickQr").value.trim();
+
+
+if(code.length<12||code.length>256){
+
+throw Error("QR code si sahihi.");
+
+}
+
+
+const result=await call("checkQrStatus")({
+
+qrHash:await sha256(code)
+
+});
+
+
+showResult(
+"quickResult",
+result.data.message||"Ukaguzi umekamilika.",
+result.data.verified
+?"status okBox"
+:"status noBox"
+);
+
+
+}catch(error){
+
+showResult(
+"quickResult",
+error.message,
+"status noBox"
+);
+
+}
+
+};
+
+
+async function loadAdmin(){
+
+try{
+
+const result=await call("adminListPending")();
+
+const payments=result.data.payments||[];
+
+const requests=result.data.qrRequests||[];
+
+
+$("adminPayments").replaceChildren();
+
+$("adminQrs").replaceChildren();
+
+
+for(const p of payments){
+
+const card=document.createElement("div");
+
+card.className="card";
+
+card.textContent=
+`${p.email||"No email"} | TZS ${p.amount} | ${p.months} mwezi | Ref: ${p.transactionReference}`;
+
+
+const approve=document.createElement("button");
+
+approve.textContent="APPROVE PAYMENT";
+
+approve.onclick=()=>review(
+"reviewPayment",
+{
+paymentId:p.id,
+decision:"approve"
+}
+);
+
+
+const reject=document.createElement("button");
+
+reject.textContent="REJECT";
+
+reject.className="dangerBtn";
+
+reject.onclick=()=>review(
+"reviewPayment",
+{
+paymentId:p.id,
+decision:"reject"
+}
+);
+
+
+card.append(approve,reject);
+
+$("adminPayments").append(card);
+
+}
+
+
+for(const q of requests){
+
+const card=document.createElement("div");
+
+card.className="card";
+
+card.textContent=
+`${q.email||"No email"} | QR request: ${q.id}`;
+
+
+const approve=document.createElement("button");
+
+approve.textContent="APPROVE QR";
+
+approve.onclick=()=>review(
+"reviewQrRequest",
+{
+requestId:q.id,
+decision:"approve"
+}
+);
+
+
+const reject=document.createElement("button");
+
+reject.textContent="REJECT";
+
+reject.className="dangerBtn";
+
+reject.onclick=()=>review(
+"reviewQrRequest",
+{
+requestId:q.id,
+decision:"reject"
+}
+);
+
+
+card.append(approve,reject);
+
+$("adminQrs").append(card);
+
+}
+
+
+if(!payments.length){
+
+$("adminPayments").textContent=
+"Hakuna malipo yanayosubiri.";
+
+}
+
+
+if(!requests.length){
+
+$("adminQrs").textContent=
+"Hakuna QR requests zinazosubiri.";
+
+}
+
+
+showResult(
+"adminStatus",
+"Taarifa za administrator zimeboreshwa.",
+"status okBox"
+);
+
+
+}catch(error){
+
+showResult(
+"adminStatus",
+error.message,
+"status noBox"
+);
+
+}
+
+}
+
+
+async function review(name,data){
+
+try{
+
+await call(name)(data);
+
+showResult(
+"adminStatus",
+"Uamuzi umehifadhiwa.",
+"status okBox"
+);
+
+await loadAdmin();
+
+await refreshAccount();
+
+
+}catch(error){
+
+showResult(
+"adminStatus",
+error.message,
+"status noBox"
+);
+
+}
+
+}
+
+
+$("refreshAdminBtn").onclick=loadAdmin;
+
+
+onAuthStateChanged(auth,async user=>{
+
+currentUser=user;
+
+isAdmin=false;
+
+try{
+
+await refreshAccount();
+
+}catch(error){
+
+notify(error.message);
+
+}
+
+});
+
+
+await loadSystem();
+
 </script>
+
 </body>
 </html>
