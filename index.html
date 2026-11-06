@@ -1,249 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071b38">
-<title>GPMSCTECH NEW BASE TECHNOLOGY</title>
-<style>
-:root{--navy:#071b38;--panel:#102e55;--gold:#e8c66a;--green:#00ff88;--white:#ffffff;--red:#ff6262}
-*{box-sizing:border-box}
-body{margin:0;background:var(--navy);color:var(--white);font-family:Arial,sans-serif}
-header{text-align:center;padding:25px 12px;background:#0b2850;border-bottom:2px solid var(--gold)}
-header h1{color:var(--gold);margin:5px}
-header p{margin:8px 0}
-.lang-bar{background:#FFD700;padding:10px;text-align:center;position:sticky;top:0;z-index:999;color:#000}
-.lang-bar select{padding:8px;border-radius:8px;font-weight:bold}
-.lang-sw{display:block;color:#d7e8ff;font-size:0.92em;margin-top:2px}
-.lang-en{display:block}
-.container{width:min(950px,94%);margin:20px auto}
-.card{background:var(--panel);padding:20px;margin:16px 0;border:1px solid #31547d;border-radius:12px}
-h2,h3{color:var(--gold)}
-label{display:block;margin:12px 0 6px}
-input,select,button{width:100%;padding:12px;border-radius:7px;border:1px solid #52749a;font-size:15px}
-input,select{background:#fff;color:#111}
-button{background:var(--gold);color:#071b38;font-weight:bold;cursor:pointer;margin-top:12px}
-button:disabled{opacity:.5;cursor:not-allowed}
-.timer{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:20px 0}
-.timebox{background:#071b38;border:1px solid var(--gold);border-radius:8px;padding:12px;min-width:75px;text-align:center}
-.timebox strong{display:block;font-size:25px;color:var(--green)}
-.status{padding:12px;background:#071b38;border-radius:7px;text-align:center}
-.success{color:var(--green)}.error{color:var(--red)}.small{font-size:13px;color:#c9d8e9}.hidden{display:none!important}
-footer{text-align:center;padding:25px 10px;color:#d7c58d;border-top:1px solid #31547d}
-a{color:var(--gold)}
-</style>
-</head>
-<body>
-
-<!-- LANGUAGE SELECTOR -->
-<div class="lang-bar">
-  <b>🌍 Select Language / Chagua Lugha:</b><br>
-  <select id="langSelect" onchange="changeLang(this.value)">
-    <option value="both">English + Kiswahili (Both / Mbili)</option>
-    <option value="en">English Only</option>
-    <option value="sw">Kiswahili Tu</option>
-  </select>
-  <div id="google_translate_element" style="margin-top:6px"></div>
-  <div style="font-size:12px;margin-top:4px">For your country language, use Google Translate above / Kwa lugha ya nchi yako, tumia Google Translate hapo juu</div>
-</div>
-
-<header>
-  <h1>GPMSCTECH</h1>
-  <h2><span class="lang-en">NEW BASE TECHNOLOGY</span><span class="lang-sw">TEKNOLOJIA MPYA YA MSINGI</span></h2>
-  <p>System ID: @speed_awr360°</p>
-  <p><span class="lang-en">Global Positive Mind Set Center Technology</span><span class="lang-sw">Teknolojia ya Kituo cha Kimataifa cha Mtazamo Chanya</span></p>
-  <p><span class="lang-en">National & International Digital Technology Services</span><span class="lang-sw">Huduma za Teknolojia ya Kidijitali za Kitaifa na Kimataifa</span></p>
-</header>
-
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"><meta name="theme-color" content="#071b38"><title>GPMSCTECH NEW BASE TECHNOLOGY</title><style>:root{--navy:#071b38;--panel:#102e55;--gold:#e8c66a;--green:#00ff88;--white:#fff}*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--white);font-family:Arial,sans-serif}header{text-align:center;padding:25px 12px;background:#0b2850;border-bottom:2px solid var(--gold)}header h1{color:var(--gold);margin:5px}.lang-bar{background:#FFD700;padding:14px 10px;text-align:center;position:sticky;top:0;z-index:999;color:#000}.lang-bar select{padding:10px;border-radius:8px;font-weight:bold;width:95%;max-width:520px;margin:5px 0;font-size:15px}.container{width:min(950px,94%);margin:20px auto}.card{background:var(--panel);padding:20px;margin:16px 0;border:1px solid #31547d;border-radius:12px}h2,h3{color:var(--gold)}label{display:block;margin:12px 0 6px}input,select,button{width:100%;padding:12px;border-radius:7px;border:1px solid #52749a;font-size:15px}input,select{background:#fff;color:#111}button{background:var(--gold);color:#071b38;font-weight:bold;cursor:pointer;margin-top:12px}.timer{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin:20px 0}.timebox{background:#071b38;border:1px solid var(--gold);border-radius:8px;padding:12px;min-width:75px;text-align:center}.timebox strong{display:block;font-size:25px;color:var(--green)}.status{padding:12px;background:#071b38;border-radius:7px;text-align:center}.hidden{display:none!important}footer{text-align:center;padding:25px 10px;color:#d7c58d;border-top:1px solid #31547d}</style></head><body>
+<div class="lang-bar"><b>🌍 <span data-i18n="chooseLang">SELECT LANGUAGE / CHAGUA LUGHA</span></b><br><select id="countryLang" onchange="setLanguage(this.value)"><option value="en">🌍 Default - English / Kiswahili</option><option value="sw">🇹🇿 Tanzania - Kiswahili</option><option value="en">🇹🇿 Tanzania - English</option><option value="sw">🇰🇪 Kenya - Kiswahili</option><option value="sw">🇺🇬 Uganda - Kiswahili</option><option value="sw">🇷🇼 Rwanda - Kinyarwanda</option><option value="fr">🇨🇩 DR Congo - Francais</option><option value="fr">🇫🇷 France - Francais</option><option value="fr">🇨🇲 Cameroon - Francais</option><option value="am">🇪🇹 Ethiopia - Amharic</option><option value="so">🇸🇴 Somalia - Somali</option><option value="ar">🇪🇬 Egypt - Arabic</option><option value="ar">🇸🇦 Saudi Arabia - Arabic</option><option value="en">🇳🇬 Nigeria - English</option><option value="yo">🇳🇬 Nigeria - Yoruba</option><option value="ig">🇳🇬 Nigeria - Igbo</option><option value="ha">🇳🇬 Nigeria - Hausa</option><option value="en">🇬🇭 Ghana - English</option><option value="en">🇿🇦 South Africa - English</option><option value="zu">🇿🇦 South Africa - isiZulu</option><option value="pt">🇲🇿 Mozambique - Portugues</option><option value="pt">🇧🇷 Brazil - Portugues</option><option value="pt">🇵🇹 Portugal - Portugues</option><option value="es">🇪🇸 Spain - Espanol</option><option value="es">🇲🇽 Mexico - Espanol</option><option value="es">🇦🇷 Argentina - Espanol</option><option value="de">🇩🇪 Germany - Deutsch</option><option value="it">🇮🇹 Italy - Italiano</option><option value="nl">🇳🇱 Netherlands - Nederlands</option><option value="en">🇬🇧 UK - English</option><option value="en">🇺🇸 USA - English</option><option value="hi">🇮🇳 India - Hindi</option><option value="ur">🇵🇰 Pakistan - Urdu</option><option value="bn">🇧🇩 Bangladesh - Bangla</option><option value="zh">🇨🇳 China - Chinese</option><option value="ja">🇯🇵 Japan - Japanese</option><option value="ko">🇰🇷 Korea - Korean</option><option value="ru">🇷🇺 Russia - Russian</option><option value="tr">🇹🇷 Turkey - Turkish</option><option value="th">🇹🇭 Thailand - Thai</option><option value="vi">🇻🇳 Vietnam - Vietnamese</option><option value="id">🇮🇩 Indonesia - Indonesian</option><option value="ms">🇲🇾 Malaysia - Malay</option><option value="tl">🇵🇭 Philippines - Filipino</option></select><div id="google_translate_element"></div><div style="font-size:12px" data-i18n="countryNote">Choose your country above - language will change immediately</div></div>
+<header><h1>GPMSCTECH</h1><h2 data-i18n="newBase">NEW BASE TECHNOLOGY</h2><p>System ID: @speed_awr360°</p><p data-i18n="global">Global Positive Mind Set Center Technology</p><p data-i18n="services">National & International Digital Technology Services</p></header>
 <main class="container">
-
-<section class="card">
-  <h2><span class="lang-en">SERVICE TIME SYSTEM</span><span class="lang-sw">MFUMO WA MUDA WA HUDUMA</span></h2>
-  <p><span class="lang-en">Initial service is available until:</span><span class="lang-sw">Huduma ya awali inapatikana hadi tarehe:</span></p>
-  <h3>10 NOVEMBER 2026 — 23:59:59</h3>
-  <div class="timer">
-    <div class="timebox"><strong id="days">--</strong><span class="lang-en">Days</span><span class="lang-sw">Siku</span></div>
-    <div class="timebox"><strong id="hours">--</strong><span class="lang-en">Hours</span><span class="lang-sw">Saa</span></div>
-    <div class="timebox"><strong id="minutes">--</strong><span class="lang-en">Minutes</span><span class="lang-sw">Dakika</span></div>
-    <div class="timebox"><strong id="seconds">--</strong><span class="lang-en">Seconds</span><span class="lang-sw">Sekunde</span></div>
-  </div>
-  <div class="status" id="timerStatus">Counting...</div>
-  <p class="small"><span class="lang-en">This timer uses your device time. Final verification must also be done by Firebase backend.</span><span class="lang-sw">Timer hii hutumia saa ya kifaa chako. Uthibitishaji wa mwisho wa muda wa huduma unapaswa kufanywa pia na Firebase backend.</span></p>
-</section>
-
-<section class="card">
-  <h2><span class="lang-en">CUSTOMER REGISTRATION</span><span class="lang-sw">USAJILI WA MTEJA</span></h2>
-  <label><span class="lang-en">Full Name</span><span class="lang-sw">Jina kamili</span></label>
-  <input id="fullName" type="text" placeholder="Enter your name / Ingiza jina lako">
-  <label><span class="lang-en">Email</span><span class="lang-sw">Barua pepe</span></label>
-  <input id="registerEmail" type="email" placeholder="Email">
-  <label><span class="lang-en">Password</span><span class="lang-sw">Nenosiri</span></label>
-  <input id="registerPassword" type="password" placeholder="At least 6 characters / Angalau herufi 6">
-  <button onclick="registerUser()"><span class="lang-en">REGISTER</span><span class="lang-sw">JISAJILI</span></button>
-  <p id="registerMessage"></p>
-</section>
-
-<section class="card">
-  <h2><span class="lang-en">LOGIN TO SYSTEM</span><span class="lang-sw">INGIA KWENYE MFUMO</span></h2>
-  <label><span class="lang-en">Email</span><span class="lang-sw">Barua pepe</span></label>
-  <input id="loginEmail" type="email" placeholder="Email">
-  <label><span class="lang-en">Password</span><span class="lang-sw">Nenosiri</span></label>
-  <input id="loginPassword" type="password" placeholder="Password / Nenosiri">
-  <button onclick="loginUser()"><span class="lang-en">LOGIN</span><span class="lang-sw">INGIA</span></button>
-  <button onclick="logoutUser()"><span class="lang-en">LOGOUT</span><span class="lang-sw">TOKA KWENYE AKAUNTI</span></button>
-  <p id="loginMessage"></p>
-  <div id="accountInfo" class="status">Not logged in / Hujaingia kwenye akaunti.</div>
-</section>
-
-<section class="card">
-  <h2><span class="lang-en">PAYMENT SYSTEM</span><span class="lang-sw">MFUMO WA MALIPO</span></h2>
-  <p><span class="lang-en">Fee:</span><span class="lang-sw">Ada:</span> <strong>TZS 20,000 <span class="lang-en">per month</span><span class="lang-sw">kwa mwezi</span></strong></p>
-  <label><span class="lang-en">Choose registration period</span><span class="lang-sw">Chagua muda wa usajili</span></label>
-  <select id="months">
-    <option value="1">1 Month / Mwezi 1 — TZS 20,000</option>
-    <option value="2">2 Months / Miezi 2 — TZS 40,000</option>
-    <option value="3">3 Months / Miezi 3 — TZS 60,000</option>
-    <option value="4">4 Months / Miezi 4 — TZS 80,000</option>
-    <option value="5">5 Months / Miezi 5 — TZS 100,000</option>
-    <option value="6">6 Months / Miezi 6 — TZS 120,000</option>
-    <option value="7">7 Months / Miezi 7 — TZS 140,000</option>
-    <option value="8">8 Months / Miezi 8 — TZS 160,000</option>
-    <option value="9">9 Months / Miezi 9 — TZS 180,000</option>
-    <option value="10">10 Months / Miezi 10 — TZS 200,000</option>
-    <option value="11">11 Months / Miezi 11 — TZS 220,000</option>
-    <option value="12">12 Months / Miezi 12 — TZS 240,000</option>
-  </select>
-  <label><span class="lang-en">Transaction Reference Number</span><span class="lang-sw">Namba ya kumbukumbu ya muamala</span></label>
-  <input id="transactionReference" type="text" placeholder="Enter transaction reference / Weka transaction reference">
-  <div class="status"><strong>CRDB BANK PLC</strong><br><span class="lang-en">Lipa Number:</span><span class="lang-sw">Lipa Namba:</span> 10055686<br><span class="lang-en">Receiver Name:</span><span class="lang-sw">Jina la mpokeaji:</span> Garaji Joseph Masambu</div>
-  <button onclick="submitPayment()"><span class="lang-en">SUBMIT PAYMENT DETAILS</span><span class="lang-sw">WASILISHA TAARIFA ZA MALIPO</span></button>
-  <p id="paymentMessage"></p>
-  <p class="small"><span class="lang-en">Payment will be verified by admin. Submitting a reference does not mean payment is already approved.</span><span class="lang-sw">Malipo yatathibitishwa na msimamizi. Kuwasilisha kumbukumbu hakumaanishi kuwa malipo tayari yamekubaliwa.</span></p>
-</section>
-
-<section class="card">
-  <h2>QR SECURITY VERIFICATION</h2>
-  <label><span class="lang-en">Enter QR Security Code</span><span class="lang-sw">Ingiza QR Security Code</span></label>
-  <input id="qrCode" type="password" placeholder="Enter your code / Ingiza code yako">
-  <button onclick="submitQrRequest()"><span class="lang-en">SUBMIT QR REQUEST</span><span class="lang-sw">WASILISHA OMBI LA QR</span></button>
-  <p id="qrMessage"></p>
-</section>
-
-<section class="card">
-  <h2><span class="lang-en">MY SERVICE STATUS</span><span class="lang-sw">HALI YA HUDUMA YANGU</span></h2>
-  <button onclick="checkMyAccess()"><span class="lang-en">CHECK MY SERVICE STATUS</span><span class="lang-sw">ANGALIA HALI YA HUDUMA</span></button>
-  <div id="accessResult" class="status"><span class="lang-en">No information loaded.</span><span class="lang-sw">Hakuna taarifa iliyopakiwa.</span></div>
-</section>
-
-<section class="card hidden" id="adminSection">
-  <h2>ADMIN DASHBOARD</h2>
-  <p><span class="lang-en">This section is visible only to Admin account verified by Firebase.</span><span class="lang-sw">Sehemu hii inaonekana tu kwa akaunti yenye ruhusa ya Admin iliyothibitishwa na Firebase.</span></p>
-  <button onclick="loadAdmin()"><span class="lang-en">LOAD PENDING REQUESTS</span><span class="lang-sw">PAKIA MAOMBI YANAYOSUBIRI</span></button>
-  <div id="adminResults"></div>
-</section>
-
-<section class="card">
-  <h2><span class="lang-en">CONTACTS</span><span class="lang-sw">MAWASILIANO</span></h2>
-  <p>Email: georgemasambu64@gmail.com</p>
-  <p>Email: gmasambu238@gmail.com</p>
-  <p>WhatsApp: +255717314652</p>
-  <p>WhatsApp: +255744769060</p>
-</section>
+<section class="card"><h2 data-i18n="serviceTime">SERVICE TIME SYSTEM</h2><p data-i18n="availableUntil">Initial service is available until:</p><h3>10 NOVEMBER 2026 — 23:59:59</h3><div class="timer"><div class="timebox"><strong id="days">--</strong><span data-i18n="days">Days</span></div><div class="timebox"><strong id="hours">--</strong><span data-i18n="hours">Hours</span></div><div class="timebox"><strong id="minutes">--</strong><span data-i18n="minutes">Minutes</span></div><div class="timebox"><strong id="seconds">--</strong><span data-i18n="seconds">Seconds</span></div></div><div class="status" id="timerStatus">Counting...</div></section>
+<section class="card"><h2 data-i18n="registerTitle">CUSTOMER REGISTRATION</h2><label data-i18n="fullName">Full Name</label><input id="fullName" type="text" placeholder="Enter your name"><label data-i18n="email">Email</label><input id="registerEmail" type="email" placeholder="Email"><label data-i18n="password">Password</label><input id="registerPassword" type="password" placeholder="At least 6 characters"><button onclick="registerUser()" data-i18n="registerBtn">REGISTER</button><p id="registerMessage"></p></section>
+<section class="card"><h2 data-i18n="loginTitle">LOGIN TO SYSTEM</h2><label data-i18n="email">Email</label><input id="loginEmail" type="email" placeholder="Email"><label data-i18n="password">Password</label><input id="loginPassword" type="password" placeholder="Password"><button onclick="loginUser()" data-i18n="loginBtn">LOGIN</button><button onclick="logoutUser()" data-i18n="logoutBtn">LOGOUT</button><p id="loginMessage"></p><div id="accountInfo" class="status">Not logged in</div></section>
+<section class="card"><h2 data-i18n="paymentTitle">PAYMENT SYSTEM</h2><p><span data-i18n="fee">Fee:</span> <strong>TZS 20,000 <span data-i18n="perMonth">per month</span></strong></p><label data-i18n="choosePeriod">Choose registration period</label><select id="months"><option value="1">1 Month — TZS 20,000</option><option value="2">2 Months — TZS 40,000</option><option value="3">3 Months — TZS 60,000</option><option value="4">4 Months — TZS 80,000</option><option value="5">5 Months — TZS 100,000</option><option value="6">6 Months — TZS 120,000</option><option value="7">7 Months — TZS 140,000</option><option value="8">8 Months — TZS 160,000</option><option value="9">9 Months — TZS 180,000</option><option value="10">10 Months — TZS 200,000</option><option value="11">11 Months — TZS 220,000</option><option value="12">12 Months — TZS 240,000</option></select><label data-i18n="transRef">Transaction Reference Number</label><input id="transactionReference" type="text" placeholder="Enter transaction reference"><div class="status"><strong>CRDB BANK PLC</strong><br><span data-i18n="lipaNo">Lipa Number:</span> 10055686<br><span data-i18n="receiver">Receiver Name:</span> Garaji Joseph Masambu</div><button onclick="submitPayment()" data-i18n="submitPay">SUBMIT PAYMENT DETAILS</button><p id="paymentMessage"></p><p class="small" data-i18n="payNote">Payment will be verified by admin.</p></section>
+<section class="card"><h2 data-i18n="qrTitle">QR SECURITY VERIFICATION</h2><label data-i18n="qrLabel">Enter QR Security Code</label><input id="qrCode" type="password" placeholder="Enter your code"><button onclick="submitQrRequest()" data-i18n="qrBtn">SUBMIT QR REQUEST</button><p id="qrMessage"></p></section>
+<section class="card"><h2 data-i18n="myStatus">MY SERVICE STATUS</h2><button onclick="checkMyAccess()" data-i18n="checkStatus">CHECK MY SERVICE STATUS</button><div id="accessResult" class="status" data-i18n="noInfo">No information loaded.</div></section>
+<section class="card hidden" id="adminSection"><h2>ADMIN DASHBOARD</h2><button onclick="loadAdmin()" data-i18n="loadPending">LOAD PENDING REQUESTS</button><div id="adminResults"></div></section>
+<section class="card"><h2 data-i18n="contacts">CONTACTS</h2><p>Email: georgemasambu64@gmail.com</p><p>Email: gmasambu238@gmail.com</p><p>WhatsApp: +255717314652</p><p>WhatsApp: +255744769060</p></section>
 </main>
-
-<footer>
-  <p>GPMSCTECH NEW BASE TECHNOLOGY</p>
-  <p><span class="lang-en">Founder & CEO:</span><span class="lang-sw">Mwanzilishi & Mkurugenzi:</span> Garaji Joseph Masambu</p>
-  <p><span class="lang-en">Also known as</span><span class="lang-sw">Pia anajulikana kama</span> George Joseph Masambu</p>
-  <p><span class="lang-en">Based in Mwanza, Tanzania, Serving the World.</span><span class="lang-sw">Anapatikana Mwanza, Tanzania, Anahudumia Dunia.</span></p>
-</footer>
-
+<footer><p>GPMSCTECH NEW BASE TECHNOLOGY</p><p><span data-i18n="founder">Founder & CEO:</span> Garaji Joseph Masambu</p><p><span data-i18n="alsoKnown">Also known as</span> George Joseph Masambu</p><p data-i18n="based">Based in Mwanza, Tanzania, Serving the World.</p></footer>
 <script>
-function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,sw,fr,es,ar,pt,de,zh-CN,hi,am,so,yo,ig,ha,zu,ru',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}
-function changeLang(val){
-  document.querySelectorAll('.lang-en').forEach(e=>e.style.display=(val==='sw'?'none':'block'));
-  document.querySelectorAll('.lang-sw').forEach(e=>e.style.display=(val==='en'?'none':'block'));
-  localStorage.setItem('gpmsc_lang',val);
-}
-let savedLang=localStorage.getItem('gpmsc_lang')||'both';
-document.getElementById('langSelect').value=savedLang; changeLang(savedLang);
-function msg(en,sw){ let l=localStorage.getItem('gpmsc_lang')||'both'; if(l==='en') return en; if(l==='sw') return sw; return en+' / '+sw; }
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+const T={en:{chooseLang:"SELECT LANGUAGE / CHAGUA LUGHA",countryNote:"Choose your country above - language will change immediately",newBase:"NEW BASE TECHNOLOGY",global:"Global Positive Mind Set Center Technology",services:"National & International Digital Technology Services",serviceTime:"SERVICE TIME SYSTEM",availableUntil:"Initial service is available until:",days:"Days",hours:"Hours",minutes:"Minutes",seconds:"Seconds",registerTitle:"CUSTOMER REGISTRATION",fullName:"Full Name",email:"Email",password:"Password",registerBtn:"REGISTER",loginTitle:"LOGIN TO SYSTEM",loginBtn:"LOGIN",logoutBtn:"LOGOUT",paymentTitle:"PAYMENT SYSTEM",fee:"Fee:",perMonth:"per month",choosePeriod:"Choose registration period",transRef:"Transaction Reference Number",lipaNo:"Lipa Number:",receiver:"Receiver Name:",submitPay:"SUBMIT PAYMENT DETAILS",payNote:"Payment will be verified by admin.",qrTitle:"QR SECURITY VERIFICATION",qrLabel:"Enter QR Security Code",qrBtn:"SUBMIT QR REQUEST",myStatus:"MY SERVICE STATUS",checkStatus:"CHECK MY SERVICE STATUS",noInfo:"No information loaded.",loadPending:"LOAD PENDING REQUESTS",contacts:"CONTACTS",founder:"Founder & CEO:",alsoKnown:"Also known as",based:"Based in Mwanza, Tanzania, Serving the World."},sw:{chooseLang:"CHAGUA LUGHA",countryNote:"Chagua nchi yako hapo juu - lugha itabadilika mara moja",newBase:"TEKNOLOJIA MPYA YA MSINGI",global:"Teknolojia ya Kituo cha Kimataifa cha Mtazamo Chanya",services:"Huduma za Teknolojia ya Kidijitali za Kitaifa na Kimataifa",serviceTime:"MFUMO WA MUDA WA HUDUMA",availableUntil:"Huduma ya awali inapatikana hadi:",days:"Siku",hours:"Saa",minutes:"Dakika",seconds:"Sekunde",registerTitle:"USAJILI WA MTEJA",fullName:"Jina kamili",email:"Barua pepe",password:"Nenosiri",registerBtn:"JISAJILI",loginTitle:"INGIA KWENYE MFUMO",loginBtn:"INGIA",logoutBtn:"TOKA",paymentTitle:"MFUMO WA MALIPO",fee:"Ada:",perMonth:"kwa mwezi",choosePeriod:"Chagua muda wa usajili",transRef:"Namba ya kumbukumbu ya muamala",lipaNo:"Lipa Namba:",receiver:"Jina la mpokeaji:",submitPay:"WASILISHA TAARIFA ZA MALIPO",payNote:"Malipo yatathibitishwa na msimamizi.",qrTitle:"UTHIBITISHO WA QR",qrLabel:"Ingiza QR Security Code",qrBtn:"WASILISHA OMBI LA QR",myStatus:"HALI YA HUDUMA YANGU",checkStatus:"ANGALIA HALI YA HUDUMA",noInfo:"Hakuna taarifa iliyopakiwa.",loadPending:"PAKIA MAOMBI YANAYOSUBIRI",contacts:"MAWASILIANO",founder:"Mwanzilishi & Mkurugenzi:",alsoKnown:"Pia anajulikana kama",based:"Anapatikana Mwanza, Tanzania, Anahudumia Dunia."},fr:{chooseLang:"CHOISIR LA LANGUE",countryNote:"Choisissez votre pays - la langue changera",newBase:"NOUVELLE TECHNOLOGIE DE BASE",global:"Technologie du Centre International de l'Etat d'Esprit Positif",services:"Services de Technologie Numerique Nationaux et Internationaux",serviceTime:"SYSTEME DE TEMPS DE SERVICE",availableUntil:"Le service initial est disponible jusqu'au:",days:"Jours",hours:"Heures",minutes:"Minutes",seconds:"Secondes",registerTitle:"INSCRIPTION DU CLIENT",fullName:"Nom complet",email:"Email",password:"Mot de passe",registerBtn:"S'INSCRIRE",loginTitle:"CONNEXION AU SYSTEME",loginBtn:"SE CONNECTER",logoutBtn:"DECONNEXION",paymentTitle:"SYSTEME DE PAIEMENT",fee:"Frais:",perMonth:"par mois",choosePeriod:"Choisir la periode",transRef:"Numero de reference",lipaNo:"Numero Lipa:",receiver:"Nom du beneficiaire:",submitPay:"SOUMETTRE PAIEMENT",payNote:"Le paiement sera verifie par l'admin.",qrTitle:"VERIFICATION QR",qrLabel:"Entrez le code QR",qrBtn:"SOUMETTRE QR",myStatus:"MON STATUT",checkStatus:"VERIFIER MON STATUT",noInfo:"Aucune information.",loadPending:"CHARGER DEMANDES",contacts:"CONTACTS",founder:"Fondateur & PDG:",alsoKnown:"Aussi connu sous",based:"Base a Mwanza, Tanzanie, au service du monde."},es:{chooseLang:"SELECCIONAR IDIOMA",countryNote:"Elija su pais - el idioma cambiara",newBase:"NUEVA TECNOLOGIA BASE",global:"Tecnologia del Centro Global de Mentalidad Positiva",services:"Servicios de Tecnologia Digital Nacional e Internacional",serviceTime:"SISTEMA DE TIEMPO",availableUntil:"El servicio inicial esta disponible hasta:",days:"Dias",hours:"Horas",minutes:"Minutos",seconds:"Segundos",registerTitle:"REGISTRO DE CLIENTE",fullName:"Nombre completo",email:"Correo",password:"Contrasena",registerBtn:"REGISTRARSE",loginTitle:"INICIAR SESION",loginBtn:"INICIAR SESION",logoutBtn:"CERRAR SESION",paymentTitle:"SISTEMA DE PAGO",fee:"Tarifa:",perMonth:"por mes",choosePeriod:"Elegir periodo",transRef:"Numero de referencia",lipaNo:"Numero Lipa:",receiver:"Nombre del receptor:",submitPay:"ENVIAR PAGO",payNote:"El pago sera verificado.",qrTitle:"VERIFICACION QR",qrLabel:"Ingrese codigo QR",qrBtn:"ENVIAR QR",myStatus:"MI ESTADO",checkStatus:"VERIFICAR MI ESTADO",noInfo:"Sin informacion.",loadPending:"CARGAR SOLICITUDES",contacts:"CONTACTOS",founder:"Fundador y CEO:",alsoKnown:"Tambien conocido como",based:"Con sede en Mwanza, Tanzania, sirviendo al mundo."},ar:{chooseLang:"اختر اللغة",countryNote:"اختر بلدك - ستتغير اللغة فورا",newBase:"تقنية القاعدة الجديدة",global:"تقنية مركز العقلية الايجابية العالمي",services:"خدمات التكنولوجيا الرقمية الوطنية والدولية",serviceTime:"نظام وقت الخدمة",availableUntil:"الخدمة الاولية متاحة حتى:",days:"ايام",hours:"ساعات",minutes:"دقائق",seconds:"ثواني",registerTitle:"تسجيل العميل",fullName:"الاسم الكامل",email:"البريد",password:"كلمة المرور",registerBtn:"تسجيل",loginTitle:"تسجيل الدخول",loginBtn:"دخول",logoutBtn:"خروج",paymentTitle:"نظام الدفع",fee:"الرسوم:",perMonth:"شهريا",choosePeriod:"اختر فترة التسجيل",transRef:"رقم مرجع المعاملة",lipaNo:"رقم ليبا:",receiver:"اسم المستلم:",submitPay:"ارسال الدفع",payNote:"سيتم التحقق من الدفع.",qrTitle:"التحقق QR",qrLabel:"ادخل رمز QR",qrBtn:"ارسال QR",myStatus:"حالة خدمتي",checkStatus:"تحقق من حالتي",noInfo:"لا معلومات.",loadPending:"تحميل الطلبات",contacts:"جهات الاتصال",founder:"المؤسس:",alsoKnown:"معروف ايضا باسم",based:"في موانزا، تنزانيا، تخدم العالم."},pt:{chooseLang:"SELECIONAR IDIOMA",countryNote:"Escolha seu pais - o idioma mudara",newBase:"NOVA TECNOLOGIA BASE",global:"Tecnologia do Centro Global de Mentalidade Positiva",services:"Servicos de Tecnologia Digital Nacional e Internacional",serviceTime:"SISTEMA DE TEMPO",availableUntil:"O servico inicial esta disponivel ate:",days:"Dias",hours:"Horas",minutes:"Minutos",seconds:"Segundos",registerTitle:"REGISTRO DO CLIENTE",fullName:"Nome completo",email:"Email",password:"Senha",registerBtn:"REGISTRAR",loginTitle:"ENTRAR NO SISTEMA",loginBtn:"ENTRAR",logoutBtn:"SAIR",paymentTitle:"SISTEMA DE PAGAMENTO",fee:"Taxa:",perMonth:"por mes",choosePeriod:"Escolher periodo",transRef:"Numero de referencia",lipaNo:"Numero Lipa:",receiver:"Nome do destinatario:",submitPay:"ENVIAR PAGAMENTO",payNote:"O pagamento sera verificado.",qrTitle:"VERIFICACAO QR",qrLabel:"Digite codigo QR",qrBtn:"ENVIAR QR",myStatus:"MEU STATUS",checkStatus:"VERIFICAR STATUS",noInfo:"Sem informacao.",loadPending:"CARREGAR PEDIDOS",contacts:"CONTATOS",founder:"Fundador & CEO:",alsoKnown:"Tambem conhecido como",based:"Sediada em Mwanza, Tanzania, servindo o mundo."},de:{chooseLang:"SPRACHE WAHLEN",countryNote:"Wahlen Sie Ihr Land - Sprache andert sich sofort",newBase:"NEUE BASISTECHNOLOGIE",global:"Technologie des Globalen Zentrums fur positive Denkweise",services:"Nationale & Internationale Digitale Dienste",serviceTime:"SERVICEZEIT-SYSTEM",availableUntil:"Erster Service verfugbar bis:",days:"Tage",hours:"Stunden",minutes:"Minuten",seconds:"Sekunden",registerTitle:"KUNDENREGISTRIERUNG",fullName:"Vollstandiger Name",email:"E-Mail",password:"Passwort",registerBtn:"REGISTRIEREN",loginTitle:"ANMELDUNG",loginBtn:"ANMELDEN",logoutBtn:"ABMELDEN",paymentTitle:"ZAHLUNGSSYSTEM",fee:"Gebuhr:",perMonth:"pro Monat",choosePeriod:"Zeitraum wahlen",transRef:"Transaktionsnummer",lipaNo:"Lipa-Nummer:",receiver:"Name des Empfangers:",submitPay:"ZAHLUNG SENDEN",payNote:"Zahlung wird gepruft.",qrTitle:"QR-PRUFUNG",qrLabel:"QR-Code eingeben",qrBtn:"QR SENDEN",myStatus:"MEIN STATUS",checkStatus:"STATUS PRUFEN",noInfo:"Keine Info.",loadPending:"ANFRAGEN LADEN",contacts:"KONTAKTE",founder:"Grunder & CEO:",alsoKnown:"Auch bekannt als",based:"Sitz in Mwanza, Tansania, dient der Welt."},zh:{chooseLang:"选择语言",countryNote:"选择您的国家 - 语言将立即更改",newBase:"新基础技术",global:"全球积极心态中心技术",services:"国家和国际数字技术服务",serviceTime:"服务时间系统",availableUntil:"初始服务可用至:",days:"天",hours:"小时",minutes:"分钟",seconds:"秒",registerTitle:"客户注册",fullName:"全名",email:"电子邮件",password:"密码",registerBtn:"注册",loginTitle:"登录系统",loginBtn:"登录",logoutBtn:"退出",paymentTitle:"支付系统",fee:"费用:",perMonth:"每月",choosePeriod:"选择注册期限",transRef:"交易参考号",lipaNo:"Lipa号码:",receiver:"收款人姓名:",submitPay:"提交付款",payNote:"付款将由管理员验证。",qrTitle:"QR安全验证",qrLabel:"输入QR安全码",qrBtn:"提交QR",myStatus:"我的服务状态",checkStatus:"检查我的状态",noInfo:"没有信息。",loadPending:"加载待处理请求",contacts:"联系方式",founder:"创始人兼CEO:",alsoKnown:"又名",based:"位于坦桑尼亚姆万扎，服务全世界。"},hi:{chooseLang:"भाषा चुनें",countryNote:"अपना देश चुनें - भाषा तुरंत बदल जाएगी",newBase:"नई बेस टेक्नोलॉजी",global:"ग्लोबल पॉजिटिव माइंड सेट सेंटर टेक्नोलॉजी",services:"राष्ट्रीय और अंतर्राष्ट्रीय डिजिटल सेवाएं",serviceTime:"सेवा समय प्रणाली",availableUntil:"प्रारंभिक सेवा उपलब्ध है तक:",days:"दिन",hours:"घंटे",minutes:"मिनट",seconds:"सेकंड",registerTitle:"ग्राहक पंजीकरण",fullName:"पूरा नाम",email:"ईमेल",password:"पासवर्ड",registerBtn:"रजिस्टर",loginTitle:"लॉगिन",loginBtn:"लॉगिन",logoutBtn:"लॉगआउट",paymentTitle:"भुगतान प्रणाली",fee:"शुल्क:",perMonth:"प्रति माह",choosePeriod:"पंजीकरण अवधि चुनें",transRef:"लेनदेन संदर्भ",lipaNo:"लिपा नंबर:",receiver:"प्राप्तकर्ता का नाम:",submitPay:"भुगतान भेजें",payNote:"भुगतान सत्यापित किया जाएगा।",qrTitle:"QR सत्यापन",qrLabel:"QR कोड दर्ज करें",qrBtn:"QR भेजें",myStatus:"मेरी सेवा स्थिति",checkStatus:"स्थिति जांचें",noInfo:"कोई जानकारी नहीं।",loadPending:"लंबित अनुरोध लोड करें",contacts:"संपर्क",founder:"संस्थापक और सीईओ:",alsoKnown:"के रूप में भी जाना जाता है",based:"म्वांज़ा, तंजानिया में स्थित, दुनिया की सेवा कर रहा है।"}};
+function setLanguage(lang){localStorage.setItem('gpmsc_country_lang',lang);let d=T[lang]||T['en'];document.querySelectorAll('[data-i18n]').forEach(el=>{let k=el.getAttribute('data-i18n');if(d[k])el.textContent=d[k];});document.getElementById('countryLang').value=lang;let c=document.querySelector('.goog-te-combo');if(c){try{c.value=lang;c.dispatchEvent(new Event('change'));}catch(e){}}}
+function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,sw,fr,es,ar,pt,de,zh-CN,hi,ur,bn,ja,ko,ru,tr,th,vi,id,ms,tl,am,so,yo,ig,ha,zu',layout:google.translate.TranslateElement.InlineLayout.SIMPLE},'google_translate_element');}
+setTimeout(()=>setLanguage(localStorage.getItem('gpmsc_country_lang')||'en'),300);
+</script><script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 <script type="module">
 import {initializeApp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged, updateProfile, getIdTokenResult} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
-import {getFirestore, doc, setDoc, getDoc, serverTimestamp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
-import {getFunctions, httpsCallable} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-functions.js";
-
+import {getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,signOut,onAuthStateChanged,updateProfile,getIdTokenResult} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
+import {getFirestore,doc,setDoc,getDoc,serverTimestamp} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore.js";
+import {getFunctions,httpsCallable} from "https://www.gstatic.com/firebasejs/13.1.0/firebase-functions.js";
 const firebaseConfig={apiKey:"AIzaSyBYmWzzWfvHkuRgHpQhvDzj6m0o8oRzHrw",authDomain:"gpmsctech-18abb.firebaseapp.com",projectId:"gpmsctech-18abb",storageBucket:"gpmsctech-18abb.firebasestorage.app",messagingSenderId:"554624850081",appId:"1:554624850081:web:6cc5cbe084f83548ed78e0",measurementId:"G-Q00NCG4CBR"};
-const app=initializeApp(firebaseConfig);
-const auth=getAuth(app); const db=getFirestore(app); const functions=getFunctions(app,"africa-south1");
-const callFunction=name=>httpsCallable(functions,name);
-
-const DEADLINE=new Date("2026-11-10T23:59:59+03:00").getTime();
-let timerEnabled=true;
-async function loadTimerConfig(){
-  try{ const snap=await getDoc(doc(db,"system","config")); if(snap.exists() && snap.data().timerEnabled===false){ timerEnabled=false; document.getElementById("timerStatus").innerHTML="⏸️ TIMER PAUSED / TIMER IMESIMAMISHWA - WAIT FOR ADMIN / SUBIRI ADMIN ARUHUSU. It will not decrease until Admin allows / Haitapungua mpaka Admin abonyeze RUHUSU TIMER."; } }catch(e){}
-}
-loadTimerConfig();
-function updateTimer(){
-  if(!timerEnabled) return;
-  const remaining=DEADLINE-Date.now();
-  if(remaining<=0){["days","hours","minutes","seconds"].forEach(id=>document.getElementById(id).textContent="00"); document.getElementById("timerStatus").innerHTML='<span class="error">INITIAL SERVICE TIME ENDED / MUDA WA HUDUMA YA AWALI UMEMALIZIKA.</span>'; return;}
-  document.getElementById("days").textContent=Math.floor(remaining/86400000);
-  document.getElementById("hours").textContent=Math.floor((remaining%86400000)/3600000);
-  document.getElementById("minutes").textContent=Math.floor((remaining%3600000)/60000);
-  document.getElementById("seconds").textContent=Math.floor((remaining%60000)/1000);
-  document.getElementById("timerStatus").textContent=window.msg("Initial service time is still running.","Muda wa huduma ya awali bado unaendelea.");
-}
-updateTimer(); setInterval(updateTimer,1000);
-
-window.registerUser=async function(){
-  const name=document.getElementById("fullName").value.trim(); const email=document.getElementById("registerEmail").value.trim(); const password=document.getElementById("registerPassword").value; const message=document.getElementById("registerMessage");
-  if(!name||!email||password.length<6){message.textContent=window.msg("Fill all fields. Password must be at least 6 characters.","Jaza taarifa zote. Nenosiri liwe na angalau herufi 6."); return;}
-  try{const credential=await createUserWithEmailAndPassword(auth,email,password); await updateProfile(credential.user,{displayName:name}); await setDoc(doc(db,"users",credential.user.uid),{fullName:name,email:email,createdAt:serverTimestamp()}); message.textContent=window.msg("Registration successful.","Usajili umefanikiwa.");}catch(error){message.textContent=window.msg("Registration failed: ","Usajili umeshindikana: ")+error.message;}
-};
-window.loginUser=async function(){
-  const email=document.getElementById("loginEmail").value.trim(); const password=document.getElementById("loginPassword").value; const message=document.getElementById("loginMessage");
-  try{await signInWithEmailAndPassword(auth,email,password); message.textContent=window.msg("You have logged in successfully.","Umeingia kikamilifu.");}catch(error){message.textContent=window.msg("Failed to login: ","Imeshindikana kuingia: ")+error.message;}
-};
-window.logoutUser=async function(){try{await signOut(auth); document.getElementById("loginMessage").textContent=window.msg("You have logged out.","Umetoka kwenye akaunti.");}catch(error){alert(error.message);}};
-onAuthStateChanged(auth,async user=>{
-  const info=document.getElementById("accountInfo"); const admin=document.getElementById("adminSection");
-  if(!user){info.textContent=window.msg("Not logged in.","Hujaingia kwenye akaunti."); admin.classList.add("hidden"); return;}
-  info.textContent=window.msg("Logged in as: ","Umeingia kama: ")+user.email;
-  try{const token=await getIdTokenResult(user,true); if(token.claims.admin===true){admin.classList.remove("hidden");}else{admin.classList.add("hidden");}}catch(error){admin.classList.add("hidden");}
-});
-window.submitPayment=async function(){
-  const user=auth.currentUser; const message=document.getElementById("paymentMessage");
-  if(!user){message.textContent=window.msg("Please login first.","Tafadhali ingia kwanza."); return;}
-  const months=Number(document.getElementById("months").value); const reference=document.getElementById("transactionReference").value.trim();
-  if(!reference){message.textContent=window.msg("Enter transaction reference.","Weka transaction reference."); return;}
-  try{const result=await callFunction("submitPayment")({months,transactionReference:reference}); message.textContent=result.data.message||window.msg("Payment request submitted.","Ombi la malipo limewasilishwa.");}catch(error){message.textContent=window.msg("Request failed: ","Ombi halijafanikiwa: ")+error.message;}
-};
-async function sha256(value){const data=new TextEncoder().encode(value); const hash=await crypto.subtle.digest("SHA-256",data); return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,"0")).join("");}
-window.submitQrRequest=async function(){
-  const user=auth.currentUser; const message=document.getElementById("qrMessage"); const code=document.getElementById("qrCode").value.trim();
-  if(!user){message.textContent=window.msg("Login first.","Ingia kwanza."); return;} if(!code){message.textContent=window.msg("Enter QR Security Code.","Weka QR Security Code."); return;}
-  try{const qrHash=await sha256(code); const result=await callFunction("submitQrRequest")({qrHash}); document.getElementById("qrCode").value=""; message.textContent=result.data.message||window.msg("Request submitted.","Ombi limewasilishwa.");}catch(error){message.textContent=window.msg("Failed: ","Imeshindikana: ")+error.message;}
-};
-window.checkMyAccess=async function(){
-  const resultBox=document.getElementById("accessResult");
-  if(!auth.currentUser){resultBox.textContent=window.msg("Login first.","Ingia kwanza."); return;}
-  try{const result=await callFunction("checkMyAccess")(); const data=result.data; resultBox.textContent=window.msg("Status: ","Hali: ")+(data.status||window.msg("Not specified","Haijabainishwa"))+" | "+window.msg("Permission: ","Ruhusa: ")+(data.allowed?window.msg("ALLOWED","IMERUHUSIWA"):window.msg("NOT ALLOWED","HAIRUHUSIWI"))+" | "+window.msg("Info: ","Taarifa: ")+(data.message||"");}catch(error){resultBox.textContent=window.msg("Failed to check service: ","Imeshindikana kuangalia huduma: ")+error.message;}
-};
-window.loadAdmin=async function(){
-  const output=document.getElementById("adminResults");
-  if(!auth.currentUser){output.textContent=window.msg("Admin not logged in.","Admin hajaingia."); return;}
-  try{const token=await getIdTokenResult(auth.currentUser,true); if(token.claims.admin!==true){output.textContent=window.msg("You have no Admin permission.","Huna ruhusa ya Admin."); return;}
-  const result=await callFunction("adminListPending")(); const data=result.data; output.innerHTML="<h3>"+window.msg("Payment Requests","Maombi ya Malipo")+"</h3>";
-  (data.payments||[]).forEach(item=>{const p=document.createElement("p"); p.textContent=(item.email||"")+" | "+(item.amount||"")+" | "+(item.transactionReference||"")+" | "+(item.id||""); output.appendChild(p);});
-  output.innerHTML+="<h3>"+window.msg("QR Requests","Maombi ya QR")+"</h3>";
-  (data.qrRequests||[]).forEach(item=>{const p=document.createElement("p"); p.textContent=(item.email||"")+" | "+(item.id||""); output.appendChild(p);});
-  }catch(error){output.textContent=window.msg("Admin dashboard failed to load: ","Admin dashboard haijapakiwa: ")+error.message;}
-};
+const app=initializeApp(firebaseConfig);const auth=getAuth(app);const db=getFirestore(app);const functions=getFunctions(app,"africa-south1");const callFunction=n=>httpsCallable(functions,n);
+const DEADLINE=new Date("2026-11-10T23:59:59+03:00").getTime();let timerEnabled=true;
+async function loadTimerConfig(){try{const s=await getDoc(doc(db,"system","config"));if(s.exists()&&s.data().timerEnabled===false){timerEnabled=false;document.getElementById("timerStatus").innerHTML="TIMER PAUSED - WAIT FOR ADMIN";}}catch(e){}}
+loadTimerConfig();function updateTimer(){if(!timerEnabled)return;const r=DEADLINE-Date.now();if(r<=0){["days","hours","minutes","seconds"].forEach(id=>document.getElementById(id).textContent="00");document.getElementById("timerStatus").textContent="TIME ENDED";return;}document.getElementById("days").textContent=Math.floor(r/86400000);document.getElementById("hours").textContent=Math.floor((r%86400000)/3600000);document.getElementById("minutes").textContent=Math.floor((r%3600000)/60000);document.getElementById("seconds").textContent=Math.floor((r%60000)/1000);}updateTimer();setInterval(updateTimer,1000);
+window.registerUser=async function(){const n=document.getElementById("fullName").value.trim();const e=document.getElementById("registerEmail").value.trim();const p=document.getElementById("registerPassword").value;const m=document.getElementById("registerMessage");if(!n||!e||p.length<6){m.textContent="Fill all fields";return;}try{const c=await createUserWithEmailAndPassword(auth,e,p);await updateProfile(c.user,{displayName:n});await setDoc(doc(db,"users",c.user.uid),{fullName:n,email:e,createdAt:serverTimestamp()});m.textContent="Registration successful.";}catch(err){m.textContent=err.message;}};
+window.loginUser=async function(){const e=document.getElementById("loginEmail").value.trim();const p=document.getElementById("loginPassword").value;const m=document.getElementById("loginMessage");try{await signInWithEmailAndPassword(auth,e,p);m.textContent="Logged in.";}catch(err){m.textContent=err.message;}};
+window.logoutUser=async function(){try{await signOut(auth);document.getElementById("loginMessage").textContent="Logged out.";}catch(err){alert(err.message);}};
+onAuthStateChanged(auth,async u=>{const info=document.getElementById("accountInfo");const ad=document.getElementById("adminSection");if(!u){info.textContent="Not logged in";ad.classList.add("hidden");return;}info.textContent="Logged in as: "+u.email;try{const t=await getIdTokenResult(u,true);if(t.claims.admin===true){ad.classList.remove("hidden");}else{ad.classList.add("hidden");}}catch(e){ad.classList.add("hidden");}});
+window.submitPayment=async function(){const u=auth.currentUser;const m=document.getElementById("paymentMessage");if(!u){m.textContent="Please login first.";return;}const mo=Number(document.getElementById("months").value);const ref=document.getElementById("transactionReference").value.trim();if(!ref){m.textContent="Enter transaction reference.";return;}try{const r=await callFunction("submitPayment")({months:mo,transactionReference:ref});m.textContent=r.data.message||"Payment request submitted.";}catch(e){m.textContent=e.message;}};
+async function sha256(v){const d=new TextEncoder().encode(v);const h=await crypto.subtle.digest("SHA-256",d);return Array.from(new Uint8Array(h)).map(b=>b.toString(16).padStart(2,"0")).join("");}
+window.submitQrRequest=async function(){const u=auth.currentUser;const m=document.getElementById("qrMessage");const c=document.getElementById("qrCode").value.trim();if(!u){m.textContent="Login first.";return;}if(!c){m.textContent="Enter QR Code.";return;}try{const h=await sha256(c);const r=await callFunction("submitQrRequest")({qrHash:h});document.getElementById("qrCode").value="";m.textContent=r.data.message||"Request submitted.";}catch(e){m.textContent=e.message;}};
+window.checkMyAccess=async function(){const b=document.getElementById("accessResult");if(!auth.currentUser){b.textContent="Login first.";return;}try{const r=await callFunction("checkMyAccess")();const d=r.data;b.textContent="Status: "+(d.status||"")+" | Allowed: "+(d.allowed?"YES":"NO")+" | "+(d.message||"");}catch(e){b.textContent=e.message;}};
+window.loadAdmin=async function(){const o=document.getElementById("adminResults");if(!auth.currentUser){o.textContent="Admin not logged in.";return;}try{const t=await getIdTokenResult(auth.currentUser,true);if(t.claims.admin!==true){o.textContent="No Admin permission.";return;}const r=await callFunction("adminListPending")();const d=r.data;o.innerHTML="<h3>Payment Requests</h3>";(d.payments||[]).forEach(it=>{const p=document.createElement("p");p.textContent=(it.email||"")+" | "+(it.amount||"")+" | "+(it.transactionReference||"")+" | "+(it.id||"");o.appendChild(p);});o.innerHTML+="<h3>QR Requests</h3>";(d.qrRequests||[]).forEach(it=>{const p=document.createElement("p");p.textContent=(it.email||"")+" | "+(it.id||"");o.appendChild(p);});}catch(e){o.textContent=e.message;}};
 </script>
 </body>
 </html>
